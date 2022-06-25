@@ -1,0 +1,27 @@
+// Halcyon Theme
+// Halcyon theme was created by Brittany Chiang (https://github.com/bchiang7)
+// Include this inside of schema[ ] in settings.json
+
+{
+  "background": "#1D2433",
+  "black": "#1D2433",
+  "blue": "#206EC5",
+  "brightBlack": "#3d3d3d",
+  "brightBlue": "#1C2434",
+  "brightCyan": "#0ED3EC",
+  "brightGreen": "#B1EE73",
+  "brightPurple": "#CAA2FF",
+  "brightRed": "#FF898F",
+  "brightWhite": "#C0C0C0",
+  "brightYellow": "#FFD571",
+  "cursorColor": "#D7DCE2",
+  "cyan": "#5CCFE6",
+  "foreground": "#A8AFC0",
+  "green": "#BAE67E",
+  "name": "Halcyon",
+  "purple": "#C3A6FF",
+  "red": "#EF6B73",
+  "selectionBackground": "#2F3B54",
+  "white": "#A2B0C2",
+  "yellow": "#FFCC66"
+},

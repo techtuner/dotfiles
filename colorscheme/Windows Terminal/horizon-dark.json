@@ -1,0 +1,27 @@
+// Horizon Dark Theme
+// Horizon Theme was created by Jolaleye (https://github.com/jolaleye)
+// Include this inside of schema[ ] in settings.json
+
+{
+  "background": "#1C1E26",
+  "black": "#1C1E26",
+  "blue": "#206EC5",
+  "brightBlack": "#2E303E",
+  "brightBlue": "#264178",
+  "brightCyan": "#21BFC2",
+  "brightGreen": "#09F7A0",
+  "brightPurple": "#CAA2FF",
+  "brightRed": "#F43E5C",
+  "brightWhite": "#C0C0C0",
+  "brightYellow": "#FAC39A",
+  "cursorColor": "#D7DCE2",
+  "cyan": "#21BFC2",
+  "foreground": "#ABB0E7",
+  "green": "#27D797",
+  "name": "Horizon Dark",
+  "purple": "#ABB0E7",
+  "red": "#E95378",
+  "selectionBackground": "#2E303E",
+  "white": "#A2B0C2",
+  "yellow": "#FAB38E"
+},
