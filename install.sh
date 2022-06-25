@@ -88,6 +88,6 @@ cp .bashrc ~/
 cp ./nvim/init.vim ~/.config/nvim/
 cp ./code/settings.json ~/.config/Code/User/
 cp ./tmux/.tmux.conf ~
-cp ./zsh_themes/* $ZSH_CUSTOM/themes/
+cp ./zsh_themes/* ~/.oh-my-zsh/themes/
 source ~/.bashrc
 source ~/.zshrc
