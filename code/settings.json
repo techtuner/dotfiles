@@ -1,0 +1,29 @@
+{
+  "editor.fontFamily": "Monaco,'Dank Mono','Droid Sans Mono', 'monospace'",
+  "editor.fontSize": 22,
+  "files.autoSave": "onFocusChange",
+  "editor.formatOnSave": true,
+  "prettier.enable": true,
+  "editor.minimap.enabled": false,
+  "prettier.jsxSingleQuote": true,
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "editor.fontLigatures": true,
+  "editor.lineHeight": 2.5,
+  "workbench.iconTheme": "material-icon-theme",
+  "workbench.productIconTheme": "material-product-icons",
+  "workbench.colorTheme": "Horizon",
+  "security.workspace.trust.untrustedFiles": "open",
+  "window.zoomLevel": -1,
+  "editor.wordWrap": "on",
+  "workbench.colorCustomizations": {
+    "editorBracketHighlight.foreground1": "#46AEFA",
+    "editorBracketHighlight.foreground2": "#9BA0F7",
+    "editorBracketHighlight.foreground3": "#5159F5",
+    "editorBracketHighlight.foreground4": "#613EDE",
+    "editorBracketHighlight.foreground5": "#4046C2",
+    "editorBracketHighlight.foreground6": "#9F46FA"
+  }
+}
