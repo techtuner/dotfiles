@@ -91,3 +91,4 @@ cp ./tmux/.tmux.conf ~
 cp ./zsh_themes/* ~/.oh-my-zsh/themes/
 source ~/.bashrc
 source ~/.zshrc
+bash -c  "$(wget -qO- https://git.io/vQgMr)" 
