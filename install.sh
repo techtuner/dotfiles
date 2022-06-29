@@ -38,6 +38,7 @@ sudo apt-get install build-essential app-transport-https gdb gcc ca-certificates
 sudo apt-get install htop fzf jq-y
 sudo apt-get install python3-pip docker-ce -y
 sudo apt-get install dconf-editor gnome-tweaks gnome-shell-extensions software-properties-common -y
+sudo apt-get install netcat nmap wireshark -y
 nvm install node -y
 
 sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \
