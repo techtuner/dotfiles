@@ -56,7 +56,7 @@ return packer.startup(function(use)
     -- Markdown Preview
     use {
         'iamcco/markdown-preview.nvim',
-        run = 'cd app && yarn install',
+        run = 'cd app && npm install',
         cmd = 'MarkdownPreview'
     }
     use "JoosepAlviste/nvim-ts-context-commentstring"
