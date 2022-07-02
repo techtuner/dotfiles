@@ -90,7 +90,9 @@ return packer.startup(function(use)
     use 'pangloss/vim-javascript'
     use 'mxw/vim-jsx'
     use 'rust-lang/rust.vim'
+     use 'p00f/nvim-ts-rainbow' 
     use 'darrikonn/vim-gofmt'
+    use 'nvim-treesitter/playground'
     use 'phaazon/hop.nvim'
     use 'ryanoasis/vim-devicons'
     use {
@@ -101,7 +103,11 @@ return packer.startup(function(use)
         require('crates').setup()
     end,
 }
-
+use "b0o/schemastore.nvim"
+use 'hrsh7th/cmp-nvim-lua'
+USE 'JoosepAlviste/nvim-ts-context-commentstring'
+use 'nvim-telescope/telescope-media-files.nvim'
+use 'akinsho/toggleterm.nvim'
     if PACKER_BOOTSTRAP then
         require("packer").sync()
     end

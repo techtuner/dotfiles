@@ -62,3 +62,8 @@ keymaps("n","<leader>w",":wq",opts)
 
 keymaps("n","<leader><CR>",":so %<CR>",opts)
 keymaps("v","<leader><CR>",":so %<CR>",opts)
+
+keymaps("n","<leader>ff","<cmd>Telescope find_files<CR>",opts)
+keymaps("n","<leader>fg","<cmd>Telescope live_grep<CR>",opts)
+
+keymaps("n","<leader>e","NvimTreeToggle<CR>",opts)
