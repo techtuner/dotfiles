@@ -1,3 +1,4 @@
+-- LSP Handler
 local M = {}
 M.setup = function()
   local signs = {

@@ -1,3 +1,4 @@
+-- Initial Options for neovim
 local options = {
   backup = false,
   clipboard = "unnamedplus",

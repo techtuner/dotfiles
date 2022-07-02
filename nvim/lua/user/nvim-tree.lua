@@ -1,3 +1,4 @@
+-- File Explorer for Neovim
 local status_ok,nvim_tree = pcal(require,"nvim-tree")
 if not status_ok then
     return

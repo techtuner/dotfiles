@@ -1,3 +1,4 @@
+-- Plugins used from Packer.nvim(https://github.com/wbthomason/packer.nvim)
 local fn = vim.fn
 
 -- Automatically install packer
@@ -90,24 +91,24 @@ return packer.startup(function(use)
     use 'pangloss/vim-javascript'
     use 'mxw/vim-jsx'
     use 'rust-lang/rust.vim'
-     use 'p00f/nvim-ts-rainbow' 
+    use 'p00f/nvim-ts-rainbow'
     use 'darrikonn/vim-gofmt'
     use 'nvim-treesitter/playground'
     use 'phaazon/hop.nvim'
     use 'ryanoasis/vim-devicons'
     use {
-    'saecki/crates.nvim',
-    event = { "BufRead Cargo.toml" },
-    requires = { { 'nvim-lua/plenary.nvim' } },
-    config = function()
-        require('crates').setup()
-    end,
-}
-use "b0o/schemastore.nvim"
-use 'hrsh7th/cmp-nvim-lua'
-USE 'JoosepAlviste/nvim-ts-context-commentstring'
-use 'nvim-telescope/telescope-media-files.nvim'
-use 'akinsho/toggleterm.nvim'
+        'saecki/crates.nvim',
+        event = {"BufRead Cargo.toml"},
+        requires = {{'nvim-lua/plenary.nvim'}},
+        config = function()
+            require('crates').setup()
+        end
+    }
+    use "b0o/schemastore.nvim"
+    use 'hrsh7th/cmp-nvim-lua'
+    use 'JoosepAlviste/nvim-ts-context-commentstring'
+    use 'nvim-telescope/telescope-media-files.nvim'
+    use 'akinsho/toggleterm.nvim'
     if PACKER_BOOTSTRAP then
         require("packer").sync()
     end
