@@ -1,3 +1,3 @@
-source ~/.config/nvim/plugs/plugins.vim
-source ~/.config/nvim/modules/options.vim
-source ~/.config/nvim/modules/keymaps.vim
+source ~\AppData\Local\nvim\plugs\plugins.vim
+source ~\AppData\Local\nvim\modules\options.vim
+source ~\AppData\Local\nvim\modules\keymaps.vim

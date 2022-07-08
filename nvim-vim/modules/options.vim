@@ -5,7 +5,7 @@ set incsearch
 set splitbelow
 set splitright
 set tabstop=4
-set cmdheight=3
+set cmdheight=2
 set mouse=a
 set shiftwidth=4
 set pumheight=10
@@ -13,7 +13,7 @@ set termguicolors
 set smartindent
 set autoindent
 set smartcase
-set numberwidth=6
+set numberwidth=4
 set scrolloff=100
 set sidescrolloff=10
 set fileencoding = "utf-8"
@@ -23,7 +23,7 @@ set background = "dark"
 
 " Allow Italics font
 
-colorscheme gruvbox-baby
-
+" colorscheme gruvbuddy
 " Autocommands
+lua require('colorbuddy').colorscheme('gruvbuddy')
 autocmd BufWritePre *.py ImpSort!

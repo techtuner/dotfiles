@@ -7,6 +7,8 @@ Plug 'nvim-lua/popup.nvim'
 " Colorscheme and Statusline
 Plug 'luisiacc/gruvbox-baby'
 Plug 'mkitt/tabline.vim'
+Plug 'tjdevries/colorbuddy.vim'
+Plug 'tjdevries/gruvbuddy.nvim'
 
 "Startup
 Plug 'mhinz/vim-startify'
