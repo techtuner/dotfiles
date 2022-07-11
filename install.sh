@@ -1,7 +1,7 @@
 #!/bin/bash
 
-sudo add-apt-repository ppa:neovim-ppa/stable -y
 
+wget "https://github.com/neovim/neovim/releases/download/nightly/nvim-linux64.deb"
 curl -sS https://download.spotify.com/debian/pubkey_5E3C45D7B312C643.gpg | sudo apt-key add - 
 echo "deb http://repository.spotify.com stable non-free" | sudo tee /etc/apt/sources.list.d/spotify.list
 
@@ -32,7 +32,7 @@ sudo tar xf lazygit.tar.gz -C /usr/local/bin lazygit
 sudo apt-get update -y && sudo apt-get upgrade -y
 sudo apt-get install spotify-client -y
 sudo apt-get install gh -y
-sudo apt-get install code neovim -y
+sudo apt-get install code -y
 sudo apt-get install tmux -y
 sudo apt-get install build-essential app-transport-https gdb gcc ca-certificates libedit-dev g++ -y
 sudo apt-get install htop fzf jq-y
@@ -40,6 +40,8 @@ sudo apt-get install python3-pip docker-ce -y
 sudo apt-get install dconf-editor gnome-tweaks gnome-shell-extensions software-properties-common -y
 sudo apt-get install netcat nmap wireshark -y
 nvm install node -y
+
+sudo dpkg -i nvim-linux64.deb
 
 sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \
        https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
