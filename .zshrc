@@ -70,7 +70,7 @@ ZSH_THEME="kayid"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git copyfile copybuffer dirhistory history web-search jsontools sudo zsh-autosuggestions zsh-syntax-highlighting)
+plugins=(git copyfile copybuffer dirhistory history web-search jsontools sudo)
 
 source $ZSH/oh-my-zsh.sh
 
