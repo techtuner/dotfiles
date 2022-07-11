@@ -15,7 +15,6 @@ set autoindent
 set smartcase
 set numberwidth=4
 set scrolloff=100
-set sidescrolloff=10
 set fileencoding = "utf-8"
 set conceallevel=0
 set background = "dark"
@@ -26,6 +25,6 @@ set t_ZH=^[[3m
 set t_ZR=^[[23m
 " colorscheme gruvbuddy
 " Autocommands
-colorscheme horizon
+colorscheme gruvbox
 
 autocmd BufWritePre *.py ImpSort!
