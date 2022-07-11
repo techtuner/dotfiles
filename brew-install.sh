@@ -18,10 +18,11 @@ brew update
 
 # Installing Softwares
 
-brew install tree ctags tmux ansible ansiweather exa wget docker gh gcc gitui htop jq lazydocker lazygit make nmap
+brew install tree ctags tmux ansible cmake ansiweather exa wget docker gh gcc gitui htop jq lazydocker lazygit make nmap
 
 brew install --HEAD tree-sitter luajit nvm neovim
 
+brew install --cask visual-studio-code pomodone wireshark
 
 # Installing Vim-Plug plugin manager
 sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \
