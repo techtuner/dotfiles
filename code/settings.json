@@ -13,7 +13,7 @@
   "editor.fontLigatures": true,
   "editor.lineHeight": 2.5,
   "workbench.iconTheme": "material-icon-theme",
-  "workbench.productIconTheme": "material-product-icons",
+  "workbench.productIconTheme": "icons-carbon",
   "workbench.colorTheme": "Horizon",
   "security.workspace.trust.untrustedFiles": "open",
   "window.zoomLevel": 0.5,
