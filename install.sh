@@ -44,10 +44,6 @@ nvm install node -y
 sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \
        https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
 
-git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
-git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
-git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
-
 # Remove Few apps
 
 sudo apt remove snapd -y
@@ -84,9 +80,9 @@ sudo cp -r ./fonts/'Dank Mono' /usr/share/fonts/opentype
 cp ./ide.sh ~
 sudo chsh -s /usr/bin/zsh
 sed -i "1i exec zsh" ~/.bashrc
-cp .zshrc ~/
-cp .bashrc ~/
-cp ./nvim/init.vim ~/.config/nvim/
+cp .zshrc ~
+cp .bashrc ~
+cp ./nvim-vim/* ~/.config/nvim/
 cp ./code/settings.json ~/.config/Code/User/
 cp ./tmux/.tmux.conf ~
 cp ./zsh_themes/* ~/.oh-my-zsh/themes/
