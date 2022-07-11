@@ -13,16 +13,16 @@ test -r ~/.bash_profile && echo "eval \"\$($(brew --prefix)/bin/brew shellenv)\"
 echo "eval \"\$($(brew --prefix)/bin/brew shellenv)\"" >> ~/.profile
 
 killall -3 gnome-shell # used to restart the gnome shell
-brew update 
+yes | brew update 
 
 
 # Installing Softwares
 
-brew install tree ctags tmux ansible cmake ansiweather exa wget docker gh gcc gitui htop jq lazydocker lazygit make nmap
+yes | brew install tree ctags tmux ansible cmake ansiweather exa wget docker gh gcc gitui htop jq lazydocker lazygit make nmap
 
-brew install --HEAD tree-sitter luajit nvm neovim
+yes | brew install --HEAD tree-sitter luajit nvm neovim
 
-brew install --cask visual-studio-code pomodone wireshark
+yes | brew install --cask visual-studio-code pomodone wireshark
 
 # Installing Vim-Plug plugin manager
 sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \
