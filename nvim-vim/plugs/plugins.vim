@@ -20,6 +20,7 @@ Plug 'lukas-reineke/indent-blankline.nvim'
 
 Plug 'L3MON4D3/LuaSnip'
 Plug 'saadparwaiz1/cmp_luasnip'
+Plug 'rafamadriz/friendly-snippets'
 
 " Comments
 Plug 'numToStr/Comment.nvim'
@@ -56,8 +57,10 @@ Plug 'kyazdani42/nvim-tree.lua'
 
 " Completion
 
+Plug 'windwp/nvim-autopairs'
 Plug 'neovim/nvim-lspconfig'
 Plug 'hrsh7th/cmp-nvim-lsp'
+Plug 'hrsh7th/cmp-nvim-lua'
 Plug 'hrsh7th/cmp-buffer'
 Plug 'hrsh7th/cmp-path'
 Plug 'hrsh7th/cmp-cmdline'
