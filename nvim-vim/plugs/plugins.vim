@@ -9,13 +9,11 @@ Plug 'nvim-lua/popup.nvim'
 
 " Colorscheme
 
-Plug 'tjdevries/colorbuddy.nvim'
-Plug 'tjdevries/gruvbuddy.nvim'
-Plug 'ntk148v/vim-horizon'
 Plug 'nvim-lualine/lualine.nvim'
+Plug 'luisiacc/gruvbox-baby', {'branch': 'main'}
 Plug 'lukas-reineke/indent-blankline.nvim'
 
-
+ellisonleao/gruvbox.nvim
 " Snippets
 
 Plug 'L3MON4D3/LuaSnip'
@@ -50,6 +48,8 @@ Plug 'pearofducks/ansible-vim', { 'for': 'yaml' } " Yaml Files
 Plug 'elzr/vim-json', { 'for': 'json' }
 Plug 'tweekmonster/impsort.vim', {'for': 'python'}
 Plug 'nvim-treesitter/nvim-treesitter'
+Plug 'mattn/emmet-vim'
+
 " File Explorer and File Icons
 
 Plug 'kyazdani42/nvim-web-devicons'
