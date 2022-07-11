@@ -13,6 +13,7 @@ inoremap <silent><C-s> <C-O>:update<cr>
 " Telescope
 nnoremap <leader>ff :Telescope find_files<cr>
 nnoremap <leader>fg :Telescope git_files<cr>
+nnoremap <leader>ps :lua require('telescope.builtin').grep_string({search = vim.fn.input("Grep For >")})
 
 " Tree Sitter
 nnoremap <C-t> :NvimTreeToggle .<cr>
