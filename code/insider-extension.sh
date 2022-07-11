@@ -30,3 +30,4 @@ code-insiders --install-extension humao.rest-client
 code-insiders --install-extension gruntfuggly.todo-tree
 code-insiders --install-extension wayou.vscode-todo-highlight
 code-insiders --install-extension piousdeer.horizon-theme-vscode-default-token-colors
+code-insiders --install-extension antfu.icons-carbon

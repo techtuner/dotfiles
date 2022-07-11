@@ -29,4 +29,5 @@ code --install-extension xabikos.JavaScriptSnippets
 code --install-extension humao.rest-client
 code --install-extension gruntfuggly.todo-tree
 code --install-extension wayou.vscode-todo-highlight
+code --install-extension antfu.icons-carbon
 code --install-extension piousdeer.horizon-theme-vscode-default-token-colors
