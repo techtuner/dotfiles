@@ -1,0 +1,14 @@
+source ~/.config/nvim/modules/keymaps.vim
+source ~/.config/nvim/plugs/plugins.vim
+source ~/.config/nvim/modules/options.vim
+source ~/.config/nvim/modules/plugins/indent-guide.vim
+source ~/.config/nvim/modules/plugins/gitsigns.vim
+source ~/.config/nvim/modules/plugins/lualine.vim
+source ~/.config/nvim/modules/plugins/telescope.vim
+source ~/.config/nvim/modules/plugins/nvim-tree.vim
+source ~/.config/nvim/modules/plugins/cmp.vim
+source ~/.config/nvim/modules/plugins/comments.vim
+source ~/.config/nvim/modules/plugins/treesitter.vim
+source ~/.config/nvim/modules/plugins/lsp.vim
+source ~/.config/nvim/modules/plugins/autopairs.vim
+source ~/.config/nvim/modules/plugins/ayu.vim

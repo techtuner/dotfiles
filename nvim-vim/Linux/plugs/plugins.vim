@@ -8,12 +8,10 @@ Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-lua/popup.nvim'
 
 " Colorscheme
-
+Plug 'Shatur/neovim-ayu'
 Plug 'nvim-lualine/lualine.nvim'
-Plug 'luisiacc/gruvbox-baby', {'branch': 'main'}
 Plug 'lukas-reineke/indent-blankline.nvim'
 
-ellisonleao/gruvbox.nvim
 " Snippets
 
 Plug 'L3MON4D3/LuaSnip'

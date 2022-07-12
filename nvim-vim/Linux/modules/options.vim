@@ -28,8 +28,4 @@ set winbl=10
 " Allow Italics font
 set t_ZH=^[[3m
 set t_ZR=^[[23m
-" colorscheme gruvbuddy
-" Autocommands
-	colorscheme gruvbox-baby
-
-autocmd BufWritePre *.py ImpSort!
+colorscheme ayu

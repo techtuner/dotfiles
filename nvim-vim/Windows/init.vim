@@ -1,0 +1,14 @@
+source ~\AppData\Local\nvim\modules\keymaps.vim
+source ~\AppData\Local\nvim\plugs\plugins.vim
+source ~\AppData\Local\nvim\modules\options.vim
+source ~\AppData\Local\nvim\modules\plugins\indent-guide.vim
+source ~\AppData\Local\nvim\modules\plugins\gitsigns.vim
+source ~\AppData\Local\nvim\modules\plugins\lualine.vim
+source ~\AppData\Local\nvim\modules\plugins\telescope.vim
+source ~\AppData\Local\nvim\modules\plugins\nvim-tree.vim
+source ~\AppData\Local\nvim\modules\plugins\cmp.vim
+source ~\AppData\Local\nvim\modules\plugins\comments.vim
+source ~\AppData\Local\nvim\modules\plugins\treesitter.vim
+source ~\AppData\Local\nvim\modules\plugins\lsp.vim
+source ~\AppData\Local\nvim\modules\plugins\autopairs.vim
+source ~\AppData\Local\nvim\modules\plugins\ayu.vim
