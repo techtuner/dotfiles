@@ -84,7 +84,7 @@ sudo chsh -s /usr/bin/zsh
 sed -i "1i exec zsh" ~/.bashrc
 cp .zshrc ~
 cp .bashrc ~
-cp -r ./nvim-vim/* ~/.config/nvim/
+cp -r ./nvim-vim/Linux/* ~/.config/nvim/
 cp ./code/settings.json ~/.config/Code/User/
 cp ./tmux/.tmux.conf ~
 cp ./zsh_themes/* ~/.oh-my-zsh/themes/
