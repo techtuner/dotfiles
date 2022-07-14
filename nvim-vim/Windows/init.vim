@@ -12,3 +12,4 @@ source ~\AppData\Local\nvim\modules\plugins\treesitter.vim
 source ~\AppData\Local\nvim\modules\plugins\lsp.vim
 source ~\AppData\Local\nvim\modules\plugins\autopairs.vim
 source ~\AppData\Local\nvim\modules\plugins\ayu.vim
+source ~\AppData\Local\nvim\modules\plugins\prettier.vim

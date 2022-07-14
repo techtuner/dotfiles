@@ -1,6 +1,4 @@
 lua << EOF
-vim.cmd[[set foldmethod=expr
-set foldexpr=nvim_treesitter#foldexpr()]]
 require'nvim-treesitter.configs'.setup {
   -- A list of parser names, or "all"
   ensure_installed = { "c", "lua", "rust" , "bash","python","javascript" },

@@ -47,7 +47,7 @@ Plug 'elzr/vim-json', { 'for': 'json' }
 Plug 'tweekmonster/impsort.vim', {'for': 'python'}
 Plug 'nvim-treesitter/nvim-treesitter'
 Plug 'mattn/emmet-vim'
-
+Plug 'prettier/vim-prettier', { 'do': 'yarn install --frozen-lockfile --production' }
 " File Explorer and File Icons
 
 Plug 'kyazdani42/nvim-web-devicons'

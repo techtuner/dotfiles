@@ -1,5 +1,11 @@
 lua << EOF
 
+local lspconfig = require('lspconfig')
+local configs = require('lspconfig/configs')
+local capabilities = vim.lsp.protocol.make_client_capabilities()
+capabilities.textDocument.completion.completionItem.snippetSupport = true
+local eslint_config = require("lspconfig.server_configurations.eslint")
+
 require("nvim-lsp-installer").setup {
 	automatic_installation = true,
 	ui = {
@@ -28,9 +34,13 @@ require("nvim-lsp-installer").setup {
 
 }
 
-require("lspconfig").pyright.setup {}
-
-
+lspconfig.pyright.setup {}
+lspconfig.rust_analyzer.setup {}
+lspconfig.quick_lint_js.setup {}
+lspconfig.emmet_ls.setup({
+    -- on_attach = on_attach,
+    capabilities = {capabilities},
+    filetypes = { 'html', 'typescriptreact', 'javascriptreact', 'css', 'sass', 'scss', 'less' },
+})
 
 EOF
-
