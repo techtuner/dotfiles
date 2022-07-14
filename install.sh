@@ -41,6 +41,9 @@ sudo apt-get install dconf-editor gnome-tweaks gnome-shell-extensions software-p
 sudo apt-get install netcat nmap wireshark -y
 nvm install node -y
 
+
+npm i -g lsp-tsserver typescript pyright typescript-language-server emmet-ls
+
 sudo dpkg -i nvim-linux64.deb
 
 sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \
