@@ -80,6 +80,7 @@ mkdir ~/.config/tmux
 sudo cp -r ./fonts/'Anonymous Pro' /usr/share/fonts/truetype
 sudo cp -r ./fonts/'Fira Code' /usr/share/fonts/truetype
 sudo cp -r ./fonts/Monaco /usr/share/fonts/truetype
+sudo cp -r ./fonts/Iosevka /usr/share/fonts/truetype
 sudo cp -r ./fonts/'Source Code Pro' /usr/share/fonts/truetype
 sudo cp -r ./fonts/'Dank Mono' /usr/share/fonts/opentype
 
