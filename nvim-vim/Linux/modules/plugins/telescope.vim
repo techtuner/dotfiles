@@ -20,7 +20,21 @@ require('telescope').setup({
       -- filetypes whitelist
       -- defaults to {"png", "jpg", "mp4", "webm", "pdf"}
       filetypes = {"png", "webp", "jpg", "jpeg"},
-      find_cmd = "rg" -- find command (defaults to `fd`)
+      find_cmd = "rg", -- find command (defaults to `fd`)
+file_browser = {
+      theme = "catppuccin",
+      -- disables netrw and use telescope-file-browser in its place
+      hijack_netrw = true,
+      mappings = {
+        ["i"] = {
+          -- your custom insert mode mappings
+        },
+        ["n"] = {
+          -- your custom normal mode mappings
+        },
+      },
+   },
+
     }
 
   -- other configuration values here

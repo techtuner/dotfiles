@@ -12,3 +12,4 @@ source ~/.config/nvim/modules/plugins/treesitter.vim
 source ~/.config/nvim/modules/plugins/lsp.vim
 source ~/.config/nvim/modules/plugins/autopairs.vim
 source ~/.config/nvim/modules/plugins/ayu.vim
+source ~/.config/nvim/modules/plugins/glow.vim

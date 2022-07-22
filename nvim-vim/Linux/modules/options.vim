@@ -28,4 +28,4 @@ set winbl=10
 " Allow Italics font
 set t_ZH=^[[3m
 set t_ZR=^[[23m
-colorscheme ayu
+colorscheme catppuccin

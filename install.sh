@@ -2,6 +2,7 @@
 
 
 wget "https://github.com/neovim/neovim/releases/download/nightly/nvim-linux64.deb"
+
 curl -sS https://download.spotify.com/debian/pubkey_5E3C45D7B312C643.gpg | sudo apt-key add - 
 echo "deb http://repository.spotify.com stable non-free" | sudo tee /etc/apt/sources.list.d/spotify.list
 
@@ -38,9 +39,7 @@ sudo apt-get install build-essential app-transport-https gdb gcc ca-certificates
 sudo apt-get install htop fzf jq-y
 sudo apt-get install python3-pip docker-ce -y
 sudo apt-get install dconf-editor gnome-tweaks gnome-shell-extensions software-properties-common -y
-sudo apt-get install netcat nmap wireshark -y
-nvm install node -y
-
+nvm install lts
 
 npm i -g lsp-tsserver typescript pyright typescript-language-server emmet-ls
 
@@ -48,6 +47,8 @@ sudo dpkg -i nvim-linux64.deb
 
 sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \
        https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
+
+git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
 
 # Remove Few apps
 
@@ -79,6 +80,7 @@ mkdir ~/.config/tmux
 sudo cp -r ./fonts/'Anonymous Pro' /usr/share/fonts/truetype
 sudo cp -r ./fonts/'Fira Code' /usr/share/fonts/truetype
 sudo cp -r ./fonts/Monaco /usr/share/fonts/truetype
+sudo cp -r ./fonts/Iosevka /usr/share/fonts/truetype
 sudo cp -r ./fonts/'Source Code Pro' /usr/share/fonts/truetype
 sudo cp -r ./fonts/'Dank Mono' /usr/share/fonts/opentype
 
@@ -93,4 +95,3 @@ cp ./tmux/.tmux.conf ~
 cp ./zsh_themes/* ~/.oh-my-zsh/themes/
 source ~/.bashrc
 source ~/.zshrc
-bash -c  "$(wget -qO- https://git.io/vQgMr)" 

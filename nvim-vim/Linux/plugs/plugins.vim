@@ -11,6 +11,7 @@ Plug 'nvim-lua/popup.nvim'
 Plug 'Shatur/neovim-ayu'
 Plug 'nvim-lualine/lualine.nvim'
 Plug 'lukas-reineke/indent-blankline.nvim'
+Plug 'catppuccin/nvim', {'as': 'catppuccin'}
 
 " Snippets
 
@@ -20,6 +21,7 @@ Plug 'rafamadriz/friendly-snippets'
 
 " Comments
 Plug 'numToStr/Comment.nvim'
+Plug 'folke/todo-comments.nvim'
 
 " Startup
 
@@ -34,7 +36,7 @@ Plug 'lewis6991/gitsigns.nvim'
 
 Plug 'nvim-telescope/telescope.nvim'
 Plug 'nvim-telescope/telescope-media-files.nvim' 
-
+Plug 'nvim-telescope/telescope-file-browser.nvim'
 " Programming Language
 
 Plug 'pangloss/vim-javascript', {'for' : ['javascript','html']} " JavaScript Support
@@ -45,9 +47,11 @@ Plug 'vim-scripts/JavaScript-Indent',  { 'for': 'javascript' }
 Plug 'pearofducks/ansible-vim', { 'for': 'yaml' } " Yaml Files 
 Plug 'elzr/vim-json', { 'for': 'json' }
 Plug 'tweekmonster/impsort.vim', {'for': 'python'}
+Plug 'ellisonleao/glow.nvim'
 Plug 'nvim-treesitter/nvim-treesitter'
 Plug 'mattn/emmet-vim'
 Plug 'prettier/vim-prettier', { 'do': 'yarn install --frozen-lockfile --production' }
+
 " File Explorer and File Icons
 
 Plug 'kyazdani42/nvim-web-devicons'
@@ -64,4 +68,7 @@ Plug 'hrsh7th/cmp-path'
 Plug 'hrsh7th/cmp-cmdline'
 Plug 'hrsh7th/nvim-cmp'
 Plug 'williamboman/nvim-lsp-installer'
+
+
+
 call plug#end()

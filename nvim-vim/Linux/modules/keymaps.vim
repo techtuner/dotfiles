@@ -38,3 +38,5 @@ nnoremap <C-w> :tabclose<cr>
 
 " Remove Whitespaces
 nnoremap <leader>sws :%s/\s\+$//<CR>
+nnoremap <leader>p :Glow<cr>
+nnoremap <leader>c :Glow!<cr>
