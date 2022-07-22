@@ -28,4 +28,5 @@ set winbl=10
 " Allow Italics font
 set t_ZH=^[[3m
 set t_ZR=^[[23m
-colorscheme ayu
+let g:catppuccin_flavour = "frappe" " latte, frappe, macchiato, mocha
+colorscheme catppuccin

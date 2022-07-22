@@ -11,6 +11,7 @@ Plug 'nvim-lua/popup.nvim'
 Plug 'Shatur/neovim-ayu'
 Plug 'nvim-lualine/lualine.nvim'
 Plug 'lukas-reineke/indent-blankline.nvim'
+Plug 'catppuccin/nvim', {'as': 'catppuccin'}
 
 " Snippets
 
@@ -20,7 +21,7 @@ Plug 'rafamadriz/friendly-snippets'
 
 " Comments
 Plug 'numToStr/Comment.nvim'
-
+Plug 'folke/todo-comments.nvim'
 " Startup
 
 Plug 'mhinz/vim-startify'
@@ -29,7 +30,7 @@ Plug 'tweekmonster/startuptime.vim'
 " Git Signs
 
 Plug 'lewis6991/gitsigns.nvim'
-
+Plug 'sindrets/diffview.nvim'
 " Telescope File Finders
 
 Plug 'nvim-telescope/telescope.nvim'
@@ -48,11 +49,12 @@ Plug 'tweekmonster/impsort.vim', {'for': 'python'}
 Plug 'nvim-treesitter/nvim-treesitter'
 Plug 'mattn/emmet-vim'
 Plug 'prettier/vim-prettier', { 'do': 'yarn install --frozen-lockfile --production' }
+
 " File Explorer and File Icons
 
 Plug 'kyazdani42/nvim-web-devicons'
 Plug 'kyazdani42/nvim-tree.lua'
-
+Plug 'phaazon/hop.nvim'
 " Completion
 
 Plug 'windwp/nvim-autopairs'
