@@ -39,7 +39,7 @@ sudo chmod +x ./code_extension.sh
 git clone --depth 1 https://github.com/wbthomason/packer.nvim\
  ~/.local/share/nvim/site/pack/packer/start/packer.nvim
 
-nvm install lts
+nvm install --lts
 nvm use 18.17.0
 
 mkdir ~/Pictures/wallpapers/
