@@ -15,21 +15,21 @@
 ## ⚙️ Installation
 - Windows
 	```powershell
-		Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass
-		./install.ps1
+	Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass
+	./install.ps1
 	```
 
 - Kali
 	```shell
-		python kali.py
+	python kali.py
 	```
  - Ubuntu
 	```shell
-		sudo apt-get install git curl wget -y
-		git clone https://www.github.com/techtuner/dotfiles.git
-		cd dotfiles
-		sudo chmod +x ubuntu.sh
-		./ubuntu.sh
+	sudo apt-get install git curl wget -y
+	git clone https://www.github.com/techtuner/dotfiles.git
+	cd dotfiles
+	sudo chmod +x ubuntu.sh
+	./ubuntu.sh
 	```
 ## Tools I Use
 - Neovim
