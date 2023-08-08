@@ -16,11 +16,13 @@ sudo apt remove apport apport-gtk -y && sudo apt purge apport apport-gtk -y
 
 code&
 
-# Node Version Manager (NVM)
+# Node Version Manager
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.3/install.sh | bash
+source ~/.bashrc
 
 sudo cp -r ./fonts/'Dank Mono' /usr/share/fonts/opentype
 sudo cp -r ./fonts/'Fira Code' /usr/share/fonts/truetype
+sudo cp -r ./fonts/Lora /usr/share/fonts/truetype
 sudo cp -r ./fonts/Monaco/ /usr/share/fonts/truetype
 sudo cp -r ./fonts/MonoLisa/ /usr/share/fonts/truetype
 
