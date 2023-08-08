@@ -12,6 +12,7 @@ sudo apt autoremove -y
 sudo apt-get install curl wget gh terminator dconf-editor gnome-tweaks gnome-shell-extensions software-properties-common build-essential gdb gcc gh python3-pip -y
 sudo snap install code --classic
 sudo snap install nvim --classic
+sudo snap install spotify --classic
 sudo apt remove apport apport-gtk -y && sudo apt purge apport apport-gtk -y
 
 code&
