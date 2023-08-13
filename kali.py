@@ -171,14 +171,11 @@ def labs():
     os.mkdir(f"{home}/TryHackMe")
     os.mkdir(f"{home}/CTF")
     os.mkdir(f"{home}/vpns")
-    os.mkdir(f"{home}/Pictures/wallpaper/")
 
 
 # Editor Configs and wallpaper
 def copy_configs():
-    os.system(
-        f"cp -r {current_path}/wallpaper/Kali-wallpaper.png {home}/Pictures/wallpaper/"
-    )
+    os.system(f"cp -r {current_path}/wallpapers {home}/Pictures")
     os.system(f"cp -r {current_path}/nvim {home}/.config/")
     os.system(f"cp -r {current_path}/zsh/ {home}")
     os.system(f"cp {current_path}/tmux/.tmux.conf {home}")

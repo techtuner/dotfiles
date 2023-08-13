@@ -39,5 +39,4 @@ git clone --depth 1 https://github.com/wbthomason/packer.nvim\
 nvm install --lts
 nvm use 18.17.0
 
-mkdir ~/Pictures/wallpapers/
-sudo cp -r ./wallpaper/Ubuntu-wallpaper.jpg ~/Pictures/wallpapers/
+sudo cp -r ./wallpapers ~/Pictures
