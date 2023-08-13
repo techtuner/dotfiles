@@ -58,12 +58,12 @@
     ".phpunit.result.cache": true
   },
   // Typography
-  "terminal.integrated.fontFamily": "'FiraCode NF', sanserif",
+  "terminal.integrated.fontFamily": "MonoLisa,'FiraCode NF', sanserif",
   "editor.fontSize": 14,
   "editor.lineHeight": 2.5,
   "terminal.integrated.fontSize": 12,
   "terminal.integrated.lineHeight": 1.5,
-  "editor.fontFamily": "dank mono,monaco, monospace",
+  "editor.fontFamily": "MonoLisa,dank mono,monaco, monospace",
   "debug.console.fontFamily": "dank mono,monaco,monospace",
   "errorLens.fontFamily": "dank mono.monaco,monospace",
   "importCost.fontStyle": "italic",
