@@ -7,12 +7,17 @@ curl -fsSL https://cli.github.com/packages/githubcli-archive-keyring.gpg | sudo 
 sudo chmod go+r /usr/share/keyrings/githubcli-archive-keyring.gpg
 echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/githubcli-archive-keyring.gpg] https://cli.github.com/packages stable main" | sudo tee /etc/apt/sources.list.d/github-cli.list > /dev/null
 
+# Install Rustup
+curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+source "$HOME/.cargo/env"
+
 sudo apt-get update -y && sudo apt-get full-upgrade -y
 sudo apt autoremove -y
 sudo apt-get install curl wget gh terminator dconf-editor gnome-tweaks gnome-shell-extensions software-properties-common build-essential gdb gcc python3-pip -y
 sudo snap install code --classic
 sudo snap install nvim --classic
 sudo snap install spotify --classic
+cargo install --locked zellij
 sudo apt remove apport apport-gtk -y && sudo apt purge apport apport-gtk -y
 
 code&

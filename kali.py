@@ -23,6 +23,9 @@ def code_neovim():
     )
     os.system("rm -rf packages.microsoft.gpg")
 
+def zellij():
+    os.system("curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh")
+    os.system("source \"$HOME/.cargo/env\"")
 
 # Update and Upgrade the linux system
 def update_upgrade():
@@ -33,7 +36,7 @@ def update_upgrade():
 
 # Install Apps and Dependencies
 def install_apps():
-    apps = "bless name-that-hash adb routersploit python3-pip curl dnsrecon terminator  enum4linux python3-virtualenv feroxbuster gobuster impacket-scripts nbtscan nikto onesixtyone oscanner redis-tools smbclient smbmap snmp sslscan sipvicious tnscmd10g whatweb wkhtmltopdf cargo libimage-exiftool-perl code golang-go python3-virtualenv python3-impacket rainbowcrack ldnsutils ghidra strace dsniff yersinia dhcpstarv sslstrip zaproxy dvwa steghide bloodhound juice-shop nuclei armitage beef-xss maltego"
+    apps = "bless name-that-hash adb routersploit python3-pip curl dnsrecon terminator  enum4linux python3-virtualenv feroxbuster gobuster impacket-scripts nbtscan nikto onesixtyone oscanner redis-tools smbclient smbmap snmp sslscan sipvicious tnscmd10g whatweb wkhtmltopdf libimage-exiftool-perl code golang-go python3-virtualenv python3-impacket rainbowcrack ldnsutils ghidra strace dsniff yersinia dhcpstarv sslstrip zaproxy dvwa steghide bloodhound juice-shop nuclei armitage beef-xss maltego"
     apps_list = apps.split(" ")
     for app in apps_list:
         os.system(f"sudo apt-get install {app} -y")
