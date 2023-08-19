@@ -1,0 +1,27 @@
+import:
+  - ~/.config/alacritty/hardhacker.yml
+env:
+  TERM: xterm-256color
+window:
+  decoration: buttonless
+  opacity: 0.8
+  dynamic_padding: false
+  padding:
+    x:  12
+    y: 12
+
+font:
+  normal:
+    family: 'Anonymous Pro'
+    style: Medium
+  italic:
+    family: "Anonymous Pro"
+    style: Medium Italic
+  bold:
+    family: "Anonymous Pro"
+    style: Heavy
+  bold_italic:
+    family: "Anonymous Pro"
+    style: Heavy Italic
+  size: 20.0
+live_config_reload: true
