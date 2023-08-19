@@ -1,5 +1,8 @@
 #! /bin/bash
 
+# Global variables
+$cwd = $(pwd)
+
 # Updating the repository and Upgrading the applications
 sudo apt-get update -y && sudo apt-get full-upgrade -y
 sudo apt autoremove -y
@@ -7,7 +10,7 @@ sudo apt autoremove -y
 sudo apt-get install wget build-essential procps curl file zsh -y
 
 # installing Oh-My-Zsh
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+# sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 
 # Installing LinuxBrew (HomeBrew)
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
@@ -23,11 +26,16 @@ brew update
 brew install gcc
 brew install --cask brave-browser
 brew install --cask alacritty
+brew install fish
 
+# Setting Fiah as the default shell
+sudo echo "/opt/homebrew/bin/fish" >> /etc/shells
+cd ~
+sudo chsh -s /opt/homebrew/bin/fish $(basename $(pwd))
 
-
-# Create configuration Directories
-mkdir ~/.config/alacritty/
+# Making Directories
+mkdir ~/.config/bin
 
 # Copy Configuration files
-sudo cp -r ./alacritty/* ~/.config/alacritty/
+sudo cp -r ./alacritty/ ~/.config/
+sudo cp -r ./fish/ ~/.config/
