@@ -7,21 +7,21 @@ window:
   opacity: 0.8
   dynamic_padding: false
   padding:
-    x:  12
+    x: 12
     y: 12
 
 font:
   normal:
-    family: 'Anonymous Pro'
+    family: "Dank Mono"
     style: Medium
   italic:
-    family: "Anonymous Pro"
+    family: "Dank Mono"
     style: Medium Italic
   bold:
-    family: "Anonymous Pro"
+    family: "Dank Mono"
     style: Heavy
   bold_italic:
-    family: "Anonymous Pro"
+    family: "Dank Mono"
     style: Heavy Italic
-  size: 20.0
+  size: 16.0
 live_config_reload: true

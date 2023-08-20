@@ -16,11 +16,10 @@ sudo add-apt-repository ppa:aslatter/ppa
 
 sudo apt-get update -y && sudo apt-get full-upgrade -y
 sudo apt autoremove -y
-sudo apt-get install alacritty i3 i3-wm dmenu polybar zsh curl wget gh dconf-editor gnome-tweaks gnome-shell-extensions software-properties-common build-essential gdb gcc pcmake pkg-config libfreetype6-dev libfontconfig1-dev libxcb-xfixes0-dev libxkbcommon-dev python3 python3-pip -y
+sudo apt-get install alacritty i3 i3-wm dmenu polybar zsh curl wget gh dconf-editor gnome-tweaks gnome-shell-extensions software-properties-common build-essential gdb gcc cmake pkg-config libfreetype6-dev libfontconfig1-dev libxcb-xfixes0-dev libxkbcommon-dev python3 python3-pip -y
 sudo snap install code --classic
 sudo snap install nvim --classic
 sudo snap install spotify --classic
-cargo install --locked zellij
 sudo apt remove apport apport-gtk -y && sudo apt purge apport apport-gtk -y
 
 code&
@@ -31,10 +30,10 @@ source ~/.bashrc
 
 sudo cp -r ./fonts/'Dank Mono' /usr/share/fonts/opentype
 sudo cp -r ./fonts/'Fira Code' /usr/share/fonts/truetypes
-sudo cp -r ./fonts/MonoLisa/ /usr/share/fonts/truetype
-sudo cp -r ./fonts/Anonymous Pro/ /usr/share/fonts/truetype
-sudo cp -r ./fonts/MapleMono-NF/ /usr/share/fonts/truetype
-sudo cp -r ./fonts/JetBrainsMono/ /usr/share/fonts/truetype
+sudo cp -r ./fonts/MonoLisa /usr/share/fonts/truetype
+sudo cp -r ./fonts/'Anonymous Pro' /usr/share/fonts/truetype
+sudo cp -r ./fonts/MapleMono-NF /usr/share/fonts/truetype
+sudo cp -r ./fonts/JetBrainsMono /usr/share/fonts/truetype
 
 sudo chmod +x ./source_files.sh
 ./source_files.sh
