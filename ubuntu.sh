@@ -11,15 +11,17 @@ echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/githu
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 source "$HOME/.cargo/env"
 
+# Add alacritty to the apt repository
+sudo add-apt-repository ppa:aslatter/ppa
+
 sudo apt-get update -y && sudo apt-get full-upgrade -y
 sudo apt autoremove -y
-sudo apt-get install zsh curl wget gh terminator dconf-editor gnome-tweaks gnome-shell-extensions software-properties-common build-essential gdb gcc pcmake pkg-config libfreetype6-dev libfontconfig1-dev libxcb-xfixes0-dev libxkbcommon-dev python3 python3-pip -y
+sudo apt-get install alacritty i3 i3-wm dmenu polybar zsh curl wget gh dconf-editor gnome-tweaks gnome-shell-extensions software-properties-common build-essential gdb gcc pcmake pkg-config libfreetype6-dev libfontconfig1-dev libxcb-xfixes0-dev libxkbcommon-dev python3 python3-pip -y
 sudo snap install code --classic
 sudo snap install nvim --classic
 sudo snap install spotify --classic
 cargo install --locked zellij
 sudo apt remove apport apport-gtk -y && sudo apt purge apport apport-gtk -y
-cargo install alacritty
 
 code&
 
@@ -40,6 +42,8 @@ sudo chmod +x ./source_files.sh
 cp -r ./nvim/ ~/.config/
 cp -r ./terminator/ ~/.config/
 cp -r ./alacritty/ ~/.config/
+cp -r ./i3/ ~/.config/
+cp -r ./polybar/ ~/.config/
 cp -r ./zsh/ ~
 cp ./.zshrc ~
 cp -r ./code/settings.json ~/.config/Code/User/
