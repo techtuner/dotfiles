@@ -5,11 +5,21 @@ lsp.preset("recommended")
 lsp.ensure_installed({
     'tsserver',
     'rust_analyzer',
-    'lua_ls',
+    'luau_lsp',
+    'html',
+    'jsonls',
+    'tailwindcss',
+    'volar',
+    'vuels',
+    'ltex',
+    'sqlls',
     'jedi_language_server',
     'gopls',
     'bashls',
     'eslint',
+    'clangd',
+    'emmet_ls',
+    'cssls',
     'pyright',
 
 })

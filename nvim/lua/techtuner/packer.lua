@@ -61,8 +61,8 @@ return require('packer').startup(function(use)
     use("windwp/nvim-ts-autotag")
 
     -- Colorscheme
-    use('techtuner/nord.nvim')
-
+    --use('techtuner/nord.nvim')
+    use('catppuccin/nvim')
     -- GitSigns
     use("lewis6991/gitsigns.nvim")
 
@@ -75,9 +75,9 @@ return require('packer').startup(function(use)
         branch = 'v2.x',
         requires = {
             -- LSP Support
-            { 'neovim/nvim-lspconfig' },
             { 'williamboman/mason.nvim' },
             { 'williamboman/mason-lspconfig.nvim' },
+            { 'neovim/nvim-lspconfig' },
 
             -- Autocompletion
             { 'hrsh7th/nvim-cmp' },
