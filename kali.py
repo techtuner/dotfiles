@@ -23,15 +23,17 @@ def code_neovim():
     )
     os.system("rm -rf packages.microsoft.gpg")
 
+
 def zellij():
     os.system("curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh")
-    os.system("source \"$HOME/.cargo/env\"")
+    os.system('source "$HOME/.cargo/env"')
+
 
 # Update and Upgrade the linux system
 def update_upgrade():
     os.system("sudo apt-get update -y")
     os.system("sudo apt-get full-upgrade -y")
-    os.system("sudo apt autoremove")
+    os.system("sudo apt autoremove -y")
 
 
 # Install Apps and Dependencies
@@ -54,6 +56,16 @@ def install_apps():
     )
     os.system(f"sudo chmod +x {tools_path}/nvim.appimage")
     os.system(f"sudo ln -s {tools_path}/nvim.appimage /usr/bin/nvim")
+    os.chdir(tools_path)
+    os.system(
+        f"sudo wget https://storage.googleapis.com/caido-releases/v0.28.0/caido-desktop-linux-v0.28.0-9799aa77.AppImage"
+    )
+    os.system(
+        f"sudo chmod +x {tools_path}/caido-desktop-linux-v0.28.0-9799aa77.AppImage"
+    )
+    os.system(
+        f"sudo ln -s {tools_path}/caido-desktop-linux-v0.28.0-9799aa77.AppImage /usr/bin/caido"
+    )
     os.chdir(tools_path)
     os.system("sudo git clone https://github.com/internetwache/GitTools")
     os.chdir(f"{git_tools_path}/Dumper/")
@@ -170,10 +182,10 @@ os.system(f"sudo cp -r {current_path}/fonts/MonoLisa /usr/share/fonts/truetype")
 
 # Create Boxes Folder to store HTB and THM boxes solution
 def labs():
-    os.mkdir(f"{home}/HackTheBox")
-    os.mkdir(f"{home}/TryHackMe")
-    os.mkdir(f"{home}/CTF")
-    os.mkdir(f"{home}/vpns")
+    os.mkdir(f"{home}/Labs")
+    folder_list = ["HTB", "THM", "CTF", "CTF/pico", "CTF/embed"]
+    for folder in folder_list:
+        os.mkdir(f"{home}/Labs/{folder}")
 
 
 # Editor Configs and wallpaper
@@ -183,6 +195,9 @@ def copy_configs():
     os.system(f"cp -r {current_path}/zsh/ {home}")
     os.system(f"cp {current_path}/tmux/.tmux.conf {home}")
     os.system(f"cp -r {current_path}/terminator/config {home}/.config/")
+    os.system(
+        f"cp -r {current_path}/heapbytes.zsh-theme {home}/.oh-my-zsh/custom/themes/"
+    )
     os.system(f"cp -r {current_path}/.zshrc {home}")
 
 
