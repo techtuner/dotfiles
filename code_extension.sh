@@ -18,3 +18,5 @@ code --install-extension serayuzgur.crates
 code --install-extension inci-august.august-themes
 code --install-extension kisstkondoros.vscode-gutter-preview
 code --install-extension usernamehw.errorlens
+code --install-extension editorconfig.editorconfig
+code --install-extension prisma.prisma

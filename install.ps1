@@ -42,7 +42,9 @@ function code_extensions() {
     "ms-python.vscode-pylance",
     "vadimcn.vscode-lldb",
     "bungcip.better-toml",
-    "serayuzgur.crates"
+    "serayuzgur.crates",
+    "editorconfig.editorconfig",
+    "prisma.prisma"
 
     foreach ($extension in $extension_list) {
         code --install-extension $extension

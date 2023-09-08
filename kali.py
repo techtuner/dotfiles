@@ -235,6 +235,8 @@ def code_extensions():
         "bungcip.better-toml",
         "serayuzgur.crates",
         "inci-august.august-themes",
+        "editorconfig.editorconfig",
+        "prisma.prisma",
     ]
     for extension in extensions:
         os.system(f"code --install-extension {extension}")
