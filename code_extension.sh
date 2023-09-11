@@ -20,3 +20,4 @@ code --install-extension kisstkondoros.vscode-gutter-preview
 code --install-extension usernamehw.errorlens
 code --install-extension editorconfig.editorconfig
 code --install-extension prisma.prisma
+code --install-extension tamasfe.even-better-toml

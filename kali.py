@@ -232,7 +232,7 @@ def code_extensions():
         "rust-lang.rust-analyzer",
         "ms-python.vscode-pylance",
         "vadimcn.vscode-lldb",
-        "bungcip.better-toml",
+        "tamasfe.even-better-toml",
         "serayuzgur.crates",
         "inci-august.august-themes",
         "editorconfig.editorconfig",
