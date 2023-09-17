@@ -38,7 +38,7 @@ def update_upgrade():
 
 # Install Apps and Dependencies
 def install_apps():
-    apps = "bless name-that-hash adb routersploit python3-pip curl dnsrecon terminator  enum4linux python3-virtualenv feroxbuster gobuster impacket-scripts nbtscan nikto onesixtyone oscanner redis-tools smbclient smbmap snmp sslscan sipvicious tnscmd10g whatweb wkhtmltopdf libimage-exiftool-perl code golang-go python3-virtualenv python3-impacket rainbowcrack ldnsutils ghidra strace dsniff yersinia dhcpstarv sslstrip zaproxy dvwa steghide bloodhound juice-shop nuclei armitage beef-xss maltego"
+    apps = "bless name-that-hash adb routersploit python3-pip curl dnsrecon terminator  enum4linux python3-virtualenv feroxbuster gobuster impacket-scripts nbtscan nikto onesixtyone oscanner redis-tools smbclient smbmap snmp sslscan sipvicious tnscmd10g whatweb wkhtmltopdf libimage-exiftool-perl code golang-go python3-virtualenv python3-impacket rainbowcrack ldnsutils ghidra strace dsniff yersinia dhcpstarv sslstrip zaproxy dvwa steghide bloodhound juice-shop nuclei armitage beef-xss maltego protobuf-compiler"
     apps_list = apps.split(" ")
     for app in apps_list:
         os.system(f"sudo apt-get install {app} -y")
@@ -141,6 +141,11 @@ def install_apps():
     os.system("sudo make build")
     os.chdir(f"{tools_path}/kiterunner/dist/")
     os.system(f"sudo ln -s {tools_path}/kiterunner/dist/kr /usr/bin/kr")
+    os.chdir(tools_path)
+    os.system("go install github.com/fullstorydev/grpcurl/cmd/grpcurl@latest")
+    os.system("go install github.com/fullstorydev/grpcui/cmd/grpcui@latest")
+    os.system(f"sudo ln -s {home}/go/bin/grpcui /usr/bin/grpcui")
+    os.system(f"sudo ln -s {home}/go/bin/grpcurl /usr/bin/grpcurl")
     os.chdir(tools_path)
     os.system(
         "sudo wget https://dl.pstmn.io/download/latest/linux_64 -O postman-linux-x64.tar.gz"
