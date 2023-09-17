@@ -171,10 +171,6 @@ def install_apps():
         f"git clone https://github.com/zsh-users/zsh-autosuggestions {home}/.oh-my-zsh/custom/plugins/zsh-autosuggestions"
     )
     os.system(f"git clone https://github.com/tmux-plugins/tpm {home}/.tmux/plugins/tpm")
-    os.system("sudo git clone https://github.com/m4ll0k/Infoga.git && cd Infoga")
-    os.system("python setup.py install")
-    os.system(f"sudo chmod +x {tools_path}/Infoga/infoga.py")
-    os.system(f"sudo ln -s {tools_path}/Infoga/infoga.py /usr/bin/infoga")
     os.chdir(current_path)
 
 
