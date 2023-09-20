@@ -179,6 +179,8 @@ os.system(f"sudo cp -r {current_path}/fonts/'Dank Mono' /usr/share/fonts/opentyp
 os.system(f"sudo cp -r {current_path}/fonts/'Fira Code' /usr/share/fonts/truetype")
 os.system(f"sudo cp -r {current_path}/fonts/Monaco /usr/share/fonts/truetype")
 os.system(f"sudo cp -r {current_path}/fonts/MonoLisa /usr/share/fonts/truetype")
+os.system(f"sudo cp -r {current_path}/fonts/MapleMono-NF /usr/share/fonts/truetype")
+os.system(f"sudo cp -r {current_path}/fonts/Lora /usr/share/fonts/truetype")
 
 
 # Create Boxes Folder to store HTB and THM boxes solution
