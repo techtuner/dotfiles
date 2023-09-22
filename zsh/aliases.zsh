@@ -6,3 +6,6 @@ alias dots="cd ~/Downloads/kali-dots && ls"
 alias htbo="sudo openvpn ~/vpns/htb.ovpn"
 alias thmo="sudo openvpn ~/vpns/thm.ovpn"
 alias tmux="tmux -u"  # Fixes tmux not showing symbols in the terminal
+alias bcipher="cd /opt/BillCipher & sudo python billcipher.py"
+alias photon="cd /opt/Photon && sudo python photon.py"
+alias grecon="cd /opt/GRecon && sudo python grecon.py"
