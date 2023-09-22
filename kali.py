@@ -38,7 +38,7 @@ def update_upgrade():
 
 # Install Apps and Dependencies
 def install_apps():
-    apps = "bless name-that-hash adb routersploit python3-pip curl dnsrecon terminator  enum4linux python3-virtualenv feroxbuster gobuster impacket-scripts nbtscan nikto onesixtyone oscanner redis-tools smbclient smbmap snmp sslscan sipvicious tnscmd10g whatweb wkhtmltopdf libimage-exiftool-perl code golang-go python3-virtualenv python3-impacket rainbowcrack ldnsutils ghidra strace dsniff yersinia dhcpstarv sslstrip zaproxy dvwa steghide bloodhound juice-shop nuclei armitage beef-xss maltego protobuf-compiler"
+    apps = "bless name-that-hash adb routersploit python3-pip curl dnsrecon terminator  enum4linux python3-virtualenv feroxbuster gobuster impacket-scripts nbtscan nikto onesixtyone oscanner redis-tools smbclient smbmap snmp sslscan sipvicious tnscmd10g whatweb wkhtmltopdf libimage-exiftool-perl code golang-go python3-virtualenv python3-impacket rainbowcrack ldnsutils ghidra strace dsniff yersinia dhcpstarv sslstrip zaproxy dvwa steghide bloodhound juice-shop nuclei armitage beef-xss maltego protobuf-compiler httrack whatweb ruby osrframework"
     apps_list = apps.split(" ")
     for app in apps_list:
         os.system(f"sudo apt-get install {app} -y")
@@ -106,6 +106,12 @@ def install_apps():
     os.system("sudo apt install python3-impacket")
     os.system(f"sudo python3 {tools_path}/impacket/setup.py install")
     os.chdir(tools_path)
+    os.system("sudo git clone https://github.com/bahatiphill/BillCipher")
+    os.chdir(f"{tools_path}/BillCipher")
+    os.system("pip install -r requirements.txt")
+    os.system("pip3 install -r requirements.txt")
+    os.system(f"sudo chmod +x {tools_path}/BillCipher/")
+    os.chdir(tools_path)
     os.system("sudo git clone https://github.com/sherlock-project/sherlock.git")
     os.chdir(f"{tools_path}/sherlock")
     os.system(f"python3 -m pip install -r requirements.txt")
@@ -113,6 +119,23 @@ def install_apps():
     os.system(
         f"sudo ln -s {tools_path}/sherlock/sherlock/sherlock.py /usr/bin/sherlock"
     )
+    os.chdir(tools_path)
+    os.system("sudo git clone https://github.com/s0md3v/Photon")
+    os.chdir(f"{tools_path}/Photon")
+    os.system(f"python3 -m pip install -r requirements.txt")
+    os.system(f"sudo chmod +x {tools_path}/Photon/photon.py")
+    os.chdir(tools_path)
+    os.system("sudo git clone https://github.com/Moham3dRiahi/Th3inspector.git")
+    os.chdir(f"{tools_path}/Th3inspector")
+    os.system(f"sudo chmod +x {tools_path}/Th3inspector/install.sh")
+    os.system(f"sudo {tools_path}/Th3inspector/install.sh")
+    os.chdir(tools_path)
+    os.system("pip install raccoon-scanner")
+    os.chdir(tools_path)
+    os.system("sudo git clone https://github.com/s0md3v/ReconDog")
+    os.chdir(f"{tools_path}/ReconDog")
+    os.system(f"sudo chmod +x {tools_path}/ReconDog/dog")
+    os.system(f"sudo ln -s {tools_path}/ReconDog/dog /usr/bin/dog")
     os.chdir(tools_path)
     os.system(
         "sudo wget https://github.com/DominicBreuker/pspy/releases/download/v1.2.1/pspy64"
