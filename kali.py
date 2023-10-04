@@ -38,7 +38,7 @@ def update_upgrade():
 
 # Install Apps and Dependencies
 def install_apps():
-    apps = "bless name-that-hash adb routersploit python3-pip curl dnsrecon terminator  enum4linux python3-virtualenv feroxbuster gobuster impacket-scripts nbtscan nikto onesixtyone oscanner redis-tools smbclient smbmap snmp sslscan sipvicious tnscmd10g whatweb wkhtmltopdf libimage-exiftool-perl code golang-go python3-virtualenv python3-impacket rainbowcrack ldnsutils ghidra strace dsniff yersinia dhcpstarv sslstrip zaproxy dvwa steghide bloodhound juice-shop nuclei armitage beef-xss maltego protobuf-compiler httrack whatweb ruby osrframework"
+    apps = "bless name-that-hash adb routersploit python3-pip curl dnsrecon enum4linux python3-virtualenv feroxbuster gobuster impacket-scripts nbtscan nikto onesixtyone oscanner redis-tools smbclient smbmap snmp sslscan sipvicious tnscmd10g whatweb wkhtmltopdf libimage-exiftool-perl code golang-go python3-virtualenv python3-impacket rainbowcrack ldnsutils ghidra strace dsniff yersinia dhcpstarv sslstrip zaproxy dvwa steghide bloodhound juice-shop nuclei armitage beef-xss maltego protobuf-compiler httrack whatweb ruby osrframework"
     apps_list = apps.split(" ")
     for app in apps_list:
         os.system(f"sudo apt-get install {app} -y")
@@ -50,6 +50,10 @@ def install_apps():
     os.system(
         "sudo python3 -m pip install git+https://github.com/Tib3rius/AutoRecon.git"
     )
+    os.chdir(tools_path)
+    os.system("sudo wget https://download.sysinternals.com/files/PSTools.zip")
+    os.system("mkdir PSTools")
+    os.system("unzip PSTools.zip -d PSTools")
     os.chdir(tools_path)
     os.system(
         "sudo wget https://github.com/neovim/neovim/releases/download/v0.9.0/nvim.appimage"
@@ -220,7 +224,7 @@ def copy_configs():
     os.system(f"cp -r {current_path}/nvim {home}/.config/")
     os.system(f"cp -r {current_path}/zsh/ {home}")
     os.system(f"cp {current_path}/tmux/.tmux.conf {home}")
-    os.system(f"cp -r {current_path}/terminator/config {home}/.config/")
+    # os.system(f"cp -r {current_path}/terminator/config {home}/.config/")
     os.system(
         f"cp -r {current_path}/heapbytes.zsh-theme {home}/.oh-my-zsh/custom/themes/"
     )
