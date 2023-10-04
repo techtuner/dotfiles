@@ -13,11 +13,10 @@ code --install-extension aaron-bond.better-comments
 code --install-extension rust-lang.rust-analyzer
 code --install-extension ms-python.vscode-pylance
 code --install-extension vadimcn.vscode-lldb
-code --install-extension bungcip.better-toml
 code --install-extension serayuzgur.crates
-code --install-extension inci-august.august-themes
 code --install-extension kisstkondoros.vscode-gutter-preview
 code --install-extension usernamehw.errorlens
 code --install-extension editorconfig.editorconfig
 code --install-extension prisma.prisma
 code --install-extension tamasfe.even-better-toml
+code --install-extension nur.just-black
