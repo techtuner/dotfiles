@@ -52,8 +52,8 @@ def install_apps():
     )
     os.chdir(tools_path)
     os.system("sudo wget https://download.sysinternals.com/files/PSTools.zip")
-    os.system("mkdir PSTools")
-    os.system("unzip PSTools.zip -d PSTools")
+    os.system("sudo mkdir PSTools")
+    os.system("sudo unzip PSTools.zip -d PSTools")
     os.chdir(tools_path)
     os.system(
         "sudo wget https://github.com/neovim/neovim/releases/download/v0.9.0/nvim.appimage"
@@ -228,7 +228,7 @@ def copy_configs():
     os.system(
         f"cp -r {current_path}/heapbytes.zsh-theme {home}/.oh-my-zsh/custom/themes/"
     )
-    #os.system(f"cp -r {current_path}/.zshrc {home}")
+    # os.system(f"cp -r {current_path}/.zshrc {home}")
 
 
 # Code Extension
