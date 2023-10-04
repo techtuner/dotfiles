@@ -11,12 +11,9 @@ echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/githu
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 source "$HOME/.cargo/env"
 
-# Add alacritty to the apt repository
-sudo add-apt-repository ppa:aslatter/ppa
-
 sudo apt-get update -y && sudo apt-get full-upgrade -y
 sudo apt autoremove -y
-sudo apt-get install alacritty zsh curl wget gh dconf-editor gnome-tweaks gnome-shell-extensions software-properties-common build-essential gdb gcc cmake pkg-config libfreetype6-dev libfontconfig1-dev libxcb-xfixes0-dev libxkbcommon-dev python3 python3-pip -y
+sudo apt-get install zsh curl wget gh dconf-editor net-tools gnome-tweaks gnome-shell-extensions software-properties-common build-essential gdb gcc cmake pkg-config libfreetype6-dev libfontconfig1-dev libxcb-xfixes0-dev libxkbcommon-dev python3 python3-pip -y
 sudo snap install code --classic
 sudo snap install nvim --classic
 sudo snap install spotify --classic
@@ -28,12 +25,7 @@ code&
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.3/install.sh | bash
 source ~/.bashrc
 
-sudo cp -r ./fonts/'Dank Mono' /usr/share/fonts/opentype
 sudo cp -r ./fonts/'Fira Code' /usr/share/fonts/truetypes
-sudo cp -r ./fonts/MonoLisa /usr/share/fonts/truetype
-sudo cp -r ./fonts/'Anonymous Pro' /usr/share/fonts/truetype
-sudo cp -r ./fonts/MapleMono-NF /usr/share/fonts/truetype
-sudo cp -r ./fonts/JetBrainsMono /usr/share/fonts/truetype
 
 sudo chmod +x ./source_files.sh
 ./source_files.sh
@@ -42,12 +34,11 @@ git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-m
 git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
 
 cp -r ./nvim/ ~/.config/
-cp -r ./terminator/ ~/.config/
-cp -r ./alacritty/ ~/.config/
 cp -r ./zsh/ ~
 cp ./.zshrc ~
 cp -r ./code/settings.json ~/.config/Code/User/
 cp -r ./code/keybindings.json ~/.config/Code/User/
+cp -r ./heapbytes.zsh-theme ~/.oh-my-zsh/custom/themes
 
 sudo chmod +x ./code_extension.sh
 ./code_extension.sh
