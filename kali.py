@@ -228,7 +228,7 @@ def copy_configs():
     os.system(
         f"cp -r {current_path}/heapbytes.zsh-theme {home}/.oh-my-zsh/custom/themes/"
     )
-    os.system(f"cp -r {current_path}/.zshrc {home}")
+    #os.system(f"cp -r {current_path}/.zshrc {home}")
 
 
 # Code Extension
