@@ -64,7 +64,7 @@
   "editor.lineHeight": 2.5,
   "terminal.integrated.fontSize": 12,
   "terminal.integrated.lineHeight": 1.5,
-  "editor.fontFamily": "AnonymicePro Nerd Font,MonoLisa,dank mono,monaco, monospace",
+  "editor.fontFamily": "FiraCode NF,AnonymicePro Nerd Font,MonoLisa,dank mono,monaco, monospace",
   "debug.console.fontFamily": "dank mono,monaco,monospace",
   "errorLens.fontFamily": "dank mono.monaco,monospace",
   "importCost.fontStyle": "italic",
