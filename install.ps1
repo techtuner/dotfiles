@@ -37,14 +37,14 @@ function code_extensions() {
     "ms-vscode.powershell",
     "yummygum.city-lights-theme",
     "silofy.hackthebox",
-    "inci-august.august-themes",
     "rust-lang.rust-analyzer",
     "ms-python.vscode-pylance",
     "vadimcn.vscode-lldb",
     "tamasfe.even-better-toml",
     "serayuzgur.crates",
     "editorconfig.editorconfig",
-    "prisma.prisma"
+    "prisma.prisma",
+    "ms-azuretools.vscode-docker"
 
     foreach ($extension in $extension_list) {
         code --install-extension $extension

@@ -264,9 +264,9 @@ def code_extensions():
         "vadimcn.vscode-lldb",
         "tamasfe.even-better-toml",
         "serayuzgur.crates",
-        "inci-august.august-themes",
         "editorconfig.editorconfig",
         "prisma.prisma",
+        "ms-azuretools.vscode-docker",
     ]
     for extension in extensions:
         os.system(f"code --install-extension {extension}")

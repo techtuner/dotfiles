@@ -1,22 +1,30 @@
 #!/bin/bash
 
-code --install-extension sumneko.lua
-code --install-extension ritwickdey.liveserver
-code --install-extension golang.go
-code --install-extension miguelsolorio.fluent-icons
-code --install-extension miguelsolorio.symbols
-code --install-extension yzhang.markdown-all-in-one
-code --install-extension christian-kohler.path-intellisense
-code --install-extension ms-python.python
-code --install-extension ms-python.black-formatter
-code --install-extension aaron-bond.better-comments
-code --install-extension rust-lang.rust-analyzer
-code --install-extension ms-python.vscode-pylance
-code --install-extension vadimcn.vscode-lldb
-code --install-extension serayuzgur.crates
-code --install-extension kisstkondoros.vscode-gutter-preview
-code --install-extension usernamehw.errorlens
-code --install-extension editorconfig.editorconfig
-code --install-extension prisma.prisma
-code --install-extension tamasfe.even-better-toml
-code --install-extension nur.just-black
+EXTENSIONS=(
+"sumneko.lua"
+"ritwickdey.liveserver"
+"golang.go"
+"miguelsolorio.fluent-icons"
+"miguelsolorio.symbols"
+"yzhang.markdown-all-in-one"
+"christian-kohler.path-intellisense"
+"ms-python.python"
+"ms-python.black-formatter"
+"aaron-bond.better-comments"
+"rust-lang.rust-analyzer"
+"ms-python.vscode-pylance"
+"vadimcn.vscode-lldb"
+"serayuzgur.crates"
+"kisstkondoros.vscode-gutter-preview"
+"usernamehw.errorlens"
+"editorconfig.editorconfig"
+"prisma.prisma"
+"tamasfe.even-better-toml"
+"nur.just-black"
+"ms-azuretools.vscode-docker"
+)
+
+for extension in ${EXTENSIONS[@]}
+do
+    code --install-extension $extension
+done
