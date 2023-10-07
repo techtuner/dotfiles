@@ -1,8 +1,8 @@
 {
   // Workbench Settings
-  // "workbench.colorTheme": "August - City Lights (Darker)",
-  "workbench.colorTheme": "Just Black",
+  "workbench.colorTheme": "Vitesse Black",
   "workbench.productIconTheme": "fluent-icons",
+  "workbench.iconTheme": "symbols",
   "workbench.startupEditor": "none",
   "workbench.sideBar.location": "right",
   "workbench.editor.showTabs": false,
@@ -17,7 +17,7 @@
   "editor.minimap.enabled": false,
   "editor.fontWeight": "normal",
   "editor.colorDecorators": false,
-  "editor.cursorBlinking": "expand",
+  "editor.cursorBlinking": "smooth",
   "editor.formatOnPaste": true,
   "editor.formatOnSave": true,
   "editor.cursorSmoothCaretAnimation": "on",
@@ -35,12 +35,12 @@
     "strings": "off"
   },
   "editor.wordWrap": "on",
-  "editor.cursorStyle": "block",
   "editor.smoothScrolling": true,
   "explorer.sortOrder": "type",
-  "editor.tabSize": 4,
+  "editor.tabSize": 2,
   "terminal.integrated.smoothScrolling": true,
   "terminal.integrated.defaultProfile.windows": "PowerShell",
+  "terminal.integrated.defaultProfile.linux": "zsh",
   "files.autoSave": "afterDelay",
   "files.trimFinalNewlines": true,
   // Files and Search
@@ -64,9 +64,9 @@
   "editor.lineHeight": 2.5,
   "terminal.integrated.fontSize": 12,
   "terminal.integrated.lineHeight": 1.5,
-  "editor.fontFamily": "FiraCode NF,AnonymicePro Nerd Font,MonoLisa,dank mono,monaco, monospace",
-  "debug.console.fontFamily": "dank mono,monaco,monospace",
-  "errorLens.fontFamily": "dank mono.monaco,monospace",
+  "editor.fontFamily": "FiraCode NF, Maple Mono NF,MonoLisa,dank mono,monaco, monospace",
+  "debug.console.fontFamily": "FiraCode NF,monaco,monospace",
+  "errorLens.fontFamily": "FiraCode NF,monaco,monospace",
   "importCost.fontStyle": "italic",
   "errorLens.fontStyleItalic": true,
   "better-comments.tags": [
@@ -182,7 +182,7 @@
     "*"
   ],
   // Symbols
-  "symbols.hidesExplorerArrows": true,
+  "symbols.hidesExplorerArrows": false,
   "terminal.integrated.profiles.windows": {
     "PowerShell": {
       "source": "PowerShell",
@@ -202,5 +202,8 @@
   },
   "gutterpreview.showImagePreviewOnGutter": true,
   "workbench.statusBar.visible": false,
-  "security.workspace.trust.untrustedFiles": "open"
+  "security.workspace.trust.untrustedFiles": "open",
+  "editor.cursorStyle": "line-thin",
+  "amVim.startInInsertMode": true,
+  "amVim.useSystemClipboard": true
 }
