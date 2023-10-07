@@ -54,7 +54,7 @@ mkdir D:\Projects
 mkdir D:\Notes
 
 Copy-Item .\powershell\user_profile.ps1 C:\Users\$user\.config\powershell\
-Copy-Item .\powershell\Microsoft.PowerShell_profile.ps1
+Copy-Item .\powershell\Microsoft.PowerShell_profile.ps1 C:\Users\$user\Documents\Powershell\
 Copy-Item .\wallpapers\ C:\Users\$user\Pictures\ -Recurse
 Copy-Item .\nvim\ $env:LOCALAPPDATA -Recurse
 
