@@ -2,7 +2,6 @@
 
 EXTENSIONS=(
 "sumneko.lua"
-"ritwickdey.liveserver"
 "golang.go"
 "miguelsolorio.fluent-icons"
 "miguelsolorio.symbols"
@@ -18,10 +17,16 @@ EXTENSIONS=(
 "kisstkondoros.vscode-gutter-preview"
 "usernamehw.errorlens"
 "editorconfig.editorconfig"
-"prisma.prisma"
 "tamasfe.even-better-toml"
-"nur.just-black"
+"antfu.theme-vitesse"
+"peymanslh.blueberry-dark-theme"
 "ms-azuretools.vscode-docker"
+"waderyan.gitblame"
+"auiworks.amvim"
+"codezombiech.gitignore"
+"rangav.vscode-thunder-client"
+"bierner.markdown-preview-github-styles"
+"donjayamanne.githistory"
 )
 
 for extension in ${EXTENSIONS[@]}
