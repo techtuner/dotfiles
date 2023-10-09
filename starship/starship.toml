@@ -1,163 +1,148 @@
-"$schema" = 'https://starship.rs/config-schema.json'
-format = """($username\
-$hostname\
-$localip\
-$kubernetes\
-$directory\
-$vcsh\
-$fossil_branch\
-$git_branch\
-$git_commit\
-$git_state\
-$git_metrics\
-$git_status\
-$docker_context\
-$package\
-$c\
-$cmake\
-$golang\
-$lua\
-$nodejs\
-$python\
-$ruby\
-$rust\
-$terraform\
-$memory_usage\
-$aws\
-$gcloud\
-$openstack\
-$azure\
-$env_var\
-$sudo\
-$cmd_duration\
-$line_break\
-$jobs\
-$battery\
-$time\
-$status\
-$os\
-$container\
-$shell)$character"""
+command_timeout = 1000
 
-[battery]
-full_symbol = "🔋"
-charging_symbol = "🔌"
-discharging_symbol = "⚡"
+add_newline = true
 
-[[battery.display]]
-threshold = 30
-style = "bold red"
+format = """
+[╭─](color2)\
+    [【](color7)\
+      $username \
+      [@](color7) \
+       $localip\
+      $directory\      
+    [】](color7)
+[╰─](color2)\
+    $git_branch\
+    $git_status\
+    $package\
+    $python\
+    $nodejs\
+    $os\ 
+    $rust\ 
+    $golang\ 
+    $c\ 
+    $time\
+    $shell"""
 
-[cmd_duration]
-min_time = 10_000  # Show command duration over 10,000 milliseconds (=10 sec)
-format = '\[[⏱ $duration]($style)\]'
-style = 'yellow'
+palette = "pywal"
+
+[palettes.pywal]
+color0 = "#191C22"
+color1 = "#81A1C1"
+color2 = "#8FBCBB"
+color3 = "#BF616A"
+color4 = "#B48EAD"
+color5 = "#A3BE8C"
+color6 = "#4C566A"
+color7 = "#ECEFF4"
+color8 = "#EBCB8B"
 
 [memory_usage]
-format = '\[$symbol[${ram}( | ${swap})]($style)\]'
-threshold = 70
-style = "bold dimmed white"
 disabled = false
+symbol = " "
+threshold = -1
+format = " [$symbol$ram](color1)"
 
-[time]
-time_format = "%T"
-format = "🕙 $time($style) "
-style = "bright-white"
-disabled = true
 
 [username]
-format = '\[[$user]($style)\]'
-style_user = "bold dimmed blue"
-show_always = false
+show_always = true
+format = "[$user](color1)"
 
 [hostname]
 ssh_only = false
-format = "<[$hostname]($style)>"
-trim_at = "-"
-style = "bold dimmed white"
-disabled = true
-
-[directory]
-truncation_length = 5
-format = "[$path]($style)[$lock_symbol]($lock_style) "
-
-[git_branch]
-format = '\[[$symbol$branch]($style)\]'
-symbol = '🌱 '
-style = "bold green"
-
-[git_state]
-format = '\[[\($state( $progress_current of $progress_total)\)]($style)\]'
-
-[git_status]
-conflicted = "⚔️ "
-ahead = "💨${count} "
-behind = "🐢${count} "
-diverged = "🔱 💨${ahead_count} 🐢${behind_count} "
-untracked = "🛤️ ${count} "
-stashed = "📦 "
-modified = "📝${count} "
-staged = "🗃️ ${count} "
-renamed = "📛${count} "
-deleted = "🗑️ ${count} "
-style = "bright-white"
-format = '\[ $all_status$ahead_behind\]'
-
-[git_commit]
-commit_hash_length = 8
-style = "bold white"
-tag_symbol = '🔖 '
+format = "[$hostname](color1)"
 disabled = false
 
-[aws]
-format = '\[[$symbol($profile)(\($region\))(\[$duration\])]($style)\]'
-symbol = '󰅟 '
-style = "yellow"
+[localip]
+ssh_only = false
+format = '[$localipv4](bold green) '
+disabled = false
+
+
+#[custom.docker]
+#command = "echo '  '"
+#files = ["Dockerfile", 'docker-compose.yml', "docker-compose.yaml"]
+#when = """ comand -v docker &> /dev/null; exit (echo $?); """
+#format = " [$output](color7)"
+
+[character]
+success_symbol = " [$shell\\$](color7)"
+error_symbol = " [$shell✖](color7)"
+
+[shell]
+powershell_indicator = "_"
+bash_indicator = ""
+disabled = false
+
+
+[time]
+disabled = false
+time_format = "%T"
+format = "[ $time](color5)"
+use_12hr = true
+
+[directory]
+disabled = false
+read_only = " "
+truncation_length = 4
+truncate_to_repo = false
+format = "[$read_only](color4)[$path](color4) "
+home_symbol = ""
+
+[directory.substitutions]
+"~" = ""
+
+[cmd_duration]
+disabled = false
+min_time = 2000
+show_milliseconds = true
+show_notifications = false
+min_time_to_notify = 45_000
+format = "[ 祥$duration](color3) "
+
+[git_status]
+stashed = " \\(${count}\\) "
+ahead = "ﲗ ${count}"
+behind = "ﲔ ${count}"
+diverged = "李 ${ahead_count} ${behind_count}"
+conflicted = "${count}"
+deleted = " [${count}](color3)"
+renamed = "﫦${count}"
+modified = "[  \\(${count}\\) ](color3)"
+staged = " [ ${count}](color3)"
+untracked = "  \\(${count}\\)"
+format = "([$all_status$ahead_behind](color3)) "
+
+[git_branch]
+symbol = " "
+format = "[$symbol$branch](color7)"
+
+[package]
+symbol = " "
+display_private = true
+version_format = "v${raw}"
+format = "[$symbol$version](color4)"
+
+#=== languages ===
+
+[nodejs]
+symbol = "  "
+format = "[$symbol($version)](color7)"
+
+[python]
+symbol = "  "
+pyenv_prefix = 'pyenv '
+python_binary = "python"
+format = '[$symbol$pyenv_prefix$version(\($virtualenv\))](color7)'
 
 [c]
 format = '\[[$symbol($version(-$name))]($style)\]'
 
-[cmake]
-format = '\[[$symbol($version)]($style)\]'
-
-[docker_context]
-format = '\[[$symbol$context]($style)\]'
-
-[gcloud]
-format = '\[[$symbol$account(@$domain)(\($region\))]($style)\]'
-
 [golang]
-format = '\[[$symbol($version)]($style)\]'
-
-[kubernetes]
-format = '\[[$symbol$context( \($namespace\))]($style)\]'
-
-[lua]
-format = '\[[$symbol($version)]($style)\]'
-
-[nodejs]
 format = '\[[$symbol($version)]($style)\]'
 
 [os]
 format = '\[[$symbol]($style)\]'
 
-[package]
-format = '\[[$symbol$version]($style)\]'
-
-[python]
-format = '\[[${symbol}${pyenv_prefix}(${version})(\($virtualenv\))]($style)\]'
-style = "bold green"
-
-
-[ruby]
-format = '\[[$symbol($version)]($style)\]'
-
 [rust]
 format = '\[[$symbol($version)]($style)\]'
 style = "bold green"
-
-[sudo]
-format = '\[[as $symbol]\]'
-
-[terraform]
-format = '\[[$symbol$workspace]($style)\]'
