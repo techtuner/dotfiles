@@ -38,7 +38,7 @@ def update_upgrade():
 
 # Install Apps and Dependencies
 def install_apps():
-    apps = "bless name-that-hash adb routersploit python3-pip curl dnsrecon enum4linux python3-virtualenv feroxbuster gobuster impacket-scripts nbtscan nikto onesixtyone oscanner redis-tools smbclient smbmap snmp sslscan sipvicious tnscmd10g whatweb wkhtmltopdf libimage-exiftool-perl code golang-go python3-virtualenv python3-impacket rainbowcrack ldnsutils ghidra strace dsniff yersinia dhcpstarv sslstrip zaproxy dvwa steghide bloodhound juice-shop nuclei armitage beef-xss maltego protobuf-compiler httrack whatweb ruby osrframework"
+    apps = "bless name-that-hash adb routersploit python3-pip curl dnsrecon enum4linux python3-virtualenv feroxbuster gobuster impacket-scripts nbtscan nikto onesixtyone oscanner redis-tools smbclient smbmap snmp sslscan sipvicious tnscmd10g whatweb wkhtmltopdf libimage-exiftool-perl code golang-go python3-virtualenv python3-ldap3 python3-yaml python3-impacket rainbowcrack ldnsutils ghidra strace dsniff yersinia dhcpstarv sslstrip zaproxy dvwa steghide bloodhound juice-shop nuclei smbclient armitage beef-xss maltego protobuf-compiler httrack whatweb ruby osrframework"
     apps_list = apps.split(" ")
     for app in apps_list:
         os.system(f"sudo apt-get install {app} -y")
@@ -54,6 +54,7 @@ def install_apps():
     os.system("sudo wget https://download.sysinternals.com/files/PSTools.zip")
     os.system("sudo mkdir PSTools")
     os.system("sudo unzip PSTools.zip -d PSTools")
+    os.system("sudo rm -rf PSTools.zip")
     os.chdir(tools_path)
     os.system(
         "sudo wget https://github.com/neovim/neovim/releases/download/v0.9.0/nvim.appimage"
@@ -157,9 +158,13 @@ def install_apps():
     os.system("go get")
     os.system("go build")
     os.chdir(tools_path)
+    os.system("sudo git clone https://github.com/wifiphisher/wifiphisher.git")
+    os.chdir(f"{tools_path}/wifiphisher")
+    os.system("sudo python setup.py install")
+    os.chdir(tools_path)
     os.system("sudo git clone https://www.github.com/ticarpi/jwt_tool")
     os.chdir(f"{tools_path}/jwt_tool")
-    os.system("pip install termcolor cprint arjun requests pycryptodomex")
+    os.system("pip install termcolor cprint arjun requests pycryptodomex prowler")
     os.system("sudo chmod +x jwt_tool.py")
     os.system(f"sudo ln -s {tools_path}/jwt_tool/jwt_tool.py /usr/bin/jwt_tool")
     os.chdir(tools_path)
@@ -171,9 +176,16 @@ def install_apps():
     os.chdir(tools_path)
     os.system("go install github.com/fullstorydev/grpcurl/cmd/grpcurl@latest")
     os.system("go install github.com/fullstorydev/grpcui/cmd/grpcui@latest")
+    os.system("go install github.com/ropnop/kerbrute@latest")
+    os.system(f"sudo ln -s {home}/go/bin/kerbrute /usr/bin/kerbrute")
     os.system(f"sudo ln -s {home}/go/bin/grpcui /usr/bin/grpcui")
     os.system(f"sudo ln -s {home}/go/bin/grpcurl /usr/bin/grpcurl")
     os.chdir(tools_path)
+    os.system("sudo git clone https://github.com/TebbaaX/GRecon.git")
+    os.chdir(f"cd {tools_path}/GRecon")
+    os.system("sudo pip install -r requirements.txt")
+    os.chdir(tools_path)
+
     os.system(
         "sudo wget https://dl.pstmn.io/download/latest/linux_64 -O postman-linux-x64.tar.gz"
     )
@@ -183,7 +195,6 @@ def install_apps():
     os.system(
         "sudo wget https://repo1.maven.org/maven2/org/python/jython-standalone/2.7.3/jython-standalone-2.7.3.jar"
     )
-    os.system("sudo rm -rf jython-standalone-2.7.3.jar")
     os.system("sudo rm -rf postman-linux-x64.tar.gz")
     os.system(
         "sudo git clone https://github.com/p4pentest/SuperEnum.git && cd SuperEnum"
@@ -197,69 +208,52 @@ def install_apps():
     os.system(
         f"git clone https://github.com/zsh-users/zsh-autosuggestions {home}/.oh-my-zsh/custom/plugins/zsh-autosuggestions"
     )
-    os.system(f"git clone https://github.com/tmux-plugins/tpm {home}/.tmux/plugins/tpm")
     os.chdir(current_path)
 
 
 # Fonts I use for Code Editor and Terminal
 os.system(f"sudo cp -r {current_path}/fonts/'Dank Mono' /usr/share/fonts/opentype")
 os.system(f"sudo cp -r {current_path}/fonts/'Fira Code' /usr/share/fonts/truetype")
-os.system(f"sudo cp -r {current_path}/fonts/Monaco /usr/share/fonts/truetype")
-os.system(f"sudo cp -r {current_path}/fonts/MonoLisa /usr/share/fonts/truetype")
-os.system(f"sudo cp -r {current_path}/fonts/MapleMono-NF /usr/share/fonts/truetype")
-os.system(f"sudo cp -r {current_path}/fonts/Lora /usr/share/fonts/truetype")
 
 
 # Create Boxes Folder to store HTB and THM boxes solution
 def labs():
     os.mkdir(f"{home}/Labs")
-    folder_list = ["HTB", "THM", "CTF", "CTF/pico", "CTF/embed"]
+    folder_list = ["HTB", "THM", "CTF", "CTF/Pico", "CTF/Embed", "CTF/Meta"]
     for folder in folder_list:
         os.mkdir(f"{home}/Labs/{folder}")
 
 
 # Editor Configs and wallpaper
 def copy_configs():
-    os.system(f"cp -r {current_path}/wallpapers {home}/Pictures")
+    os.mkdir(f"{home}/Pictures/wallpapers/")
+    os.system(f"cp -r {current_path}/wallpapers/Kali-wallpaper.png {home}/Pictures")
     os.system(f"cp -r {current_path}/nvim {home}/.config/")
     os.system(f"cp -r {current_path}/zsh/ {home}")
-    os.system(f"cp {current_path}/tmux/.tmux.conf {home}")
+    # os.system(f"cp {current_path}/tmux/.tmux.conf {home}")
     # os.system(f"cp -r {current_path}/terminator/config {home}/.config/")
-    os.system(
-        f"cp -r {current_path}/heapbytes.zsh-theme {home}/.oh-my-zsh/custom/themes/"
-    )
-    # os.system(f"cp -r {current_path}/.zshrc {home}")
+    # os.system(
+    #   f"cp -r {current_path}/heapbytes.zsh-theme {home}/.oh-my-zsh/custom/themes/"
+    # )
+    os.system(f"cp -r {current_path}/.zshrc {home}")
 
 
 # Code Extension
 def code_extensions():
     extensions = [
- "sumneko.lua",
-"golang.go",
-"miguelsolorio.fluent-icons",
-"miguelsolorio.symbols",
-"yzhang.markdown-all-in-one",
-"christian-kohler.path-intellisense",
-"ms-python.python",
-"ms-python.black-formatter",
-"aaron-bond.better-comments",
-"rust-lang.rust-analyzer",
-"ms-python.vscode-pylance",
-"vadimcn.vscode-lldb",
-"serayuzgur.crates",
-"kisstkondoros.vscode-gutter-preview",
-"usernamehw.errorlens",
-"editorconfig.editorconfig",
-"tamasfe.even-better-toml",
-"antfu.theme-vitesse",
-"peymanslh.blueberry-dark-theme",
-"ms-azuretools.vscode-docker",
-"waderyan.gitblame",
-"auiworks.amvim",
-"codezombiech.gitignore",
-"rangav.vscode-thunder-client",
-"bierner.markdown-preview-github-styles",
-"donjayamanne.githistory",
+        "golang.go",
+        "christian-kohler.path-intellisense",
+        "ms-python.python",
+        "ms-python.black-formatter",
+        "rust-lang.rust-analyzer",
+        "ms-python.vscode-pylance",
+        "vadimcn.vscode-lldb",
+        "serayuzgur.crates",
+        "tamasfe.even-better-toml",
+        "antfu.theme-vitesse",
+        "ms-azuretools.vscode-docker",
+        "auiworks.amvim",
+        "rangav.vscode-thunder-client",
     ]
     for extension in extensions:
         os.system(f"code --install-extension {extension}")
