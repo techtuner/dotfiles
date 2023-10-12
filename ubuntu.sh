@@ -13,10 +13,13 @@ source "$HOME/.cargo/env"
 
 sudo apt-get update -y && sudo apt-get full-upgrade -y
 sudo apt autoremove -y
-sudo apt-get install zsh curl wget gh dconf-editor net-tools gnome-tweaks gnome-shell-extensions software-properties-common build-essential gdb gcc cmake pkg-config libfreetype6-dev libfontconfig1-dev libxcb-xfixes0-dev libxkbcommon-dev python3 python3-pip -y
+
+sudo apt-get install curl wget gh dconf-editor net-tools gnome-tweaks gnome-shell-extensions software-properties-common build-essential gdb gcc cmake pkg-config libfreetype6-dev libfontconfig1-dev libxcb-xfixes0-dev libxkbcommon-dev python3 python3-pip -y
+
 sudo snap install code --classic
 sudo snap install nvim --classic
 sudo snap install spotify --classic
+
 sudo apt remove apport apport-gtk -y && sudo apt purge apport apport-gtk -y
 
 code&
@@ -30,15 +33,9 @@ sudo cp -r ./fonts/'Fira Code' /usr/share/fonts/truetypes
 sudo chmod +x ./source_files.sh
 ./source_files.sh
 
-git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
-git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
-
 cp -r ./nvim/ ~/.config/
-cp -r ./zsh/ ~
-cp ./.zshrc ~
 cp -r ./code/settings.json ~/.config/Code/User/
 cp -r ./code/keybindings.json ~/.config/Code/User/
-cp -r ./heapbytes.zsh-theme ~/.oh-my-zsh/custom/themes
 
 sudo chmod +x ./code_extension.sh
 ./code_extension.sh
@@ -49,5 +46,5 @@ git clone --depth 1 https://github.com/wbthomason/packer.nvim\
 nvm install --lts
 nvm use 18.17.0
 
-sudo cp -r ./wallpapers ~/Pictures
-source ~/.zshrc
+sudo cp -r ./wallpapers/wallpaper.png ~/Pictures
+source ~/.bashrc
