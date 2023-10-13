@@ -14,7 +14,7 @@ source "$HOME/.cargo/env"
 sudo apt-get update -y && sudo apt-get full-upgrade -y
 sudo apt autoremove -y
 
-sudo apt-get install curl wget gh dconf-editor net-tools gnome-tweaks gnome-shell-extensions software-properties-common build-essential gdb gcc cmake pkg-config libfreetype6-dev libfontconfig1-dev libxcb-xfixes0-dev libxkbcommon-dev python3 python3-pip -y
+sudo apt-get install curl wget gh dconf-editor dconf-cli net-tools gnome-tweaks gnome-shell-extensions software-properties-common build-essential gdb gcc cmake pkg-config libfreetype6-dev libfontconfig1-dev libxcb-xfixes0-dev libxkbcommon-dev python3 python3-pip -y
 
 sudo snap install code --classic
 sudo snap install nvim --classic
@@ -45,6 +45,8 @@ git clone --depth 1 https://github.com/wbthomason/packer.nvim\
 
 nvm install --lts
 nvm use 18.17.0
+
+cat ./gnome-terminal.preferences | dconf load /org/gnome/terminal/legacy/profiles:/
 
 sudo cp -r ./wallpapers/wallpaper.png ~/Pictures
 source ~/.bashrc
