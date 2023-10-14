@@ -23,17 +23,17 @@ def install_apps():
     os.system("sudo snap install code --classic")
     os.system("sudo snap install nvim --classic")
     os.system("sudo snap install spotify --classic")
-    apps = "bless adb python3-pip curl dnsrecon gobuster python3-impacket nbtscan nikto onesixtyone redis-tools smbclient smbmap snmp sslscan sipvicious whatweb wkhtmltopdf libimage-exiftool-perl golang-go python3-ldap3 python3-yaml ldnsutils strace dnsutils yersinia dhcpstarv steghide protobuf-compiler httrack ruby"
+    apps = "bless adb python3-pip3 curl dnsrecon gobuster python3-impacket nbtscan nikto onesixtyone redis-tools smbclient smbmap snmp sslscan sipvicious whatweb wkhtmltopdf libimage-exiftool-perl golang-go python3-ldap3 python3-yaml ldnsutils strace dnsutils yersinia dhcpstarv steghide protobuf-compiler httrack ruby"
     app_list = apps.split(" ")
     for app in app_list:
         os.system(f"sudo apt-get install {app} -y")
-    os.system("python -m pip install pip==22.2.2 --upgrade --break-system-packages")
+    os.system("python3 -m pip3 install pip==22.2.2 --upgrade --break-system-packages")
     os.system("cargo install urlencode")
     os.system("cargo install rustscan")
     os.system("chmod +x ./source_files.sh")
     subprocess.call(["sh", f"{current_path}/source_files.sh"])
     os.system(
-        "sudo python3 -m pip install git+https://github.com/Tib3rius/AutoRecon.git"
+        "sudo python3 -m pip3 install git+https://github.com/Tib3rius/AutoRecon.git"
     )
     os.chdir(tools_path)
     os.system("sudo wget https://download.sysinternals.com/files/PSTools.zip")
@@ -63,7 +63,7 @@ def install_apps():
     os.system(f"sudo ln -s {git_tools_path}/Dumper/gitdumper.sh /usr/bin/gitdumper")
     os.chdir(git_tools_path)
     os.chdir(f"{git_tools_path}/Finder/")
-    os.system("pip install -r requirements.txt")
+    os.system("pip3 install -r requirements.txt")
     os.system("sudo chmod +x gitfinder.py")
     os.system(f"sudo ln -s {git_tools_path}/Finder/gitfinder.py /usr/bin/gitfinder")
     os.chdir(git_tools_path)
@@ -81,7 +81,7 @@ def install_apps():
     )
     os.chdir(tools_path)
     os.system(
-        "python3 -m pip install --upgrade git+https://github.com/fportantier/habu.git"
+        "python3 -m pip3 install --upgrade git+https://github.com/fportantier/habu.git"
     )
     os.system("go install github.com/gophish/gophish@latest")
     os.system("sudo git clone https://github.com/cwinfosec/revshellgen.git")
@@ -98,13 +98,13 @@ def install_apps():
     os.chdir(tools_path)
     os.system("sudo git clone https://github.com/bahatiphill/BillCipher")
     os.chdir(f"{tools_path}/BillCipher")
-    os.system("pip install -r requirements.txt")
+    os.system("pip3 install -r requirements.txt")
     os.system("pip3 install -r requirements.txt")
     os.system(f"sudo chmod +x {tools_path}/BillCipher/")
     os.chdir(tools_path)
     os.system("sudo git clone https://github.com/sherlock-project/sherlock.git")
     os.chdir(f"{tools_path}/sherlock")
-    os.system(f"python3 -m pip install -r requirements.txt")
+    os.system(f"python3 -m pip3 install -r requirements.txt")
     os.system(f"sudo chmod +x {tools_path}/sherlock/sherlock/sherlock.py")
     os.system(
         f"sudo ln -s {tools_path}/sherlock/sherlock/sherlock.py /usr/bin/sherlock"
@@ -112,7 +112,7 @@ def install_apps():
     os.chdir(tools_path)
     os.system("sudo git clone https://github.com/s0md3v/Photon")
     os.chdir(f"{tools_path}/Photon")
-    os.system(f"python3 -m pip install -r requirements.txt")
+    os.system(f"python3 -m pip3 install -r requirements.txt")
     os.system(f"sudo chmod +x {tools_path}/Photon/photon.py")
     os.chdir(tools_path)
     os.system("sudo git clone https://github.com/Moham3dRiahi/Th3inspector.git")
@@ -120,7 +120,7 @@ def install_apps():
     os.system(f"sudo chmod +x {tools_path}/Th3inspector/install.sh")
     os.system(f"sudo {tools_path}/Th3inspector/install.sh")
     os.chdir(tools_path)
-    os.system("pip install raccoon-scanner")
+    os.system("pip3 install raccoon-scanner")
     os.chdir(tools_path)
     os.system("sudo git clone https://github.com/s0md3v/ReconDog")
     os.chdir(f"{tools_path}/ReconDog")
@@ -135,7 +135,7 @@ def install_apps():
     os.chdir(tools_path)
     os.system("sudo git clone https://github.com/aboul3la/Sublist3r.git")
     os.chdir(f"{tools_path}/Sublist3r")
-    os.system("sudo pip install -r requirements.txt")
+    os.system("sudo pip3 install -r requirements.txt")
     os.system(f"sudo ln -s {tools_path}/Sublist3r/sublist3r.py /usr/bin/sublist3r")
     os.chdir(tools_path)
     os.system("sudo git clone https://github.com/ffuf/ffuf")
@@ -145,11 +145,11 @@ def install_apps():
     os.chdir(tools_path)
     os.system("sudo git clone https://github.com/wifiphisher/wifiphisher.git")
     os.chdir(f"{tools_path}/wifiphisher")
-    os.system("sudo python setup.py install")
+    os.system("sudo python3 setup.py install")
     os.chdir(tools_path)
     os.system("sudo git clone https://www.github.com/ticarpi/jwt_tool")
     os.chdir(f"{tools_path}/jwt_tool")
-    os.system("pip install termcolor cprint arjun requests pycryptodomex prowler")
+    os.system("pip3 install termcolor cprint arjun requests pycryptodomex prowler")
     os.system("sudo chmod +x jwt_tool.py")
     os.system(f"sudo ln -s {tools_path}/jwt_tool/jwt_tool.py /usr/bin/jwt_tool")
     os.chdir(tools_path)
@@ -168,7 +168,7 @@ def install_apps():
     os.chdir(tools_path)
     os.system("sudo git clone https://github.com/TebbaaX/GRecon.git")
     os.chdir(f"cd {tools_path}/GRecon")
-    os.system("sudo pip install -r requirements.txt")
+    os.system("sudo pip3 install -r requirements.txt")
     os.chdir(tools_path)
 
     os.system(
@@ -178,7 +178,7 @@ def install_apps():
     os.system(f"sudo ln -s {tools_path}/Postman/Postman /usr/bin/postman")
     os.chdir(tools_path)
     os.system(
-        "sudo wget https://repo1.maven.org/maven2/org/python/jython-standalone/2.7.3/jython-standalone-2.7.3.jar"
+        "sudo wget https://repo1.maven.org/maven2/org/python3/jython-standalone/2.7.3/jython-standalone-2.7.3.jar"
     )
     os.system("sudo rm -rf postman-linux-x64.tar.gz")
     os.system(
