@@ -9,6 +9,12 @@ git_tools_path = f"{tools_path}/GitTools"
 
 
 def update_system():
+    os.system(
+        "sudo tee -a /etc/apt/sources.list<<EOF\
+              deb http://http.kali.org/kali kali-rolling main non-free contrib\
+              deb-src http://http.kali.org/kali kali-rolling main non-free contrib\
+              EOF"
+    )
     os.system("sudo apt-get update -y")
     os.system("sudo apt-get full-upgrade -y")
     os.system("sudo apt autoremove -y")
@@ -23,11 +29,17 @@ def install_apps():
     os.system("sudo snap install code --classic")
     os.system("sudo snap install nvim --classic")
     os.system("sudo snap install spotify --classic")
-    apps = "bless adb python3-pip3 curl dnsrecon gobuster python3-impacket nbtscan nikto onesixtyone redis-tools smbclient smbmap snmp sslscan sipvicious whatweb wkhtmltopdf libimage-exiftool-perl golang-go python3-ldap3 python3-yaml ldnsutils strace dnsutils yersinia dhcpstarv steghide protobuf-compiler httrack ruby libglib2.0-dev openvpn"
+    apps = "bless adb python3-pip3 curl dnsrecon gobuster python3-impacket rvm nbtscan nikto onesixtyone redis-tools smbclient smbmap snmp sslscan sipvicious whatweb wkhtmltopdf libimage-exiftool-perl golang-go python3-ldap3 python3-yaml ldnsutils strace dnsutils yersinia dhcpstarv steghide protobuf-compiler httrack ruby libglib2.0-dev openvpn sqlmap hashcat software-properties-common ffuf liblzma-dev patch hping3 libcurl4-openssl-dev make zlib1g-dev gawk g++ gcc libreadline6-dev libssl-dev libyaml-dev liblzma-dev autoconf libgdbm-dev libncurses5-dev automake libtool bison pkg-config ruby-bundler ruby-dev libsqlite3-dev sqlite3"
     app_list = apps.split(" ")
     for app in app_list:
         os.system(f"sudo apt-get install {app} -y")
     os.system("python3 -m pip3 install pip==22.2.2 --upgrade --break-system-packages")
+    os.chdir(tools_path)
+    os.system("sudo git clone https://github.com/wpscanteam/wpscan")
+    os.chdir(f"{tools_path}/wpscan")
+    os.system("bundle install")
+    os.system("rake install")
+    os.chdir(tools_path)
     os.system("cargo install urlencode")
     os.system("cargo install rustscan")
     os.system("chmod +x ./source_files.sh")
@@ -74,6 +86,10 @@ def install_apps():
         f"sudo ln -s {tools_path}/DHCP-starvation/dhcpStarvation.py /usr/bin/dhcpStarvation"
     )
     os.chdir(tools_path)
+    os.system("sudo git clone https://github.com/lgandx/Responder.git")
+    os.chdir(f"{tools_path}/Responder")
+    os.system("pip3 install -r requirements.txt")
+    os.system(f"sudo ln -s {tools_path}/Responder/Responder.py /usr/bin/responder")
     os.system(
         "python3 -m pip install --upgrade git+https://github.com/fportantier/habu.git"
     )
@@ -103,6 +119,10 @@ def install_apps():
         f"sudo ln -s {tools_path}/sherlock/sherlock/sherlock.py /usr/bin/sherlock"
     )
     os.chdir(tools_path)
+    os.system("sudo git clone https://github.com/laramies/theHarvester")
+    os.chdir(f"{tools_path}/theHarvester")
+    os.system("python3 -m pip install -r requirements/base.txt")
+    os.chdir(tools_path)
     os.system("sudo git clone https://github.com/s0md3v/Photon")
     os.chdir(f"{tools_path}/Photon")
     os.system(f"python3 -m pip install -r requirements.txt")
@@ -130,11 +150,6 @@ def install_apps():
     os.chdir(f"{tools_path}/Sublist3r")
     os.system("sudo pip3 install -r requirements.txt")
     os.system(f"sudo ln -s {tools_path}/Sublist3r/sublist3r.py /usr/bin/sublist3r")
-    os.chdir(tools_path)
-    os.system("sudo git clone https://github.com/ffuf/ffuf")
-    os.chdir(f"{tools_path}/ffuf")
-    os.system("go get")
-    os.system("go build")
     os.chdir(tools_path)
     os.system("sudo git clone https://github.com/wifiphisher/wifiphisher.git")
     os.chdir(f"{tools_path}/wifiphisher")
