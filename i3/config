@@ -194,3 +194,4 @@ bar{
 #exec_always xrandr --output Virtual-1 --mode 2560x1440
 #exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 #exec_always feh --bg-fill ~/Pictures/wallpapers/mechanic-keyboard.png
+exec_always nitrogen --restore
