@@ -182,7 +182,7 @@ def install_apps():
     os.system(f"sudo ln -s {home}/go/bin/grpcurl /usr/bin/grpcurl")
     os.chdir(tools_path)
     os.system("sudo git clone https://github.com/TebbaaX/GRecon.git")
-    os.chdir(f"cd {tools_path}/GRecon")
+    os.chdir(f"{tools_path}/GRecon")
     os.system("sudo pip install -r requirements.txt")
     os.chdir(tools_path)
 
