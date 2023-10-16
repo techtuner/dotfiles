@@ -38,7 +38,7 @@ def update_upgrade():
 
 # Install Apps and Dependencies
 def install_apps():
-    apps = "bless name-that-hash adb cargo routersploit python3-pip curl dnsrecon enum4linux python3-virtualenv feroxbuster gobuster impacket-scripts nbtscan nikto onesixtyone oscanner redis-tools smbclient smbmap snmp sslscan sipvicious tnscmd10g whatweb wkhtmltopdf libimage-exiftool-perl code golang-go python3-virtualenv python3-ldap3 python3-yaml python3-impacket rainbowcrack ldnsutils ghidra strace dsniff yersinia dhcpstarv sslstrip zaproxy dvwa steghide bloodhound juice-shop nuclei smbclient armitage beef-xss maltego protobuf-compiler httrack whatweb ruby osrframework i3 i3-wm dmenu"
+    apps = "bless name-that-hash adb cargo routersploit python3-pip curl dnsrecon enum4linux python3-virtualenv feroxbuster gobuster impacket-scripts nbtscan nikto onesixtyone oscanner redis-tools smbclient smbmap snmp sslscan sipvicious tnscmd10g whatweb wkhtmltopdf libimage-exiftool-perl code golang-go python3-virtualenv python3-ldap3 python3-yaml python3-impacket rainbowcrack ldnsutils ghidra strace dsniff yersinia dhcpstarv sslstrip zaproxy dvwa steghide bloodhound juice-shop nuclei smbclient armitage beef-xss maltego protobuf-compiler httrack whatweb ruby osrframework i3 i3-wm dmenu nitrogen kitty"
     apps_list = apps.split(" ")
     for app in apps_list:
         os.system(f"sudo apt-get install {app} -y")
@@ -231,6 +231,8 @@ def copy_configs():
     # os.mkdir(f"{home}/Pictures/wallpapers/")
     os.system(f"cp -r {current_path}/wallpapers/Kali-wallpaper.png {home}/Pictures")
     os.system(f"cp -r {current_path}/nvim {home}/.config/")
+    os.system(f"cp -r {current_path}/.i3status.conf {home}")
+    os.system(f"cp -r {current_path}/i3 {home}/.config/")
     # os.system(f"cp -r {current_path}/zsh/ {home}")
     # os.system(f"cp {current_path}/tmux/.tmux.conf {home}")
     # os.system(f"cp -r {current_path}/terminator/config {home}/.config/")
