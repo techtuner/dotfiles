@@ -1,6 +1,6 @@
 #!/bin/bash
 
-cwd=$pwd
+cwd=$PWD
 
 sudo apt-get update -y && sudo apt-get full-upgrade -y
 
@@ -23,7 +23,7 @@ sudo wget https://downloads.arduino.cc/arduino-ide/arduino-ide_2.2.1_Linux_64bit
 sudo chmod +x arduino-ide_2.2.1_Linux_64bit.AppImage
 sudo ln -s /opt/https://downloads.arduino.cc/arduino-ide/arduino-ide_2.2.1_Linux_64bit.AppImage /usr/bin/arduinoide
 
-cd $cwd
+cd $c wd
 
 sudo snap install code --classic
 sudo snap install nvim --classic
