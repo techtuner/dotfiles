@@ -39,6 +39,8 @@ sudo snap install nvim --classic
 sudo snap install spotify --classic
 
 python3 -m pip install --upgrade pip
+
+pip install --user babi
 sudo apt remove apport apport-gtk -y && sudo apt purge apport apport-gtk -y
 
 code&
@@ -60,10 +62,5 @@ sudo chmod +x ./code_extension.sh
 git clone --depth 1 https://github.com/wbthomason/packer.nvim\
  ~/.local/share/nvim/site/pack/packer/start/packer.nvim
 
-nvm install --lts
-nvm use 18.17.0
-
-cat ./gnome-terminal.preferences | dconf load /org/gnome/terminal/legacy/profiles:/
-
-sudo cp -r ./wallpapers/wallpaper.png ~/Pictures
+sudo cp -r ./wallpapers/ ~/Pictures/
 source ~/.bashrc
