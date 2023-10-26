@@ -23,6 +23,7 @@ EXTENSIONS=(
 "ms-azuretools.vscode-docker"
 "waderyan.gitblame"
 "auiworks.amvim"
+"BeardedBear.beardedtheme"
 "codezombiech.gitignore"
 "rangav.vscode-thunder-client"
 "bierner.markdown-preview-github-styles"

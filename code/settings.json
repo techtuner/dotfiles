@@ -1,6 +1,6 @@
 {
   // Workbench Settings
-  "workbench.colorTheme": "Vitesse Dark",
+  "workbench.colorTheme": "Bearded Theme Arc",
   "workbench.productIconTheme": "fluent-icons",
   "workbench.iconTheme": "symbols",
   "workbench.startupEditor": "none",
@@ -11,6 +11,11 @@
   "workbench.list.smoothScrolling": true,
   "window.menuBarVisibility": "compact",
   "window.zoomLevel": -0.5,
+  "workbench.colorCustomizations": {
+    "editor.background": "#191f2b",
+    "editorGutter.background": "#191f2b",
+    "terminal.background": "#191f2b"
+  },
   "workbench.layoutControl.enabled": false,
   // Editor and Terminal Settings
   "editor.fontLigatures": true,
@@ -59,14 +64,14 @@
     ".phpunit.result.cache": true
   },
   // Typography
-  "terminal.integrated.fontFamily": "'FiraCode NF', sanserif",
-  "editor.fontSize": 16,
-  "editor.lineHeight": 2.5,
+  "terminal.integrated.fontFamily": "FiraCode NF, sanserif",
+  "editor.fontSize": 14,
+  "editor.lineHeight": 2.75,
   "terminal.integrated.fontSize": 12,
   "terminal.integrated.lineHeight": 1.5,
-  "editor.fontFamily": "FiraCode NF, Maple Mono NF,MonoLisa,dank mono,monaco, monospace",
-  "debug.console.fontFamily": "FiraCode NF,monaco,monospace",
-  "errorLens.fontFamily": "FiraCode NF,monaco,monospace",
+  "editor.fontFamily": "dank mono, FiraCode NF, Maple Mono NF,MonoLisa,monaco, monospace",
+  "debug.console.fontFamily": "Dank Mono,monaco,monospace",
+  "errorLens.fontFamily": "Dank Mono,monaco,monospace",
   "importCost.fontStyle": "italic",
   "errorLens.fontStyleItalic": true,
   "better-comments.tags": [
@@ -117,11 +122,11 @@
     }
   ],
   // JavaScript
-  "[javascript]": {
-    "editor.maxTokenizationLineLength": 2500,
-    "editor.defaultFormatter": "esbenp.prettier-vscode",
-    "editor.formatOnSave": true
-  },
+  // "[javascript]": {
+  //   "editor.maxTokenizationLineLength": 2500,
+  //   "editor.defaultFormatter": "esbenp.prettier-vscode",
+  //   "editor.formatOnSave": true
+  // },
   // Markdown
   "[markdown]": {
     "editor.unicodeHighlight.ambiguousCharacters": false,
@@ -204,6 +209,7 @@
   "workbench.statusBar.visible": false,
   "security.workspace.trust.untrustedFiles": "open",
   "editor.cursorStyle": "line-thin",
-  "amVim.startInInsertMode": true,
-  "amVim.useSystemClipboard": true
+  "snyk.advanced.cliPath": "C:\\Users\\techt\\AppData\\Local\\snyk-ls\\snyk-win.exe",
+  "snyk.yesWelcomeNotification": false,
+  "workbench.activityBar.visible": false
 }

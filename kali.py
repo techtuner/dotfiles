@@ -9,7 +9,6 @@ home = f"/home/{user}"
 tools_path = f"/opt"
 git_tools_path = f"{tools_path}/GitTools"
 
-
 ## Add Code to sources list
 def code_neovim():
     os.system(
@@ -23,18 +22,15 @@ def code_neovim():
     )
     os.system("rm -rf packages.microsoft.gpg")
 
-
 def zellij():
     os.system("curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh")
     os.system('source "$HOME/.cargo/env"')
-
 
 # Update and Upgrade the linux system
 def update_upgrade():
     os.system("sudo apt-get update -y")
     os.system("sudo apt-get full-upgrade -y")
     os.system("sudo apt autoremove -y")
-
 
 # Install Apps and Dependencies
 def install_apps():
@@ -254,7 +250,7 @@ def code_extensions():
         "vadimcn.vscode-lldb",
         "serayuzgur.crates",
         "tamasfe.even-better-toml",
-        "antfu.theme-vitesse",
+        "BeardedBear.beardedtheme",
         "ms-azuretools.vscode-docker",
         "auiworks.amvim",
         "rangav.vscode-thunder-client",
