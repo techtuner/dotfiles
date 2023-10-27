@@ -1,6 +1,6 @@
 {
   // Workbench Settings
-  "workbench.colorTheme": "Bearded Theme Arc",
+  "workbench.colorTheme": "Bearded Theme Arc EolStorm",
   "workbench.productIconTheme": "fluent-icons",
   "workbench.iconTheme": "symbols",
   "workbench.startupEditor": "none",
@@ -12,9 +12,9 @@
   "window.menuBarVisibility": "compact",
   "window.zoomLevel": -0.5,
   "workbench.colorCustomizations": {
-    "editor.background": "#191f2b",
-    "editorGutter.background": "#191f2b",
-    "terminal.background": "#191f2b"
+    "editor.background": "#1f2530",
+    "editorGutter.background": "#1f2530",
+    "terminal.background": "#1f2530"
   },
   "workbench.layoutControl.enabled": false,
   // Editor and Terminal Settings
@@ -65,7 +65,7 @@
   },
   // Typography
   "terminal.integrated.fontFamily": "FiraCode NF, sanserif",
-  "editor.fontSize": 14,
+  "editor.fontSize": 12,
   "editor.lineHeight": 2.75,
   "terminal.integrated.fontSize": 12,
   "terminal.integrated.lineHeight": 1.5,
@@ -209,7 +209,8 @@
   "workbench.statusBar.visible": false,
   "security.workspace.trust.untrustedFiles": "open",
   "editor.cursorStyle": "line-thin",
+  "amVim.startInInsertMode": true,
+  "amVim.useSystemClipboard": true,
   "snyk.advanced.cliPath": "C:\\Users\\techt\\AppData\\Local\\snyk-ls\\snyk-win.exe",
-  "snyk.yesWelcomeNotification": false,
-  "workbench.activityBar.visible": false
+  "snyk.yesWelcomeNotification": false
 }
