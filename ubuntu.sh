@@ -6,7 +6,6 @@ sudo apt-get update -y && sudo apt-get full-upgrade -y
 
 # Node from ppa
 sudo apt-get install ca-certificates curl gnupg -y
-
 sudo mkdir -p /etc/apt/keyrings
 curl -fsSL https://deb.nodesource.com/gpgkey/nodesource-repo.gpg.key | sudo gpg --dearmor -o /etc/apt/keyrings/nodesource.gpg
 
@@ -18,29 +17,27 @@ curl -fsSL https://cli.github.com/packages/githubcli-archive-keyring.gpg | sudo 
 sudo chmod go+r /usr/share/keyrings/githubcli-archive-keyring.gpg
 echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/githubcli-archive-keyring.gpg] https://cli.github.com/packages stable main" | sudo tee /etc/apt/sources.list.d/github-cli.list > /dev/null
 
-# Install Rustup
-# curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
-# source "$HOME/.cargo/env"
-
 sudo apt-get update -y && sudo apt-get full-upgrade -y
 sudo apt autoremove -y
 
-sudo apt-get install curl wget cargo gh dconf-editor dconf-cli net-tools gnome-tweaks gnome-shell-extensions software-properties-common build-essential gdb gcc cmake pkg-config libfreetype6-dev libfontconfig1-dev libxcb-xfixes0-dev libxkbcommon-dev python3 nodejs python3-pip -y
+sudo apt-get install curl wget cargo gh dconf-editor dconf-cli net-tools gnome-tweaks gnome-shell-extensions software-properties-common build-essential gdb gcc cmake pkg-config libfreetype6-dev libfontconfig1-dev libxcb-xfixes0-dev libxkbcommon-dev python3 nodejs python3-pip vim -y
+
+python3 --m pip install --upgrade pip
+pip install babi --user
 
 cd /opt
-sudo wget https://downloads.arduino.cc/arduino-ide/arduino-ide_2.2.1_Linux_64bit.AppImage
-sudo chmod +x arduino-ide_2.2.1_Linux_64bit.AppImage
-sudo ln -s /opt/https://downloads.arduino.cc/arduino-ide/arduino-ide_2.2.1_Linux_64bit.AppImage /usr/bin/arduinoide
+
+if ! [ -f arduino-ide_2.2.1_Linux_64bit.AppImage ]; then
+  sudo wget https://downloads.arduino.cc/arduino-ide/arduino-ide_2.2.1_Linux_64bit.AppImage
+  sudo chmod +x arduino-ide_2.2.1_Linux_64bit.AppImage
+  sudo ln -s /opt/arduino-ide_2.2.1_Linux_64bit.AppImage /usr/bin/arduinoide
+fi
 
 cd $cwd
 
 sudo snap install code --classic
-sudo snap install nvim --classic
 sudo snap install spotify --classic
 
-python3 -m pip install --upgrade pip
-
-pip install --user babi
 sudo apt remove apport apport-gtk -y && sudo apt purge apport apport-gtk -y
 
 code&
