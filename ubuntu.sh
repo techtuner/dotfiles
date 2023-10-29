@@ -2,7 +2,13 @@
 
 cwd=$PWD
 
-sudo apt-get update -y && sudo apt-get full-upgrade -y
+update_system(){
+  sudo apt-get update -y && sudo apt-get full-upgrade -y
+  sudo apt-get update --fix-missing
+  sudo apt autoremove -y
+}
+
+update_system
 
 # Node from ppa
 sudo apt-get install ca-certificates curl gnupg -y
@@ -17,10 +23,12 @@ curl -fsSL https://cli.github.com/packages/githubcli-archive-keyring.gpg | sudo 
 sudo chmod go+r /usr/share/keyrings/githubcli-archive-keyring.gpg
 echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/githubcli-archive-keyring.gpg] https://cli.github.com/packages stable main" | sudo tee /etc/apt/sources.list.d/github-cli.list > /dev/null
 
-sudo apt-get update -y && sudo apt-get full-upgrade -y
-sudo apt autoremove -y
+update_system
 
-sudo apt-get install curl wget cargo gh dconf-editor dconf-cli net-tools gnome-tweaks gnome-shell-extensions software-properties-common build-essential gdb gcc cmake pkg-config libfreetype6-dev libfontconfig1-dev libxcb-xfixes0-dev libxkbcommon-dev python3 nodejs python3-pip vim -y
+# sudo apt-get update -y && sudo apt-get full-upgrade -y
+# sudo apt autoremove -y
+
+sudo apt-get install curl wget cargo gh dconf-editor dconf-cli net-tools gnome-tweaks gnome-shell-extensions software-properties-common build-essential gdb gcc cmake pkg-config libfreetype6-dev libfontconfig1-dev libxcb-xfixes0-dev libxkbcommon-dev python3 nodejs python3-pip vim zathura -y
 
 python3 --m pip install --upgrade pip
 pip install babi --user
@@ -35,8 +43,16 @@ fi
 
 cd $cwd
 
-sudo snap install code --classic
-sudo snap install spotify --classic
+APPS=(
+  "code"
+  "spotify"
+  "insomnia"
+  "postman"
+)
+for app in ${APPS[@]}
+do
+    sudo snap install $app --classic
+done
 
 sudo apt remove apport apport-gtk -y && sudo apt purge apport apport-gtk -y
 
@@ -56,8 +72,10 @@ cp -r ./code/keybindings.json ~/.config/Code/User/
 sudo chmod +x ./code_extension.sh
 ./code_extension.sh
 
-git clone --depth 1 https://github.com/wbthomason/packer.nvim\
- ~/.local/share/nvim/site/pack/packer/start/packer.nvim
+#git clone --depth 1 https://github.com/wbthomason/packer.nvim\  ~/.local/share/nvim/site/pack/packer/start/packer.nvim
 
 sudo cp -r ./wallpapers/ ~/Pictures/
 source ~/.bashrc
+
+# Change Gnome Settings
+# profile=($(gsettings get org.gnome.Terminal.ProfilesList list | tr -d "[]\',"))
