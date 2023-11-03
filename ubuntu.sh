@@ -28,7 +28,7 @@ update_system
 # sudo apt-get update -y && sudo apt-get full-upgrade -y
 # sudo apt autoremove -y
 
-sudo apt-get install curl wget cargo gh dconf-editor dconf-cli net-tools gnome-tweaks gnome-shell-extensions software-properties-common build-essential gdb gcc cmake pkg-config libfreetype6-dev libfontconfig1-dev libxcb-xfixes0-dev libxkbcommon-dev python3 nodejs python3-pip vim zathura -y
+sudo apt-get install curl wget cargo gh dconf-editor dconf-cli net-tools gnome-tweaks gnome-shell-extensions software-properties-common build-essential gdb gcc cmake pkg-config libfreetype6-dev libfontconfig1-dev i3 i3-wm dmenu feh pulseaudio kitty libxcb-xfixes0-dev libxkbcommon-dev python3 nodejs python3-pip vim zathura -y
 
 python3 --m pip install --upgrade pip
 pip install babi --user
@@ -54,20 +54,28 @@ do
     sudo snap install $app --classic
 done
 
-sudo apt remove apport apport-gtk -y && sudo apt purge apport apport-gtk -y
-
 code&
+sudo apt remove apport apport-gtk -y && sudo apt purge apport apport-gtk -y
 
 
 sudo cp -r ./fonts/'Fira Code' /usr/share/fonts/truetype/
-sudo cp -r ./fonts/'Dank Mono' /usr/share/fonts/opentype/
 
 sudo chmod +x ./source_files.sh
 ./source_files.sh
 
 cp -r ./nvim/ ~/.config/
+cp -r ./.vimrc ~
 cp -r ./code/settings.json ~/.config/Code/User/
 cp -r ./code/keybindings.json ~/.config/Code/User/
+cp -r ./.i3status.conf ~
+if ! [ -d ~/.config/i3/ ]; then
+  mkdir ~/.config/i3/
+  cp -r ./i3/* ~/.config/i3/
+else
+  cp -r ./i3/* ~/.config/i3/
+fi
+
+cp -r ./kitty/kitty.conf ~/.config/kitty/
 
 sudo chmod +x ./code_extension.sh
 ./code_extension.sh
