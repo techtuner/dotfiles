@@ -25,9 +25,6 @@ echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/githu
 
 update_system
 
-# sudo apt-get update -y && sudo apt-get full-upgrade -y
-# sudo apt autoremove -y
-
 sudo apt-get install curl wget cargo gh dconf-editor dconf-cli net-tools gnome-tweaks gnome-shell-extensions software-properties-common build-essential gdb gcc cmake pkg-config libfreetype6-dev libfontconfig1-dev i3 i3-wm dmenu feh pulseaudio kitty libxcb-xfixes0-dev libxkbcommon-dev python3 nodejs python3-pip vim zathura -y
 
 python3 --m pip install --upgrade pip
@@ -46,8 +43,6 @@ cd $cwd
 APPS=(
   "code"
   "spotify"
-  "insomnia"
-  "postman"
 )
 for app in ${APPS[@]}
 do
@@ -82,8 +77,8 @@ sudo chmod +x ./code_extension.sh
 
 #git clone --depth 1 https://github.com/wbthomason/packer.nvim\  ~/.local/share/nvim/site/pack/packer/start/packer.nvim
 
+curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
+    https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+
 sudo cp -r ./wallpapers/ ~/Pictures/
 source ~/.bashrc
-
-# Change Gnome Settings
-# profile=($(gsettings get org.gnome.Terminal.ProfilesList list | tr -d "[]\',"))
