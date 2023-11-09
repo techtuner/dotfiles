@@ -9,6 +9,7 @@ home = f"/home/{user}"
 tools_path = f"/opt"
 git_tools_path = f"{tools_path}/GitTools"
 
+
 ## Add Code to sources list
 def code_neovim():
     os.system(
@@ -22,15 +23,18 @@ def code_neovim():
     )
     os.system("rm -rf packages.microsoft.gpg")
 
+
 def zellij():
     os.system("curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh")
     os.system('source "$HOME/.cargo/env"')
+
 
 # Update and Upgrade the linux system
 def update_upgrade():
     os.system("sudo apt-get update -y")
     os.system("sudo apt-get full-upgrade -y")
     os.system("sudo apt autoremove -y")
+
 
 # Install Apps and Dependencies
 def install_apps():
@@ -215,7 +219,14 @@ os.system(f"sudo cp -r {current_path}/fonts/'Fira Code' /usr/share/fonts/truetyp
 # Create Boxes Folder to store HTB and THM boxes solution
 def labs():
     os.mkdir(f"{home}/Labs")
-    folder_list = ["HTB", "THM", "CTF", "CTF/Pico", "CTF/Embed", "CTF/Meta"]
+    folder_list = [
+        "hackthebox",
+        "tryhackme",
+        "capturetheflag",
+        "capturetheflag/Pico",
+        "capturetheflag/Embed",
+        "capturetheflag/Meta",
+    ]
     for folder in folder_list:
         os.mkdir(f"{home}/Labs/{folder}")
 
