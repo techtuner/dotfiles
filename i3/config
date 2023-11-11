@@ -192,4 +192,4 @@ bindsym $mod+F12 exec pactl set-sink-volume @DEFAULT_SINK@ +10%  # Down
 bindsym $mod+F9  exec ~/.config/i3/toggle_sink.sh
 
 
-exec_always  feh --bg-scale ~/Pictures/wallpapers/0043.jpeg
+exec_always  feh --bg-center ~/Pictures/wallpapers/pxfuel.jpg
