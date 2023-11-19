@@ -6,7 +6,7 @@ import subprocess
 current_path = os.getcwd()
 user = os.getlogin()
 home = f"/home/{user}"
-tools_path = f"/opt"
+tools_path = "/opt"
 git_tools_path = f"{tools_path}/GitTools"
 
 
@@ -24,11 +24,6 @@ def code_neovim():
     os.system("rm -rf packages.microsoft.gpg")
 
 
-def zellij():
-    os.system("curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh")
-    os.system('source "$HOME/.cargo/env"')
-
-
 # Update and Upgrade the linux system
 def update_upgrade():
     os.system("sudo apt-get update -y")
@@ -38,7 +33,7 @@ def update_upgrade():
 
 # Install Apps and Dependencies
 def install_apps():
-    apps = "bless name-that-hash adb cargo routersploit python3-pip curl dnsrecon enum4linux python3-virtualenv feroxbuster gobuster impacket-scripts nbtscan nikto onesixtyone oscanner redis-tools smbclient smbmap snmp sslscan sipvicious tnscmd10g whatweb wkhtmltopdf libimage-exiftool-perl code golang-go python3-virtualenv python3-ldap3 python3-yaml python3-impacket rainbowcrack ldnsutils ghidra strace dsniff yersinia dhcpstarv sslstrip zaproxy dvwa steghide bloodhound juice-shop nuclei smbclient armitage beef-xss maltego protobuf-compiler httrack whatweb ruby osrframework i3 i3-wm dmenu nitrogen kitty"
+    apps = "bless name-that-hash adb cargo routersploit python3-pip curl dnsrecon enum4linux python3-virtualenv feroxbuster gobuster impacket-scripts nbtscan nikto onesixtyone oscanner redis-tools smbclient smbmap snmp sslscan sipvicious tnscmd10g whatweb wkhtmltopdf libimage-exiftool-perl code golang-go python3-virtualenv python3-ldap3 python3-yaml python3-impacket rainbowcrack ldnsutils ghidra strace dsniff yersinia dhcpstarv sslstrip zaproxy dvwa steghide bloodhound juice-shop nuclei smbclient armitage beef-xss maltego protobuf-compiler httrack whatweb ruby osrframework vim"
     apps_list = apps.split(" ")
     for app in apps_list:
         os.system(f"sudo apt-get install {app} -y")
@@ -57,13 +52,7 @@ def install_apps():
     os.system("sudo rm -rf PSTools.zip")
     os.chdir(tools_path)
     os.system(
-        "sudo wget https://github.com/neovim/neovim/releases/download/v0.9.0/nvim.appimage"
-    )
-    os.system(f"sudo chmod +x {tools_path}/nvim.appimage")
-    os.system(f"sudo ln -s {tools_path}/nvim.appimage /usr/bin/nvim")
-    os.chdir(tools_path)
-    os.system(
-        f"sudo wget https://storage.googleapis.com/caido-releases/v0.28.0/caido-desktop-linux-v0.28.0-9799aa77.AppImage"
+        "sudo wget https://storage.googleapis.com/caido-releases/v0.28.0/caido-desktop-linux-v0.28.0-9799aa77.AppImage"
     )
     os.system(
         f"sudo chmod +x {tools_path}/caido-desktop-linux-v0.28.0-9799aa77.AppImage"
@@ -119,7 +108,7 @@ def install_apps():
     os.chdir(tools_path)
     os.system("sudo git clone https://github.com/sherlock-project/sherlock.git")
     os.chdir(f"{tools_path}/sherlock")
-    os.system(f"python3 -m pip install -r requirements.txt")
+    os.system("python3 -m pip install -r requirements.txt")
     os.system(f"sudo chmod +x {tools_path}/sherlock/sherlock/sherlock.py")
     os.system(
         f"sudo ln -s {tools_path}/sherlock/sherlock/sherlock.py /usr/bin/sherlock"
@@ -127,7 +116,7 @@ def install_apps():
     os.chdir(tools_path)
     os.system("sudo git clone https://github.com/s0md3v/Photon")
     os.chdir(f"{tools_path}/Photon")
-    os.system(f"python3 -m pip install -r requirements.txt")
+    os.system("python3 -m pip install -r requirements.txt")
     os.system(f"sudo chmod +x {tools_path}/Photon/photon.py")
     os.chdir(tools_path)
     os.system("sudo git clone https://github.com/Moham3dRiahi/Th3inspector.git")
@@ -212,8 +201,9 @@ def install_apps():
 
 
 # Fonts I use for Code Editor and Terminal
-os.system(f"sudo cp -r {current_path}/fonts/'Dank Mono' /usr/share/fonts/opentype")
+os.system(f"sudo cp -r {current_path}/fonts/'Comic Code' /usr/share/fonts/opentype")
 os.system(f"sudo cp -r {current_path}/fonts/'Fira Code' /usr/share/fonts/truetype")
+os.system(f"sudo cp -r {current_path}/fonts/'PlemolJP' /usr/share/fonts/truetype")
 
 
 # Create Boxes Folder to store HTB and THM boxes solution
@@ -235,18 +225,12 @@ def labs():
 def copy_configs():
     os.system(f"sudo cp -r {current_path}/.bashrc {home}")
     os.system(f"sudo cp -r {current_path}/kitty/ {home}/.config/")
-    # os.mkdir(f"{home}/Pictures/wallpapers/")
-    os.system(f"cp -r {current_path}/wallpapers/Kali-wallpaper.png {home}/Pictures")
-    os.system(f"cp -r {current_path}/nvim {home}/.config/")
-    os.system(f"cp -r {current_path}/.i3status.conf {home}")
-    os.system(f"cp -r {current_path}/i3 {home}/.config/")
-    # os.system(f"cp -r {current_path}/zsh/ {home}")
-    # os.system(f"cp {current_path}/tmux/.tmux.conf {home}")
-    # os.system(f"cp -r {current_path}/terminator/config {home}/.config/")
-    # os.system(
-    #   f"cp -r {current_path}/heapbytes.zsh-theme {home}/.oh-my-zsh/custom/themes/"
-    # )
-    # os.system(f"cp -r {current_path}/.zshrc {home}")
+    os.system(f"sudo cp -r {current_path}/nvim/ {home}/.config/")
+    os.system(f"sudo cp -r {current_path}/neofetch/ {home}/.config/")
+    os.system(f"cp -r {current_path}/wallpapers /{home}/Pictures")
+    os.system(f"cp -r {current_path}/zsh/ {home}")
+    os.system(f"cp -r {current_path}/.vimrc {home}/")
+    os.system(f"cp -r {current_path}/.zshrc {home}/")
 
 
 # Code Extension
