@@ -3,7 +3,7 @@ Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass
 $user = $env:USERNAME
 
 function choco_packages() {
-    $choco_apps = "sudo", "nvm", "python", "golang", "brave", "adobereader", "vlc", "winrar", "wget", "curl", "powertoys", "jq", "neovim", "gh", "rust", "oh-my-posh", "fzf", "notion"
+    $choco_apps = "sudo", "nvm", "python", "golang", "wget", "curl", "powertoys", "jq", "neovim", "gh", "rust", "oh-my-posh", "fzf", "notion"
 
     foreach ($app in $choco_apps) {
         choco install $app -y
@@ -52,7 +52,6 @@ function code_extensions() {
 mkdir ~\Documents\Powershell
 mkdir ~\.config\powershell
 mkdir D:\Projects
-mkdir D:\Notes
 
 Copy-Item .\powershell\user_profile.ps1 C:\Users\$user\.config\powershell\
 Copy-Item .\powershell\Microsoft.PowerShell_profile.ps1 C:\Users\$user\Documents\Powershell\
