@@ -37,7 +37,8 @@ function code_extensions() {
     "codezombiech.gitignore",
     "rangav.vscode-thunder-client",
     "bierner.markdown-preview-github-styles",
-    "donjayamanne.githistory"
+    "donjayamanne.githistory",
+    "pmndrs.pmndrs"
 
     foreach ($extension in $extension_list) {
         code --install-extension $extension

@@ -28,6 +28,7 @@ EXTENSIONS=(
 "rangav.vscode-thunder-client"
 "bierner.markdown-preview-github-styles"
 "donjayamanne.githistory"
+"pmndrs.pmndrs"
 )
 
 for extension in ${EXTENSIONS[@]}
