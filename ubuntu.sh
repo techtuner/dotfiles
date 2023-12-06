@@ -25,7 +25,7 @@ echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/githu
 
 update_system
 
-sudo apt-get install curl wget cargo gh dconf-editor dconf-cli net-tools gnome-tweaks gnome-shell-extensions software-properties-common build-essential gdb gcc cmake pkg-config libfreetype6-dev libfontconfig1-dev i3 i3-wm dmenu feh pulseaudio kitty libxcb-xfixes0-dev libxkbcommon-dev python3 nodejs python3-pip vim zathura -y
+sudo apt-get install curl wget cargo gh dconf-editor dconf-cli net-tools gnome-tweaks gnome-shell-extensions software-properties-common build-essential gdb gcc cmake pkg-config libfreetype6-dev libfontconfig1-dev i3 i3-wm dmenu feh pulseaudio kitty libxcb-xfixes0-dev libxkbcommon-dev python3 nodejs python3-pip vim zathura zsh -y
 
 python3 --m pip install --upgrade pip
 pip install babi --user
@@ -54,6 +54,8 @@ sudo apt remove apport apport-gtk -y && sudo apt purge apport apport-gtk -y
 
 
 sudo cp -r ./fonts/'Fira Code' /usr/share/fonts/truetype/
+sudo cp -r ./fonts/'Comic Code' /usr/share/fonts/opentype/
+sudo cp -r ./fonts/'Dank Mono' /usr/share/fonts/opentype/
 
 sudo chmod +x ./source_files.sh
 ./source_files.sh
@@ -70,15 +72,14 @@ else
   cp -r ./i3/* ~/.config/i3/
 fi
 
-cp -r ./kitty/kitty.conf ~/.config/kitty/
+mkdir ~/.config/kitty && cp -r ./kitty/kitty.conf ~/.config/kitty/
 
 sudo chmod +x ./code_extension.sh
 ./code_extension.sh
-
 #git clone --depth 1 https://github.com/wbthomason/packer.nvim\  ~/.local/share/nvim/site/pack/packer/start/packer.nvim
 
 curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
     https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 
-sudo cp -r ./wallpapers/ ~/Pictures/
+cp -r ./wallpapers/ ~/Pictures/
 source ~/.bashrc
