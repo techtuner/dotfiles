@@ -1,11 +1,9 @@
 {
     "$help": "https://aka.ms/terminal-documentation",
     "$schema": "https://aka.ms/terminal-profiles-schema",
-    "actions": 
-    [
+    "actions": [
         {
-            "command": 
-            {
+            "command": {
                 "action": "copy",
                 "singleLine": false
             },
@@ -20,8 +18,7 @@
             "keys": "ctrl+shift+f"
         },
         {
-            "command": 
-            {
+            "command": {
                 "action": "splitPane",
                 "split": "auto",
                 "splitMode": "duplicate"
@@ -33,20 +30,16 @@
     "copyOnSelect": false,
     "defaultProfile": "{574e775e-4f2a-5b96-ac1e-a2962a402336}",
     "launchMode": "maximized",
-    "newTabMenu": 
-    [
+    "newTabMenu": [
         {
             "type": "remainingProfiles"
         }
     ],
-    "profiles": 
-    {
-        "defaults": 
-        {
+    "profiles": {
+        "defaults": {
             "colorScheme": "City Lights",
             "experimental.retroTerminalEffect": false,
-            "font": 
-            {
+            "font": {
                 "face": "JetBrainsMonoNL Nerd Font",
                 "size": 12.0,
                 "weight": "normal"
@@ -57,8 +50,7 @@
             "scrollbarState": "hidden",
             "useAcrylic": true
         },
-        "list": 
-        [
+        "list": [
             {
                 "commandline": "%SystemRoot%\\System32\\WindowsPowerShell\\v1.0\\powershell.exe",
                 "guid": "{61c54bbd-c2c6-5271-96e7-009a87ff44bf}",
@@ -87,8 +79,30 @@
             }
         ]
     },
-    "schemes": 
-    [
+    "schemes": [
+        {
+            "background": "#1B1E28",
+            "black": "#1B1E28",
+            "blue": "#DDFFFF",
+            "brightBlack": "#ACCDFF",
+            "brightBlue": "#D7FFFF",
+            "brightCyan": "#D7FFFF",
+            "brightGreen": "#E4C7FF",
+            "brightPurple": "#C5E9FF",
+            "brightRed": "#679DFF",
+            "brightWhite": "#FFFFFF",
+            "brightYellow": "#FAC2FF",
+            "cursorColor": "#B473FF",
+            "cyan": "#DDFFFF",
+            "foreground": "#ACCDFF",
+            "green": "#E4C7FF",
+            "name": "Poimandres",
+            "purple": "#C5E9FF",
+            "red": "#679DFF",
+            "selectionBackground": "#7CB424",
+            "white": "#FFFFFF",
+            "yellow": "#FAC2FF"
+        },
         {
             "background": "#0C0C0C",
             "black": "#0C0C0C",
@@ -412,46 +426,39 @@
             "yellow": "#808000"
         }
     ],
-    "themes": 
-    [
+    "themes": [
         {
             "name": "legacyDark",
-            "tab": 
-            {
+            "tab": {
                 "background": null,
                 "showCloseButton": "always",
                 "unfocusedBackground": null
             },
-            "window": 
-            {
+            "window": {
                 "applicationTheme": "dark",
                 "useMica": false
             }
         },
         {
             "name": "legacyLight",
-            "tab": 
-            {
+            "tab": {
                 "background": null,
                 "showCloseButton": "always",
                 "unfocusedBackground": null
             },
-            "window": 
-            {
+            "window": {
                 "applicationTheme": "light",
                 "useMica": false
             }
         },
         {
             "name": "legacySystem",
-            "tab": 
-            {
+            "tab": {
                 "background": null,
                 "showCloseButton": "always",
                 "unfocusedBackground": null
             },
-            "window": 
-            {
+            "window": {
                 "applicationTheme": "system",
                 "useMica": false
             }

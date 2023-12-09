@@ -61,8 +61,8 @@ return require('packer').startup(function(use)
     use("windwp/nvim-ts-autotag")
 
     -- Colorscheme
-    --use('techtuner/nord.nvim')
-    use('catppuccin/nvim')
+    use("olivercederborg/poimandres.nvim")
+
     -- GitSigns
     use("lewis6991/gitsigns.nvim")
 

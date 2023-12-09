@@ -9,8 +9,6 @@ lsp.ensure_installed({
     'html',
     'jsonls',
     'tailwindcss',
-    'volar',
-    'vuels',
     'ltex',
     'sqlls',
     'jedi_language_server',
@@ -19,7 +17,6 @@ lsp.ensure_installed({
     'eslint',
     'clangd',
     'emmet_ls',
-    'cssls',
     'pyright',
 
 })
