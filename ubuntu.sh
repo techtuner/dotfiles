@@ -43,7 +43,8 @@ cd $cwd
 APPS=(
   "code"
   "spotify"
-  "nvim"
+  "vlc"
+  "brave"
 )
 for app in ${APPS[@]}
 do
