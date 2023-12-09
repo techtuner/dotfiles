@@ -25,7 +25,7 @@ echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/githu
 
 update_system
 
-sudo apt-get install curl wget picom cargo gh dconf-editor dconf-cli net-tools gnome-tweaks gnome-shell-extensions software-properties-common build-essential gdb gcc cmake pkg-config libfreetype6-dev libfontconfig1-dev i3 i3-wm dmenu feh pulseaudio kitty libxcb-xfixes0-dev libxkbcommon-dev python3 nodejs python3-pip vim zathura zsh -y
+sudo apt-get install curl wget picom cargo gh dconf-editor dconf-cli net-tools gnome-tweaks gnome-shell-extensions software-properties-common build-essential gdb gcc cmake pkg-config libfreetype6-dev libfontconfig1-dev i3 i3-wm dmenu feh pulseaudio kitty libxcb-xfixes0-dev libxkbcommon-dev python3 nodejs python3-pip zathura zsh -y
 
 python3 --m pip install --upgrade pip
 pip install babi --user
@@ -43,6 +43,7 @@ cd $cwd
 APPS=(
   "code"
   "spotify"
+  "nvim"
 )
 for app in ${APPS[@]}
 do
@@ -62,7 +63,7 @@ sudo chmod +x ./source_files.sh
 
 cp ./picom/picom.conf ~/.config/
 cp -r ./nvim/ ~/.config/
-cp -r ./.vimrc ~
+# cp -r ./.vimrc ~
 cp -r ./code/settings.json ~/.config/Code/User/
 cp -r ./code/keybindings.json ~/.config/Code/User/
 cp -r ./.i3status.conf ~
@@ -77,10 +78,10 @@ mkdir ~/.config/kitty && cp -r ./kitty/kitty.conf ~/.config/kitty/
 
 sudo chmod +x ./code_extension.sh
 ./code_extension.sh
-#git clone --depth 1 https://github.com/wbthomason/packer.nvim\  ~/.local/share/nvim/site/pack/packer/start/packer.nvim
+git clone --depth 1 https://github.com/wbthomason/packer.nvim\  ~/.local/share/nvim/site/pack/packer/start/packer.nvim
 
-curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
-    https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+# curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
+#     https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 
 cp -r ./wallpapers/ ~/Pictures/
 source ~/.bashrc
