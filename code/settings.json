@@ -1,6 +1,6 @@
 {
   // Workbench Settings
-  "workbench.colorTheme": "Bearded Theme Arc",
+  "workbench.colorTheme": "SpaceCamp",
   "workbench.productIconTheme": "fluent-icons",
   "workbench.iconTheme": "bearded-icons",
   "workbench.startupEditor": "none",
@@ -10,12 +10,12 @@
   "breadcrumbs.enabled": false,
   "workbench.list.smoothScrolling": true,
   "window.menuBarVisibility": "compact",
-  "window.zoomLevel": 1.5,
-  // "workbench.colorCustomizations": {
-  //   "editor.background": "#1f2530",
-  //   "editorGutter.background": "#1f2530",
-  //   "terminal.background": "#1f2530"
-  // },
+  "window.zoomLevel": -0.5,
+  "workbench.colorCustomizations": {
+    "editor.background": "#1e1e1e",
+    "editorGutter.background": "#1e1e1e",
+    "terminal.background": "#1e1e1e"
+  },
   "workbench.layoutControl.enabled": false,
   // Editor and Terminal Settings
   "editor.fontLigatures": true,
@@ -208,9 +208,5 @@
   "gutterpreview.showImagePreviewOnGutter": true,
   "workbench.statusBar.visible": false,
   "security.workspace.trust.untrustedFiles": "open",
-  "editor.cursorStyle": "line-thin",
-  "amVim.startInInsertMode": true,
-  "amVim.useSystemClipboard": true,
-  "snyk.advanced.cliPath": "C:\\Users\\techt\\AppData\\Local\\snyk-ls\\snyk-win.exe",
-  "snyk.yesWelcomeNotification": false
+  "editor.cursorStyle": "line-thin"
 }

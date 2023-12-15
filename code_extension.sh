@@ -4,7 +4,6 @@ EXTENSIONS=(
 "sumneko.lua"
 "golang.go"
 "miguelsolorio.fluent-icons"
-"miguelsolorio.symbols"
 "yzhang.markdown-all-in-one"
 "christian-kohler.path-intellisense"
 "ms-python.python"
@@ -18,17 +17,14 @@ EXTENSIONS=(
 "usernamehw.errorlens"
 "editorconfig.editorconfig"
 "tamasfe.even-better-toml"
-"antfu.theme-vitesse"
-"peymanslh.blueberry-dark-theme"
 "ms-azuretools.vscode-docker"
 "waderyan.gitblame"
-"beardedbear.beardedtheme"
 "codezombiech.gitignore"
 "rangav.vscode-thunder-client"
 "bierner.markdown-preview-github-styles"
 "donjayamanne.githistory"
-# "pmndrs.pmndrs"
 "beardedbear.beardedicons"
+"paulgomez.spacecamp"
 )
 
 for extension in ${EXTENSIONS[@]}

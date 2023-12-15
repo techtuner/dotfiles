@@ -28,18 +28,14 @@ function code_extensions() {
     "usernamehw.errorlens",
     "editorconfig.editorconfig",
     "tamasfe.even-better-toml",
-    #"antfu.theme-vitesse",
-    #"peymanslh.blueberry-dark-theme",
     "ms-azuretools.vscode-docker",
     "waderyan.gitblame",
-   "beardedbear.beardedtheme", 
-    #"auiworks.amvim",
     "codezombiech.gitignore",
     "rangav.vscode-thunder-client",
     "bierner.markdown-preview-github-styles",
     "donjayamanne.githistory",
-    # "pmndrs.pmndrs"
-    "beardedbear.beardedicons"
+    "beardedbear.beardedicons",
+    "paulgomez.spacecamp"
 
     foreach ($extension in $extension_list) {
         code --install-extension $extension
