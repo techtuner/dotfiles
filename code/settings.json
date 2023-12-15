@@ -122,11 +122,11 @@
     }
   ],
   // JavaScript
-  // "[javascript]": {
-  //   "editor.maxTokenizationLineLength": 2500,
-  //   "editor.defaultFormatter": "esbenp.prettier-vscode",
-  //   "editor.formatOnSave": true
-  // },
+  "[javascript]": {
+    "editor.maxTokenizationLineLength": 2500,
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.formatOnSave": true
+  },
   // Markdown
   "[markdown]": {
     "editor.unicodeHighlight.ambiguousCharacters": false,

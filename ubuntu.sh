@@ -86,3 +86,5 @@ git clone --depth 1 https://github.com/wbthomason/packer.nvim\  ~/.local/share/n
 
 cp -r ./wallpapers/ ~/Pictures/
 source ~/.bashrc
+sudo chmod +x ./spacecamp_gnome_terminal.sh
+./spacecamp_gnome_terminal.sh
