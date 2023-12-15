@@ -1,16 +1,16 @@
 {
   // Workbench Settings
-  "workbench.colorTheme": "poimandres",
+  "workbench.colorTheme": "Bearded Theme Arc",
   "workbench.productIconTheme": "fluent-icons",
-  "workbench.iconTheme": "symbols",
+  "workbench.iconTheme": "bearded-icons",
   "workbench.startupEditor": "none",
   "workbench.sideBar.location": "right",
-  "workbench.editor.showTabs": false,
+  "workbench.editor.showTabs": "single",
   "workbench.editor.enablePreview": false,
   "breadcrumbs.enabled": false,
   "workbench.list.smoothScrolling": true,
   "window.menuBarVisibility": "compact",
-  "window.zoomLevel": -0.5,
+  "window.zoomLevel": 1.5,
   // "workbench.colorCustomizations": {
   //   "editor.background": "#1f2530",
   //   "editorGutter.background": "#1f2530",
@@ -31,8 +31,8 @@
   "editor.lightbulb.enabled": false,
   "editor.overviewRulerBorder": false,
   "editor.codeActionsOnSave": {
-    "source.organizeImports": true,
-    "source.fixAll": true
+    "source.organizeImports": "explicit",
+    "source.fixAll": "explicit"
   },
   "editor.quickSuggestions": {
     "other": "on",
@@ -45,7 +45,7 @@
   "editor.tabSize": 2,
   "terminal.integrated.smoothScrolling": true,
   "terminal.integrated.defaultProfile.windows": "PowerShell",
-  "terminal.integrated.defaultProfile.linux": "zsh",
+  "terminal.integrated.defaultProfile.linux": "bash",
   "files.autoSave": "afterDelay",
   "files.trimFinalNewlines": true,
   // Files and Search
@@ -65,9 +65,9 @@
   },
   // Typography
   "terminal.integrated.fontFamily": "FiraCode NF, sanserif",
-  "editor.fontSize": 12,
+  "editor.fontSize": 16,
   "editor.lineHeight": 2.75,
-  "terminal.integrated.fontSize": 12,
+  "terminal.integrated.fontSize": 14,
   "terminal.integrated.lineHeight": 1.5,
   "editor.fontFamily": "dank mono, FiraCode NF, Maple Mono NF,MonoLisa,monaco, monospace",
   "debug.console.fontFamily": "Dank Mono,monaco,monospace",
@@ -145,7 +145,7 @@
     "editor.insertSpaces": false,
     "editor.formatOnSave": true,
     "editor.codeActionsOnSave": {
-      "source.organizeImports": true
+      "source.organizeImports": "explicit"
     },
     "editor.suggest.snippetsPreventQuickSuggestions": false,
     "editor.defaultFormatter": "golang.go"

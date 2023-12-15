@@ -32,13 +32,14 @@ function code_extensions() {
     #"peymanslh.blueberry-dark-theme",
     "ms-azuretools.vscode-docker",
     "waderyan.gitblame",
-    "BeardedBear.beardedtheme",
+   "beardedbear.beardedtheme", 
     #"auiworks.amvim",
     "codezombiech.gitignore",
     "rangav.vscode-thunder-client",
     "bierner.markdown-preview-github-styles",
     "donjayamanne.githistory",
-    "pmndrs.pmndrs"
+    # "pmndrs.pmndrs"
+    "beardedbear.beardedicons"
 
     foreach ($extension in $extension_list) {
         code --install-extension $extension

@@ -22,13 +22,13 @@ EXTENSIONS=(
 "peymanslh.blueberry-dark-theme"
 "ms-azuretools.vscode-docker"
 "waderyan.gitblame"
-"auiworks.amvim"
-"BeardedBear.beardedtheme"
+"beardedbear.beardedtheme"
 "codezombiech.gitignore"
 "rangav.vscode-thunder-client"
 "bierner.markdown-preview-github-styles"
 "donjayamanne.githistory"
-"pmndrs.pmndrs"
+# "pmndrs.pmndrs"
+"beardedbear.beardedicons"
 )
 
 for extension in ${EXTENSIONS[@]}

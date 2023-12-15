@@ -245,10 +245,11 @@ def code_extensions():
         "vadimcn.vscode-lldb",
         "serayuzgur.crates",
         "tamasfe.even-better-toml",
-        # "BeardedBear.beardedtheme",
-        "pmndrs.pmndrs",
+        "beardedbear.beardedtheme",
+        # "pmndrs.pmndrs",
         "ms-azuretools.vscode-docker",
-        "auiworks.amvim",
+        # "auiworks.amvim",
+        "beardedbear.beardedicons",
         "rangav.vscode-thunder-client",
     ]
     for extension in extensions:
