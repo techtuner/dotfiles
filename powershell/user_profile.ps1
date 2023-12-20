@@ -29,6 +29,15 @@ function which ($command) {
 
 function touch { Set-Content -Path ($args[0]) -Value ($null) }
 
+function gcd ($username, $repo) {
+    if (Test-Path -Path $repo)
+    {
+        cd $repo
+    } else {
+        git clone https://www.github.com/$username/$repo && cd $repo
+    }
+}
+
 oh-my-posh init pwsh --config 'C:\Program Files (x86)\oh-my-posh\themes\robbyrussell.omp.json' | Invoke-Expression
 # Invoke-Expression (&starship init powershell)
 
