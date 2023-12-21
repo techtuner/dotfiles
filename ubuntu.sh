@@ -25,26 +25,15 @@ echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/githu
 
 update_system
 
-sudo apt-get install curl wget picom cargo gh dconf-editor dconf-cli net-tools gnome-tweaks gnome-shell-extensions software-properties-common build-essential gdb gcc cmake pkg-config libfreetype6-dev libfontconfig1-dev i3 i3-wm dmenu feh pulseaudio kitty libxcb-xfixes0-dev libxkbcommon-dev python3 nodejs python3-pip zathura zsh -y
+sudo apt-get install curl wget cargo gh dconf-editor dconf-cli net-tools software-properties-common build-essential gdb gcc cmake pkg-config libfreetype6-dev libfontconfig1-dev libxcb-xfixes0-dev libxkbcommon-dev python3 nodejs python3-pip zathura tmux -y
 
 python3 --m pip install --upgrade pip
 pip install babi --user
-
-cd /opt
-
-if ! [ -f arduino-ide_2.2.1_Linux_64bit.AppImage ]; then
-  sudo wget https://downloads.arduino.cc/arduino-ide/arduino-ide_2.2.1_Linux_64bit.AppImage
-  sudo chmod +x arduino-ide_2.2.1_Linux_64bit.AppImage
-  sudo ln -s /opt/arduino-ide_2.2.1_Linux_64bit.AppImage /usr/bin/arduinoide
-fi
-
-cd $cwd
 
 APPS=(
   "code"
   "spotify"
   "vlc"
-  "brave"
 )
 for app in ${APPS[@]}
 do
@@ -56,33 +45,22 @@ sudo apt remove apport apport-gtk -y && sudo apt purge apport apport-gtk -y
 
 
 sudo cp -r ./fonts/'Fira Code' /usr/share/fonts/truetype/
-sudo cp -r ./fonts/'Comic Code' /usr/share/fonts/opentype/
-sudo cp -r ./fonts/'Dank Mono' /usr/share/fonts/opentype/
 
 sudo chmod +x ./source_files.sh
 ./source_files.sh
 
-cp ./picom/picom.conf ~/.config/
+mkdir ~/Projects
 cp -r ./nvim/ ~/.config/
-# cp -r ./.vimrc ~
-cp -r ./code/settings.json ~/.config/Code/User/
-cp -r ./code/keybindings.json ~/.config/Code/User/
-cp -r ./.i3status.conf ~
-if ! [ -d ~/.config/i3/ ]; then
-  mkdir ~/.config/i3/
-  cp -r ./i3/* ~/.config/i3/
-else
-  cp -r ./i3/* ~/.config/i3/
-fi
-
-mkdir ~/.config/kitty && cp -r ./kitty/kitty.conf ~/.config/kitty/
+cp ./.vimrc ~
+cp ./code/settings.json ~/.config/Code/User/
+cp ./code/keybindings.json ~/.config/Code/User/
+cp ./.bashrc ~
+cp ./aliases.sh ~
 
 sudo chmod +x ./code_extension.sh
 ./code_extension.sh
-git clone --depth 1 https://github.com/wbthomason/packer.nvim\  ~/.local/share/nvim/site/pack/packer/start/packer.nvim
 
-# curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
-#     https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 
 cp -r ./wallpapers/ ~/Pictures/
 source ~/.bashrc
