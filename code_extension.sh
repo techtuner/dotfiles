@@ -24,7 +24,8 @@ EXTENSIONS=(
 "bierner.markdown-preview-github-styles"
 "donjayamanne.githistory"
 "beardedbear.beardedicons"
-"paulgomez.spacecamp"
+# "paulgomez.spacecamp"
+"nur.just-black"
 )
 
 for extension in ${EXTENSIONS[@]}

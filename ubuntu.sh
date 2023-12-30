@@ -34,6 +34,7 @@ APPS=(
   "code"
   "spotify"
   "vlc"
+  "lsd"
 )
 for app in ${APPS[@]}
 do
@@ -56,6 +57,7 @@ cp ./code/settings.json ~/.config/Code/User/
 cp ./code/keybindings.json ~/.config/Code/User/
 cp ./.bashrc ~
 cp ./aliases.sh ~
+cp ./tmux/.tmux.conf ~
 
 sudo chmod +x ./code_extension.sh
 ./code_extension.sh
@@ -64,5 +66,6 @@ curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.c
 
 cp -r ./wallpapers/ ~/Pictures/
 source ~/.bashrc
+
 sudo chmod +x ./spacecamp_gnome_terminal.sh
 ./spacecamp_gnome_terminal.sh

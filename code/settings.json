@@ -1,6 +1,6 @@
 {
   // Workbench Settings
-  "workbench.colorTheme": "SpaceCamp",
+  "workbench.colorTheme": "Just Black",
   "workbench.productIconTheme": "fluent-icons",
   "workbench.iconTheme": "bearded-icons",
   "workbench.startupEditor": "none",
@@ -11,11 +11,11 @@
   "workbench.list.smoothScrolling": true,
   "window.menuBarVisibility": "compact",
   "window.zoomLevel": -0.5,
-  "workbench.colorCustomizations": {
-    "editor.background": "#1e1e1e",
-    "editorGutter.background": "#1e1e1e",
-    "terminal.background": "#1e1e1e"
-  },
+  // "workbench.colorCustomizations": {
+  //   "editor.background": "#1e1e1e",
+  //   "editorGutter.background": "#1e1e1e",
+  //   "terminal.background": "#1e1e1e"
+  // },
   "workbench.layoutControl.enabled": false,
   // Editor and Terminal Settings
   "editor.fontLigatures": true,
