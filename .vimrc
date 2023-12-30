@@ -6,7 +6,7 @@ set number
 set relativenumber
 
 " Enables the use of mouse in vim
-set mouse="a"
+set mouse=a
 
 " Disable compatibility with vi which can cause some issues
 set nocompatible
@@ -37,6 +37,8 @@ set smartcase
 set wildmenu
 set wildmode=list:longest
 set wildignore=*.docx,*.jpg,*.png,*.gif,*.pdf,*.pyc,*.exe,*.flv,*.img,*.xlsx
+set list listchars=tab:>\ , trail:+,eol:$
+
 
 " Plugin Manager - Vim Plus
 call plug#begin('~/.vim/plugged')
