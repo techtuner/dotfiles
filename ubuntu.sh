@@ -62,6 +62,7 @@ if test $which_shell =  "zsh";then
   cp ./.zshrc ~
   cp ./powerlevel10k/.p10k.zsh ~
   echo "alias src=\"source ~/.zshrc\"" >> ~/aliases.sh
+  echo "exec zsh" >> ~/.bashrc
   source ~/.zshrc
 else
   cp ./.bashrc ~
@@ -71,3 +72,4 @@ fi
 
 sudo chmod +x ./spacecamp_gnome_terminal.sh
 ./spacecamp_gnome_terminal.sh
+zsh
