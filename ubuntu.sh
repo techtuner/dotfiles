@@ -2,15 +2,15 @@
 
 cwd=$PWD
 
+read -p "Which shell do you intend to use?: " which_shell
+
 update_system(){
-  sudo apt-get update -y && sudo apt-get full-upgrade -y
-  sudo apt-get update --fix-missing
-  sudo apt autoremove -y
+sudo apt update -y && sudo apt full-upgrade -y
+sudo apt autoremove -y
 }
 
 update_system
 
-# Node from ppa
 sudo apt-get install ca-certificates curl gnupg -y
 sudo mkdir -p /etc/apt/keyrings
 curl -fsSL https://deb.nodesource.com/gpgkey/nodesource-repo.gpg.key | sudo gpg --dearmor -o /etc/apt/keyrings/nodesource.gpg
@@ -25,7 +25,7 @@ echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/githu
 
 update_system
 
-sudo apt-get install curl wget cargo gh dconf-editor dconf-cli net-tools software-properties-common build-essential gdb gcc cmake pkg-config libfreetype6-dev libfontconfig1-dev libxcb-xfixes0-dev libxkbcommon-dev python3 nodejs python3-pip zathura tmux -y
+sudo apt-get install curl wget cargo gh dconf-editor dconf-cli net-tools software-properties-common build-essential gdb gcc cmake pkg-config libfreetype6-dev libfontconfig1-dev libxcb-xfixes0-dev libxkbcommon-dev python3 nodejs python3-pip zathura tmux zsh gnome-tweaks gnome-shell-extensions chrome-gnome-shell -y
 
 python3 --m pip install --upgrade pip
 pip install babi --user
@@ -34,7 +34,6 @@ APPS=(
   "code"
   "spotify"
   "vlc"
-  "lsd"
 )
 for app in ${APPS[@]}
 do
@@ -46,26 +45,28 @@ sudo apt remove apport apport-gtk -y && sudo apt purge apport apport-gtk -y
 
 
 sudo cp -r ./fonts/'Fira Code' /usr/share/fonts/truetype/
-
-sudo chmod +x ./source_files.sh
-./source_files.sh
+sudo cp -r ./fonts/'Comic Code' /usr/share/fonts/opentype/
+sudo cp -r ./fonts/Cantarell /usr/share/fonts/opentype/
 
 mkdir ~/Projects
-cp -r ./nvim/ ~/.config/
 cp ./.vimrc ~
 cp ./code/settings.json ~/.config/Code/User/
 cp ./code/keybindings.json ~/.config/Code/User/
-cp ./.bashrc ~
-cp ./aliases.sh ~
 cp ./tmux/.tmux.conf ~
-
-sudo chmod +x ./code_extension.sh
-./code_extension.sh
-
-curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-
+cp ./aliases.sh ~
 cp -r ./wallpapers/ ~/Pictures/
-source ~/.bashrc
+
+if test $which_shell =  "zsh";then
+  sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended
+  cp ./.zshrc ~
+  cp ./powerlevel10k/.p10k.zsh ~
+  echo "alias src=\"source ~/.zshrc\"" >> ~/aliases.sh
+  source ~/.zshrc
+else
+  cp ./.bashrc ~
+  echo "alias src=\"source ~/.bashrc\"" >> ~/aliases.sh
+ source ~/.bashrc
+fi
 
 sudo chmod +x ./spacecamp_gnome_terminal.sh
 ./spacecamp_gnome_terminal.sh

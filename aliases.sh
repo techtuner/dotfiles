@@ -7,7 +7,7 @@ function gcd() {
   fi
 }
 
-alias src="source ~/.bashrc"
+# alias src="source ~/.bashrc"
 alias e="exit"
 alias python="python3"
 alias pip="pip3"
@@ -16,5 +16,3 @@ alias wall="cd ~/Pictures/wallpapers && gio ."
 alias nano="~/.local/bin/babi"
 alias babi="nano"
 alias tmux="tmux -u"
-alias lsd="lsd"
-alias ls -a="lsd -a"
