@@ -5,7 +5,9 @@ cwd=$PWD
 read -p "Which shell do you intend to use?: " which_shell
 
 update_system(){
-sudo apt update -y && sudo apt full-upgrade -y
+sudo apt --fix-broken install -y
+sudo apt update -y
+sudo apt full-upgrade -y
 sudo apt autoremove -y
 }
 
@@ -25,7 +27,7 @@ echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/githu
 
 update_system
 
-sudo apt-get install curl wget cargo gh dconf-editor dconf-cli net-tools software-properties-common build-essential gdb gcc cmake pkg-config libfreetype6-dev libfontconfig1-dev libxcb-xfixes0-dev libxkbcommon-dev python3 nodejs python3-pip zathura tmux zsh gnome-tweaks gnome-shell-extensions chrome-gnome-shell -y
+sudo apt-get install curl wget cargo gh dconf-editor dconf-cli net-tools software-properties-common build-essential gdb gcc cmake pkg-config libfreetype6-dev libfontconfig1-dev libxcb-xfixes0-dev libxkbcommon-dev python3 nodejs python3-pip zathura tmux zsh gnome-tweaks gnome-shell-extensions chrome-gnome-shell vim  kitty -y
 
 python3 --m pip install --upgrade pip
 pip install babi --user
@@ -61,12 +63,12 @@ if test $which_shell =  "zsh";then
   git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
   cp ./.zshrc ~
   cp ./powerlevel10k/.p10k.zsh ~
-  echo "alias src=\"source ~/.zshrc\"" >> ~/aliases.sh
+  sed -i  "$ a\alias src=\"source ~/.zshrc\"" ~/aliases.sh
   echo "exec zsh" >> ~/.bashrc
   source ~/.zshrc
 else
   cp ./.bashrc ~
-  echo "alias src=\"source ~/.bashrc\"" >> ~/aliases.sh
+  sed -i  "$ a\alias src=\"source ~/.bashrc\"" ~/aliases.sh
  source ~/.bashrc
 fi
 
