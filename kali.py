@@ -40,8 +40,6 @@ def install_apps():
     os.system("python -m pip install pip==22.2.2 --upgrade --break-system-packages")
     os.system("cargo install urlencode")
     os.system("cargo install rustscan")
-    os.system("chmod +x ./source_files.sh")
-    subprocess.call(["sh", f"{current_path}/source_files.sh"])
     os.system(
         "sudo python3 -m pip install git+https://github.com/Tib3rius/AutoRecon.git"
     )
@@ -221,15 +219,19 @@ def labs():
         os.mkdir(f"{home}/Labs/{folder}")
 
 
+os.mkdir(f"{home}/vpns")
+
+
 # Editor Configs and wallpaper
 def copy_configs():
     os.system(f"sudo cp -r {current_path}/.bashrc {home}")
-    os.system(f"sudo cp -r {current_path}/kitty/ {home}/.config/")
-    os.system(f"sudo cp -r {current_path}/nvim/ {home}/.config/")
-    os.system(f"sudo cp -r {current_path}/neofetch/ {home}/.config/")
+    # os.system(f"sudo cp -r {current_path}/kitty/ {home}/.config/")
+    # os.system(f"sudo cp -r {current_path}/nvim/ {home}/.config/")
+    # os.system(f"sudo cp -r {current_path}/neofetch/ {home}/.config/")
     os.system(f"cp -r {current_path}/wallpapers /{home}/Pictures")
     os.system(f"cp -r {current_path}/zsh/ {home}")
     os.system(f"cp -r {current_path}/.vimrc {home}/")
+    os.system(f"cp -r {current_path}/tmux/.tmux.conf {home}/")
     os.system(f"cp -r {current_path}/.zshrc {home}/")
 
 
@@ -248,7 +250,7 @@ def code_extensions():
         "ms-azuretools.vscode-docker",
         "beardedbear.beardedicons",
         "rangav.vscode-thunder-client",
-        "paulgomez.spacecamp",
+        "nur.just-black",
     ]
     for extension in extensions:
         os.system(f"code --install-extension {extension}")

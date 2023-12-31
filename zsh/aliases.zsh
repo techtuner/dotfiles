@@ -9,3 +9,5 @@ alias tmux="tmux -u"  # Fixes tmux not showing symbols in the terminal
 alias bcipher="sudo python /opt/BillCipher/billcipher.py"
 alias photon="cd /opt/Photon && sudo python photon.py"
 alias grecon="sudo python /opt/GRecon/grecon.py"
+alias nano="~/.local/bin/babi"
+alias babi="nano"
