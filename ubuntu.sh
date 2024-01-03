@@ -27,15 +27,17 @@ echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/githu
 
 update_system
 
-sudo apt-get install curl wget cargo gh dconf-editor dconf-cli net-tools software-properties-common build-essential gdb gcc cmake pkg-config libfreetype6-dev libfontconfig1-dev libxcb-xfixes0-dev libxkbcommon-dev python3 nodejs python3-pip zathura tmux zsh gnome-tweaks gnome-shell-extensions chrome-gnome-shell vim  kitty -y
+sudo apt-get install curl wget cargo gh dconf-editor dconf-cli net-tools software-properties-common build-essential gdb gcc cmake pkg-config libfreetype6-dev libfontconfig1-dev libxcb-xfixes0-dev libxkbcommon-dev python3 nodejs python3-pip zathura tmux zsh gnome-tweaks gnome-shell-extensions chrome-gnome-shell vim  kitty ripgrep fd-find xclip wl-clipboard -y
 
 python3 --m pip install --upgrade pip
-pip install babi --user
+# pip install babi --user
 
 APPS=(
   "code"
   "spotify"
   "vlc"
+  "nvim"
+  "obsidian"
 )
 for app in ${APPS[@]}
 do
@@ -47,8 +49,7 @@ sudo apt remove apport apport-gtk -y && sudo apt purge apport apport-gtk -y
 
 
 sudo cp -r ./fonts/'Fira Code' /usr/share/fonts/truetype/
-sudo cp -r ./fonts/'Comic Code' /usr/share/fonts/opentype/
-sudo cp -r ./fonts/Cantarell /usr/share/fonts/opentype/
+sudo cp -r ./fonts/AnonymousPro/ /usr/share/fonts/truetype/
 
 mkdir ~/Projects
 cp ./.vimrc ~
@@ -57,21 +58,9 @@ cp ./code/keybindings.json ~/.config/Code/User/
 cp ./tmux/.tmux.conf ~
 cp ./aliases.sh ~
 cp -r ./wallpapers/ ~/Pictures/
+cp ./.bashrc ~
+source  /.bashrc
 
-if test $which_shell =  "zsh";then
-  sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended
-  git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
-  cp ./.zshrc ~
-  cp ./powerlevel10k/.p10k.zsh ~
-  sed -i  "$ a\alias src=\"source ~/.zshrc\"" ~/aliases.sh
-  echo "exec zsh" >> ~/.bashrc
-  source ~/.zshrc
-else
-  cp ./.bashrc ~
-  sed -i  "$ a\alias src=\"source ~/.bashrc\"" ~/aliases.sh
- source ~/.bashrc
-fi
 
 sudo chmod +x ./spacecamp_gnome_terminal.sh
 ./spacecamp_gnome_terminal.sh
-zsh
