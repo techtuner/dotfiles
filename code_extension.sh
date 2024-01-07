@@ -22,6 +22,7 @@ EXTENSIONS=(
 "codezombiech.gitignore"
 "rangav.vscode-thunder-client"
 "bierner.markdown-preview-github-styles"
+"catppuccin.catppuccin-vsc-icons"
 "donjayamanne.githistory"
 "beardedbear.beardedicons"
 # "paulgomez.spacecamp"

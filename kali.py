@@ -199,9 +199,8 @@ def install_apps():
 
 
 # Fonts I use for Code Editor and Terminal
-os.system(f"sudo cp -r {current_path}/fonts/'Comic Code' /usr/share/fonts/opentype")
 os.system(f"sudo cp -r {current_path}/fonts/'Fira Code' /usr/share/fonts/truetype")
-os.system(f"sudo cp -r {current_path}/fonts/'PlemolJP' /usr/share/fonts/truetype")
+os.system(f"sudo cp -r {current_path}/fonts/'AnonymousPro' /usr/share/fonts/truetype")
 
 
 # Create Boxes Folder to store HTB and THM boxes solution
@@ -226,11 +225,11 @@ os.mkdir(f"{home}/vpns")
 def copy_configs():
     os.system(f"sudo cp -r {current_path}/.bashrc {home}")
     # os.system(f"sudo cp -r {current_path}/kitty/ {home}/.config/")
-    # os.system(f"sudo cp -r {current_path}/nvim/ {home}/.config/")
+    os.system(f"sudo cp -r {current_path}/nvim/ {home}/.config/")
     # os.system(f"sudo cp -r {current_path}/neofetch/ {home}/.config/")
     os.system(f"cp -r {current_path}/wallpapers /{home}/Pictures")
     os.system(f"cp -r {current_path}/zsh/ {home}")
-    os.system(f"cp -r {current_path}/.vimrc {home}/")
+    # os.system(f"cp -r {current_path}/.vimrc {home}/")
     os.system(f"cp -r {current_path}/tmux/.tmux.conf {home}/")
     os.system(f"cp -r {current_path}/.zshrc {home}/")
 
@@ -249,6 +248,7 @@ def code_extensions():
         "tamasfe.even-better-toml",
         "ms-azuretools.vscode-docker",
         "beardedbear.beardedicons",
+        "catppuccin.catppuccin-vsc-icons",
         "rangav.vscode-thunder-client",
         "nur.just-black",
     ]
