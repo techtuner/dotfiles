@@ -3,7 +3,7 @@ Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass
 $user = $env:USERNAME
 
 function choco_packages() {
-    $choco_apps = "sudo", "nvm", "python", "golang", "wget", "curl", "powertoys", "jq", "neovim", "gh", "rust", "oh-my-posh", "fzf", "notion"
+    $choco_apps = "sudo", "nvm", "python", "golang", "wget", "curl", "jq", "neovim", "gh", "rust", "oh-my-posh", "fzf", "notion"
 
     foreach ($app in $choco_apps) {
         choco install $app -y
