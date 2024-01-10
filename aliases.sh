@@ -17,9 +17,9 @@ alias nano="~/.local/bin/babi"
 alias babi="nano"
 alias tmux="tmux -u"
 alias obsidian="obsidian &"
-alias lg-"lazygit"
+alias lg="lazygit"
 
-function update(){
+function update-system(){
 sudo apt --fix-broken install -y
 sudo apt update -y
 sudo apt full-upgrade -y
