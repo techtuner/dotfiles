@@ -24,8 +24,7 @@ EXTENSIONS=(
 "bierner.markdown-preview-github-styles"
 "catppuccin.catppuccin-vsc-icons"
 "donjayamanne.githistory"
-"beardedbear.beardedicons"
-# "paulgomez.spacecamp"
+"marlosirapuan.nord-deep"
 "nur.just-black"
 )
 
