@@ -1,8 +1,8 @@
 {
   // Workbench Settings
-  "workbench.colorTheme": "Just Black",
+  "workbench.colorTheme": "Nord Deep",
   "workbench.productIconTheme": "fluent-icons",
-  "workbench.iconTheme": "catppuccin-frappe",
+  "workbench.iconTheme": "catppuccin-mocha",
   "workbench.startupEditor": "none",
   "workbench.sideBar.location": "right",
   "workbench.editor.showTabs": "single",
@@ -10,7 +10,6 @@
   "breadcrumbs.enabled": false,
   "workbench.list.smoothScrolling": true,
   "window.menuBarVisibility": "compact",
-  "window.zoomLevel": -0.5,
   "workbench.colorCustomizations": {
     // "editor.background": "#1f2530",
     // "editorGutter.background": "#1f2530",
@@ -65,11 +64,11 @@
   },
   // Typography
   "terminal.integrated.fontFamily": "FiraCode Nerd Font, JetBrainsMono Nerd Font, sanserif",
-  "editor.fontSize": 16,
+  "editor.fontSize": 14,
   "editor.lineHeight": 2.75,
   "terminal.integrated.fontSize": 14,
   "terminal.integrated.lineHeight": 1.5,
-  "editor.fontFamily": "AnonymicePro Nerd Font,dank mono,MonoLisa,monaco, monospace",
+  "editor.fontFamily": "FiraCode Nerd Font,dank mono,MonoLisa,monaco, monospace",
   "debug.console.fontFamily": "Dank Mono,monaco,monospace",
   "errorLens.fontFamily": "Dank Mono,monaco,monospace",
   "importCost.fontStyle": "italic",
