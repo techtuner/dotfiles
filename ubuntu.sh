@@ -1,6 +1,7 @@
 #!/bin/bash
 
 cwd=$PWD
+download=~/Downloads/
 
 read -p "Which shell do you intend to use(zsh/bash)? :" which_shell
 
@@ -48,9 +49,21 @@ sudo apt remove apport apport-gtk -y && sudo apt purge apport apport-gtk -y
 sudo cp -r ./fonts/'Fira Code' /usr/share/fonts/truetype/
 sudo cp -r ./fonts/AnonymousPro/ /usr/share/fonts/truetype/
 
+git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+
+echo "Downloading Nord theme for the Gnome Terminal"
+cd $download/
+git clone https://github.com/nordtheme/gnome-terminal
+cd $download/gnome-terminal/src
+sudo chmod +x nord.sh
+./nord.sh
+
+cd $cwd
+
 mkdir ~/workspace
 mkdir ~/workspace/Projects
 cp ./.vimrc ~
+cp -r ./nvim/ ~/.config/
 cp ./code/settings.json ~/.config/Code/User/
 cp ./code/keybindings.json ~/.config/Code/User/
 cp ./tmux/.tmux.conf ~
@@ -58,6 +71,3 @@ cp ./aliases.sh ~
 cp -r ./wallpapers/ ~/Pictures/
 cp ./.bashrc ~
 source /.bashrc
-
-sudo chmod +x ./spacecamp_gnome_terminal.sh
-./spacecamp_gnome_terminal.sh

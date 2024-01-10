@@ -14,7 +14,6 @@ function code_extensions() {
     $extension_list = "sumneko.lua",
     "golang.go",
     "miguelsolorio.fluent-icons",
-    "miguelsolorio.symbols",
     "yzhang.markdown-all-in-one",
     "christian-kohler.path-intellisense",
     "ms-python.python",
@@ -34,8 +33,9 @@ function code_extensions() {
     "rangav.vscode-thunder-client",
     "bierner.markdown-preview-github-styles",
     "donjayamanne.githistory",
-    "beardedbear.beardedicons",
-    "paulgomez.spacecamp"
+    "marlosirapuan.nord-deep",
+    "nur.just-black",
+   "catppuccin.catppuccin-vsc-icons"
 
     foreach ($extension in $extension_list) {
         code --install-extension $extension
