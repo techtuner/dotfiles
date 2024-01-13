@@ -247,10 +247,10 @@ def code_extensions():
         "serayuzgur.crates",
         "tamasfe.even-better-toml",
         "ms-azuretools.vscode-docker",
-        "beardedbear.beardedicons",
         "catppuccin.catppuccin-vsc-icons",
         "rangav.vscode-thunder-client",
-        "nur.just-black",
+        "nullxception.cherry-theme",
+        "drcika.apc-extension",
     ]
     for extension in extensions:
         os.system(f"code --install-extension {extension}")

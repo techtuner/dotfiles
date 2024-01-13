@@ -25,7 +25,8 @@ EXTENSIONS=(
 "catppuccin.catppuccin-vsc-icons"
 "donjayamanne.githistory"
 "marlosirapuan.nord-deep"
-"nur.just-black"
+"nullxception.cherry-theme"
+"drcika.apc-extension"
 )
 
 for extension in ${EXTENSIONS[@]}

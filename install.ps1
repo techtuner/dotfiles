@@ -34,7 +34,8 @@ function code_extensions() {
     "bierner.markdown-preview-github-styles",
     "donjayamanne.githistory",
     "marlosirapuan.nord-deep",
-    "nur.just-black",
+    "nullxception.cherry-theme",
+    "drcika.apc-extension",
    "catppuccin.catppuccin-vsc-icons"
 
     foreach ($extension in $extension_list) {
