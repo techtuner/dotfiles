@@ -1,6 +1,6 @@
 {
   // Workbench Settings
-  "workbench.colorTheme": "Nord Deep",
+  "workbench.colorTheme": "Cherry Midnight",
   "workbench.productIconTheme": "fluent-icons",
   "workbench.iconTheme": "catppuccin-mocha",
   "workbench.startupEditor": "none",
@@ -9,13 +9,16 @@
   "workbench.editor.enablePreview": false,
   "breadcrumbs.enabled": false,
   "workbench.list.smoothScrolling": true,
-  "window.menuBarVisibility": "compact",
-  "workbench.colorCustomizations": {
-    // "editor.background": "#1f2530",
-    // "editorGutter.background": "#1f2530",
-    // "terminal.background": "#1f2530"
+  "apc.electron": {
+    "backgroundColor": "rgba(123, 123, 123, 0.5)",
+    "frame": false,
+    "transparent": true,
+    "titleBarStyle": "hiddenInset",
+    "vibrancy": "ultra-dark",
+    "opacity": 0.98, // Range: 0-1 (To go fully transparent, set it to 0)
+    "visualEffectState": "active"
   },
-  "workbench.layoutControl.enabled": false,
+  "apc.theme": [],
   // Editor and Terminal Settings
   "editor.fontLigatures": true,
   "editor.minimap.enabled": false,
@@ -63,12 +66,12 @@
     ".phpunit.result.cache": true
   },
   // Typography
-  "terminal.integrated.fontFamily": "FiraCode Nerd Font, JetBrainsMono Nerd Font, sanserif",
-  "editor.fontSize": 14,
+  "terminal.integrated.fontFamily": "Dank Mono, Cascadia Code,FiraCode Nerd Font, JetBrainsMono Nerd Font, sanserif",
+  "editor.fontSize": 16,
   "editor.lineHeight": 2.75,
-  "terminal.integrated.fontSize": 14,
+  "terminal.integrated.fontSize": 16,
   "terminal.integrated.lineHeight": 1.5,
-  "editor.fontFamily": "FiraCode Nerd Font,dank mono,MonoLisa,monaco, monospace",
+  "editor.fontFamily": "Dank Mono,Cascadia Code,FiraCode Nerd Font,MonoLisa,monaco, monospace",
   "debug.console.fontFamily": "Dank Mono,monaco,monospace",
   "errorLens.fontFamily": "Dank Mono,monaco,monospace",
   "importCost.fontStyle": "italic",
@@ -121,11 +124,11 @@
     }
   ],
   // JavaScript
-  // "[javascript]": {
-  //   "editor.maxTokenizationLineLength": 2500,
-  //   "editor.defaultFormatter": "esbenp.prettier-vscode",
-  //   "editor.formatOnSave": true
-  // },
+  "[javascript]": {
+    "editor.maxTokenizationLineLength": 2500,
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.formatOnSave": true
+  },
   // Markdown
   "[markdown]": {
     "editor.unicodeHighlight.ambiguousCharacters": false,
@@ -207,5 +210,9 @@
   "gutterpreview.showImagePreviewOnGutter": true,
   "workbench.statusBar.visible": false,
   "security.workspace.trust.untrustedFiles": "open",
-  "editor.cursorStyle": "line-thin"
+  "editor.cursorStyle": "line-thin",
+  "window.commandCenter": false,
+  "window.menuBarVisibility": "compact",
+  "workbench.layoutControl.enabled": false,
+  "workbench.activityBar.location": "hidden"
 }
