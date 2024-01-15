@@ -2,41 +2,41 @@ Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass
 
 $user = $env:USERNAME
 
-function choco_packages() {
-    $choco_apps = "sudo", "nvm", "python", "golang", "wget", "curl", "jq", "neovim", "gh", "rust", "oh-my-posh", "fzf", "notion"
-
-    foreach ($app in $choco_apps) {
-        choco install $app -y
+function scoop_packages() {
+    $scoop_apps = "sudo", "nvm", "gcc", "wget", "curl", "jq", "neovim", "gh", "oh-my-posh", "fzf"
+    foreach ($app in $scoop_apps) {
+        scoop install main/$app
     }
 }
 
+Invoke-Expression "& {$(Invoke-RestMethod get.scoop.sh)} -RunAsAdmin"
+
+scoop_packages
+
 function code_extensions() {
-    $extension_list = "sumneko.lua",
+    $extension_list = "rust-lang.rust-analyzer",
+    "artdiniz.quitcontrol-vscode",
+    "ms-python.python",
+    "ms-python.vscode-pylance",
+    "esbenp.prettier-vscode",
+    "ms-vscode.powershell",
+    "christian-kohler.path-intellisense",
+    "yzhang.markdown-all-in-one",
+    "sumneko.lua",
+    "kisstkondoros.vscode-gutter-preview",
+    "jdinhlife.gruvbox",
     "golang.go",
     "miguelsolorio.fluent-icons",
-    "yzhang.markdown-all-in-one",
-    "christian-kohler.path-intellisense",
-    "ms-python.python",
-    "ms-python.black-formatter",
-    "aaron-bond.better-comments",
-    "rust-lang.rust-analyzer",
-    "ms-python.vscode-pylance",
-    "vadimcn.vscode-lldb",
-    "serayuzgur.crates",
-    "kisstkondoros.vscode-gutter-preview",
-    "usernamehw.errorlens",
-    "editorconfig.editorconfig",
     "tamasfe.even-better-toml",
+    "usernamehw.errorlens",
     "ms-azuretools.vscode-docker",
-    "waderyan.gitblame",
-    "codezombiech.gitignore",
-    "rangav.vscode-thunder-client",
-    "bierner.markdown-preview-github-styles",
-    "donjayamanne.githistory",
-    "marlosirapuan.nord-deep",
-    "nullxception.cherry-theme",
-    "drcika.apc-extension",
-   "catppuccin.catppuccin-vsc-icons"
+    "serayuzgur.crates",
+    "naumovs.color-highlight",
+    "vadimcn.vscode-lldb",
+    "catppuccin.catppuccin-vsc-icons",
+    "aaron-bond.better-comments",
+    "drcika.apc-extension"
+
 
     foreach ($extension in $extension_list) {
         code --install-extension $extension
@@ -44,13 +44,13 @@ function code_extensions() {
 
     Copy-Item .\code\settings.json C:\Users\$user\AppData\Roaming\Code\User\ -Recurse
     Copy-Item .\code\keybindings.json C:\Users\$user\AppData\Roaming\Code\User\ -Recurse
-
 }
 
 # Create Directories
 mkdir ~\Documents\Powershell
 mkdir ~\.config\powershell
 mkdir D:\Projects
+mkdir '~\Documents\ISO File'
 
 Copy-Item .\powershell\user_profile.ps1 C:\Users\$user\.config\powershell\
 Copy-Item .\powershell\Microsoft.PowerShell_profile.ps1 C:\Users\$user\Documents\Powershell\
@@ -60,20 +60,7 @@ Copy-Item .\nvim\ $env:LOCALAPPDATA -Recurse
 Unblock-File -Path C:\Users\$user\.config\powershell\user_profile.ps1
 Unblock-File -Path C:\Users\$user\Documents\Powershell\Microsoft.PowerShell_profile.ps1
 
-# Downloading Choco Package Manager
-Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; Invoke-Expression ((New-Object System.Net.WebClient).DownloadString('https://community.chocolatey.org/install.ps1'))
-
-Write-Output "More packages available at : https://community.chocolatey.org/packages "
-
-# Installing the required apps
-choco_packages
-
-# Installing Visual Studio Extensions
 code_extensions
 
-# Install Scoop Package manager to install gcc
-Invoke-Expression "& {$(Invoke-RestMethod get.scoop.sh)} -RunAsAdmin"
-scoop install gcc
-
-Install-Module -Name posh-git -Scope CurrentUser
-Install-Module -Name PSFzf -Scope CurrentUser
+Install-Module -Name posh-git -Scope CurrentUser -Force
+Install-Module -Name PSFzf -Scope CurrentUser -Force
