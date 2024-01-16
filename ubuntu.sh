@@ -61,7 +61,7 @@ sudo chmod +x nord.sh
 cd $cwd
 
 mkdir ~/workspace
-mkdir ~/workspace/Projects
+mkdir ~/workspace/Personal
 cp ./.vimrc ~
 cp -r ./nvim/ ~/.config/
 cp ./code/settings.json ~/.config/Code/User/
