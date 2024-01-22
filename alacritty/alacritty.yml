@@ -1,11 +1,10 @@
 import:
-  # - ~/.config/alacritty/hardhacker.yml
-  - ~/.config/alacritty/gruvbox.yml
+  - "~/.config/alacritty/nord.toml"
 env:
   TERM: xterm-256color
 window:
   decoration: buttonless
-  opacity: 0.8
+  opacity: 1.0
   dynamic_padding: false
   padding:
     x: 12
@@ -13,16 +12,16 @@ window:
 
 font:
   normal:
-    family: "Dank Mono"
+    family: "FiraCode Nerd Font"
     style: Medium
   italic:
-    family: "Dank Mono"
+    family: "FiraCode Nerd Font"
     style: Medium Italic
   bold:
-    family: "Dank Mono"
+    family: "FiraCode Nerd Font"
     style: Heavy
   bold_italic:
-    family: "Dank Mono"
+    family: "FiraCode Nerd Font"
     style: Heavy Italic
   size: 16.0
 live_config_reload: true
