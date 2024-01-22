@@ -32,7 +32,7 @@ echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/githu
 update_system
 
 sudo apt-get install cargo gh wallch brave-browser dconf-editor dconf-cli net-tools software-properties-common build-essential gdb gcc cmake pkg-config libfreetype6-dev libfontconfig1-dev libxcb-xfixes0-dev libxkbcommon-dev python3 nodejs python3-pip zathura tmux zsh gnome-tweaks gnome-shell-extensions chrome-gnome-shell vim ripgrep fd-find xclip wl-clipboard -y
-sudo apt remove firefox -y && sudo apt purge firefox -y && sudo snap remove firefox
+
 python3 --m pip install --upgrade pip
 pip install babi --user
 
@@ -41,16 +41,17 @@ APPS=(
 	"spotify"
 	"vlc"
 	"nvim"
+	"alacritty"
 )
 for app in ${APPS[@]}; do
 	sudo snap install $app --classic
 done
 
 code &
-sudo apt remove apport apport-gtk -y && sudo apt purge apport apport-gtk -y
+sudo apt remove apport apport-gtk firefox -y && sudo apt purge apport apport-gtk firefox -y && sudo snap remove firefox
 
 sudo cp -r ./fonts/'Fira Code' /usr/share/fonts/truetype/
-# sudo cp -r ./fonts/'Noto Sans Mono' /usr/share/fonts/truetype/
+sudo cp -r ./fonts/'Noto Sans Mono' /usr/share/fonts/truetype/
 
 git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 
@@ -64,7 +65,7 @@ cp -r ./nvim/ ~/.config/
 cp ./code/settings.json ~/.config/Code/User/
 cp ./code/keybindings.json ~/.config/Code/User/
 cp ./tmux/.tmux.conf ~
-# cp -r ./kitty/ ~/.config/
+cp -r ./alacritty/ ~/.config/
 cp ./aliases.sh ~
 cp -r ./wallpapers/ ~/Pictures/
 cp ./.bashrc ~
