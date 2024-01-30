@@ -116,5 +116,9 @@ if ! shopt -oq posix; then
   fi
 fi
 
+# Go Path
+export GOBIN="$HOME/.local/bin"
+export GOPATH="$HOME/go/"
+
 export PATH=~/.local/bin:/snap/bin:/usr/sandbox/:/usr/local/bin:/usr/bin:/bin:/usr/local/games:/usr/games:/usr/share/games:/usr/local/sbin:/usr/sbin:/sbin:~/.cargo/bin:/usr/local/go/bin:$PATH
 source ~/aliases.sh
