@@ -1,7 +1,7 @@
 #!/bin/bash
 
 EXTENSIONS=(
-"rust-lang.rust-analyzer"
+    "rust-lang.rust-analyzer"
     "artdiniz.quitcontrol-vscode"
     "ms-python.python"
     "ms-python.vscode-pylance"
