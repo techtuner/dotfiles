@@ -28,7 +28,15 @@ return {
             ensure_installed = {
                 "lua_ls",
                 "rust_analyzer",
+                "gopls",
                 "tsserver",
+                "pyright",
+                "taplo",
+                "yamlls",
+                "dockerls",
+                "cmake",
+                "clangd",
+                "bashls"
             },
             handlers = {
                 function(server_name) -- default handler (optional)
@@ -77,7 +85,7 @@ return {
         })
 
         vim.diagnostic.config({
-            -- update_in_insert = true,
+            update_in_insert = true,
             float = {
                 focusable = false,
                 style = "minimal",

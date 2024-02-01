@@ -3,6 +3,8 @@ local opts = { silent = true }
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 
+vim.keymap.set("n", "<leader>pv", vim.cmd.Ex)
+
 -- splitting of the windows
 keymap("n","<leader>sv", "<C-w>v", opts)
 keymap("n","<leader>sh", "<C-w>s", opts)
@@ -23,3 +25,6 @@ keymap("n", "<C-l>", "<C-w>l", opts)
 keymap("n", "<C-S>", ":update<CR>", opts)
 keymap("v", "<C-S>", "<C-C>:update<CR>", opts)
 keymap("i", "<C-S>", "<C-O>:update<CR>", opts)
+
+keymap("v", "J", ":m '>+1<CR>gv=gv")
+keymap("v", "K", ":m '<-2<CR>gv=gv")
