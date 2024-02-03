@@ -30,7 +30,7 @@ echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/githu
 
 update_system
 
-sudo apt-get install i3 i3-wm kitty golang-go polybar picom cargo gh wallch dconf-editor dconf-cli net-tools software-properties-common build-essential gdb gcc cmake pkg-config libfreetype6-dev libfontconfig1-dev libxcb-xfixes0-dev libxkbcommon-dev python3 nodejs python3-pip python3-venv zathura tmux zsh gnome-tweaks gnome-shell-extensions chrome-gnome-shell dmenu ripgrep fd-find xclip wl-clipboard -y
+sudo apt-get install i3 i3-wm kitty golang-go feh rofi polybar picom cargo gh wallch dconf-editor dconf-cli net-tools software-properties-common build-essential gdb gcc cmake pkg-config libfreetype6-dev libfontconfig1-dev libxcb-xfixes0-dev libxkbcommon-dev python3 nodejs python3-pip python3-venv zathura tmux zsh gnome-tweaks gnome-shell-extensions chrome-gnome-shell dmenu ripgrep fd-find xclip wl-clipboard -y
 
 # python3 --m pip install --upgrade pip
 # pip install babi --user
@@ -55,7 +55,6 @@ sudo cp -r ./fonts/'Noto Sans Mono' /usr/share/fonts/truetype/
 
 git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended
-git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
 
 sudo chmod +x ./code_extension.sh
 ./code_extension.sh
@@ -76,11 +75,11 @@ cp -r ./wallpapers/ ~/Pictures/
 cp -r ./zsh/ ~
 cp -r ./i3/ ~/.config/ 
 cp -r ./polybar/ ~/.config/ 
+cp -r ./rofi/ ~/.config/ 
 cp -r ./picom/ ~/.config/ 
 cp -r ./kitty/ ~/.config/ 
-cp -r ./powerlevel10k/.p10k.zsh ~
 cp -r ./.zshrc ~
 source ~/.zshrc
 echo "Rebooting for the changes to take place: "
-sleep(3)
+sleep 3
 reboot
