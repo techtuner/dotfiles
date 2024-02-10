@@ -19,9 +19,6 @@ curl -fsSL https://deb.nodesource.com/gpgkey/nodesource-repo.gpg.key | sudo gpg 
 NODE_MAJOR=20
 echo "deb [signed-by=/usr/share/keyrings/nodesource.gpg] https://deb.nodesource.com/node_$NODE_MAJOR.x nodistro main" | sudo tee /etc/apt/sources.list.d/nodesource.list
 
-# Brave Browser
-# sudo curl -fsSLo /usr/share/keyrings/brave-browser-archive-keyring.gpg https://brave-browser-apt-release.s3.brave.com/brave-browser-archive-keyring.gpg
-# echo "deb [signed-by=/usr/share/keyrings/brave-browser-archive-keyring.gpg] https://brave-browser-apt-release.s3.brave.com/ stable main"|sudo tee /etc/apt/sources.list.d/brave-browser-release.list
 
 # Github CLI
 curl -fsSL https://cli.github.com/packages/githubcli-archive-keyring.gpg | sudo dd of=/usr/share/keyrings/githubcli-archive-keyring.gpg
@@ -32,15 +29,10 @@ update_system
 
 sudo apt-get install i3 i3-wm kitty golang-go feh rofi polybar picom cargo gh wallch dconf-editor dconf-cli net-tools software-properties-common build-essential gdb gcc cmake pkg-config libfreetype6-dev libfontconfig1-dev libxcb-xfixes0-dev libxkbcommon-dev python3 nodejs python3-pip python3-venv zathura tmux zsh gnome-tweaks gnome-shell-extensions chrome-gnome-shell dmenu ripgrep fd-find xclip wl-clipboard -y
 
-# python3 --m pip install --upgrade pip
-# pip install babi --user
-
 APPS=(
 	"code"
-	"spotify"
 	"vlc"
 	"nvim"
-  "obsidian"
 )
 
 for app in ${APPS[@]}; do
@@ -54,7 +46,10 @@ sudo cp -r ./fonts/'Fira Code' /usr/share/fonts/truetype/
 sudo cp -r ./fonts/'Noto Sans Mono' /usr/share/fonts/truetype/
 
 git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+# Zsh configuration
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended
+git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
+git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
 
 sudo chmod +x ./code_extension.sh
 ./code_extension.sh
@@ -73,11 +68,11 @@ cp ./code/keybindings.json ~/.config/Code/User/
 cp ./tmux/.tmux.conf ~
 cp -r ./wallpapers/ ~/Pictures/
 cp -r ./zsh/ ~
-cp -r ./i3/ ~/.config/ 
-cp -r ./polybar/ ~/.config/ 
-cp -r ./rofi/ ~/.config/ 
-cp -r ./picom/ ~/.config/ 
-cp -r ./kitty/ ~/.config/ 
+cp -r ./i3/ ~/.config/
+cp -r ./polybar/ ~/.config/
+cp -r ./rofi/ ~/.config/
+cp -r ./picom/ ~/.config/
+cp -r ./kitty/ ~/.config/
 cp -r ./.zshrc ~
 source ~/.zshrc
 echo "Rebooting for the changes to take place: "

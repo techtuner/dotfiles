@@ -17,7 +17,7 @@ sudo install -o root -g root -m 644 packages.microsoft.gpg /etc/apt/trusted.gpg.
 sudo sh -c 'echo deb [arch=amd64,arm64,armhf signed-by=/etc/apt/trusted.gpg.d/packages.microsoft.gpg] https://packages.microsoft.com/repos/code stable main > /etc/apt/sources.list.d/vscode.list'
 rm -rf packages.microsoft.gpg
 
-sudo apt install name-that-hash adb cargo routersploit python3-pip python3-virtualenv onesixtyone oscanner redis-tools smbclient smbmap snmp seclists curl dnsrecon enum4linux feroxbuster gobuster nbtscan nikto nmap sslscan sipvicious tnscmd10g  wkhtmltopdf libimage-exiftool-perl code golang-go python3-virtualenv python3-ldap3 python3-yaml python3-impacket rainbowcrack ldnsutils ghidra strace dsniff yersinia dhcpstarv sslstrip zaproxy dvwa steghide bloodhound juice-shop nuclei armitage beef-xss maltego protobuf-compiler httrack whatweb ruby osrframework sherlock sublist3r wifiphisher dnsmasq -y
+sudo apt install name-that-hash adb cargo routersploit python3-pip python3-virtualenv onesixtyone oscanner redis-tools smbclient smbmap snmp seclists curl dnsrecon enum4linux feroxbuster gobuster nbtscan nikto nmap sslscan sipvicious tnscmd10g  wkhtmltopdf libimage-exiftool-perl code golang-go python3-virtualenv python3-ldap3 python3-yaml python3-impacket rainbowcrack ldnsutils ghidra strace dsniff yersinia dhcpstarv sslstrip zaproxy dvwa steghide bloodhound juice-shop nuclei armitage beef-xss maltego protobuf-compiler httrack whatweb ruby osrframework sherlock sublist3r wifiphisher dnsmasq cmake terminator gcc -y
 
 cargo install urlencode rustscan eza
 
@@ -28,7 +28,7 @@ python -m pip install pip==22.2.2 --upgrade --break-system-packages
 
 python3 -m pip install --user pipx
 python3 -m pipx ensurepath
-pipx install git+https://github.com/Tib3rius/AutoRecon.git
+python3 -m pip install git+https://github.com/Tib3rius/AutoRecon.git
 
 python3 -m pip install --upgrade git+https://github.com/fportantier/habu.git
 
@@ -71,14 +71,19 @@ sudo ln -s $tools_path/Postman/Postman /usr/bin/postman
 rm -rf postman-linux-x64.tar.gz
 cd $tools_path
 
+wget https://github.com/neovim/neovim/releases/download/v0.9.5/nvim.appimage
+sudo chmod +x nvim.appimage
+sudo ln -s $tools_path/nvim.appimage /usr/bin/nvim
+
 git clone https://github.com/p4pentest/SuperEnum.git
 cd $tools_path/SuperEnum
 sudo chmod +x superenum
 sudo ln -s $tools_path/SuperEnum/superenum /usr/bin/superenum
 cd $tools_path
 
-wget https://github.com/carlospolop/PEASS-ng/releases/download/20240204-ab87b191/linpeas.sh >> linpeas.sh
+wget https://github.com/carlospolop/PEASS-ng/releases/download/20240204-ab87b191/linpeas.sh
 sudo chmod +x linpeas.sh
+sudo ln -s $tools_path/linpeas.sh /usr/bin/linpeas
 
 cd $cwd
 sudo cp -r $cwd/fonts/'Fira Code' /usr/share/fonts/truetype
@@ -97,12 +102,18 @@ for folder in ${FOLDERS[@]}; do
 	mkdir -p ~/Labs/$folder
 done
 
+# Zsh configuration
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended
+git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
+git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
+
 cp -r $cwd/code/* ~/.config/Code/User/
 cp -r $cwd/wallpapers ~/Pictures/
 cp -r nvim ~/.config/
 cp -r $cwd/zsh ~
 cp $cwd/.zshrc ~
 cp ~/tmux/.tmux.conf ~
+sudo cp -r $cwd/dnsmasq/techtuner.conf /etc/dnsmasq.d/
 
 EXTENSIONS=(
  "golang.go"

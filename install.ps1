@@ -34,8 +34,7 @@ function code_extensions() {
     "naumovs.color-highlight",
     "vadimcn.vscode-lldb",
     "catppuccin.catppuccin-vsc-icons",
-    "aaron-bond.better-comments",
-    "drcika.apc-extension"
+    "aaron-bond.better-comments"
 
 
     foreach ($extension in $extension_list) {
@@ -49,8 +48,6 @@ function code_extensions() {
 # Create Directories
 mkdir ~\Documents\Powershell
 mkdir ~\.config\powershell
-mkdir D:\Projects
-mkdir '~\Documents\ISO File'
 
 Copy-Item .\powershell\user_profile.ps1 C:\Users\$user\.config\powershell\
 Copy-Item .\powershell\Microsoft.PowerShell_profile.ps1 C:\Users\$user\Documents\Powershell\
@@ -64,3 +61,4 @@ code_extensions
 
 Install-Module -Name posh-git -Scope CurrentUser -Force
 Install-Module -Name PSFzf -Scope CurrentUser -Force
+Install-Module -Name Terminal-Icons -Scope CurrentUser -Force
