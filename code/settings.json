@@ -9,19 +9,9 @@
   "workbench.editor.enablePreview": false,
   "breadcrumbs.filePath": "last",
   "workbench.list.smoothScrolling": true,
-  "apc.electron": {
-    "backgroundColor": "rgba(123, 123, 123, 0.5)",
-    "frame": false,
-    "transparent": true,
-    "titleBarStyle": "hiddenInset",
-    "vibrancy": "ultra-dark",
-    "opacity": 0.98,
-    "visualEffectState": "active"
-  },
   "window.menuBarVisibility": "hidden",
   "workbench.layoutControl.enabled": false,
   "window.commandCenter": false,
-  "window.titleBarStyle": "native",
   "editor.minimap.enabled": false,
   "editor.cursorBlinking": "smooth",
   "editor.formatOnPaste": true,
@@ -30,12 +20,12 @@
   "editor.cursorSmoothCaretAnimation": "on",
   "editor.overviewRulerBorder": false,
   "editor.linkedEditing": true,
-  "editor.lightbulb.enabled": false,
+  "editor.lightbulb.enabled": "off",
   "editor.codeActionsOnSave": {
     "source.organizeImports": "explicit",
     "source.fixAll": "explicit"
   },
-  "editor.wordWrap": "off",
+  "editor.wordWrap": "on",
   "explorer.sortOrder": "type",
   "editor.tabSize": 2,
   "terminal.integrated.profiles.windows": {
@@ -52,6 +42,7 @@
   "editor.fontWeight": "bold",
   "editor.fontSize": 16,
   "editor.lineHeight": 2,
+  "editor.fontLigatures": true,
   "terminal.integrated.fontFamily": "Noto Sans Mono",
   "terminal.integrated.fontSize": 14,
   "terminal.integrated.lineHeight": 1.5,
@@ -109,7 +100,7 @@
   // Javascript
   "[javascript]": {
     "editor.maxTokenizationLineLength": 2500,
-  "editor.defaultFormatter": "esbenp.prettier-vscode"
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   // Markdown
   "[markdown]": {
@@ -124,26 +115,27 @@
       "other": "off"
     }
   },
-    // Rust
-  "[rust]": {"editor.defaultFormatter": "rust-lang.rust-analyzer",
-},
-// Go
+  // Rust
+  "[rust]": { "editor.defaultFormatter": "rust-lang.rust-analyzer" },
+  // Go
   "[go]": {
     "editor.insertSpaces": false,
-    "editor.codeActionsOnSave" :{
-      "source.organizeImports" : "explicit"
+    "editor.codeActionsOnSave": {
+      "source.organizeImports": "explicit"
     },
-     "editor.suggest.snippetsPreventQuickSuggestions": false,
+    "editor.suggest.snippetsPreventQuickSuggestions": false,
     "editor.defaultFormatter": "golang.go"
   },
-  "[lua]": { "editor.quickSuggestions": {
+  "[lua]": {
+    "editor.quickSuggestions": {
       "comments": "inline",
       "other": "on",
       "strings": "on"
     },
     "editor.semanticHighlighting.enabled": true,
-    "editor.defaultFormatter": "sumneko.lua"},
-    "[python]": {
+    "editor.defaultFormatter": "sumneko.lua"
+  },
+  "[python]": {
     "editor.defaultFormatter": "ms-python.vscode-pylance",
     "editor.formatOnSave": true,
     "editor.formatOnType": true
@@ -151,9 +143,7 @@
   // Color Highlight
   "color-highlight.enable": true,
   "color-highlight.markerType": "background",
-  "color-highlight.languages": [
-    "*"
-  ],
+  "color-highlight.languages": ["*"],
   "gutterpreview.showImagePreviewOnGutter": true,
   "workbench.activityBar.location": "hidden"
 }
