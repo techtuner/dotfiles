@@ -17,7 +17,15 @@ sudo install -o root -g root -m 644 packages.microsoft.gpg /etc/apt/trusted.gpg.
 sudo sh -c 'echo deb [arch=amd64,arm64,armhf signed-by=/etc/apt/trusted.gpg.d/packages.microsoft.gpg] https://packages.microsoft.com/repos/code stable main > /etc/apt/sources.list.d/vscode.list'
 rm -rf packages.microsoft.gpg
 
-sudo apt install name-that-hash adb cargo routersploit python3-pip python3-virtualenv onesixtyone oscanner redis-tools smbclient smbmap snmp seclists curl dnsrecon enum4linux feroxbuster gobuster nbtscan nikto nmap sslscan sipvicious tnscmd10g  wkhtmltopdf libimage-exiftool-perl code golang-go python3-virtualenv python3-ldap3 python3-yaml python3-impacket rainbowcrack ldnsutils ghidra strace dsniff yersinia dhcpstarv sslstrip zaproxy dvwa steghide bloodhound juice-shop nuclei armitage beef-xss maltego protobuf-compiler httrack whatweb ruby osrframework sherlock sublist3r wifiphisher dnsmasq cmake terminator gcc -y
+NODE_MAJOR=20
+echo "deb [signed-by=/usr/share/keyrings/nodesource.gpg] https://deb.nodesource.com/node_$NODE_MAJOR.x nodistro main" | sudo tee /etc/apt/sources.list.d/nodesource.list
+
+# Github CLI
+curl -fsSL https://cli.github.com/packages/githubcli-archive-keyring.gpg | sudo dd of=/usr/share/keyrings/githubcli-archive-keyring.gpg
+sudo chmod go+r /usr/share/keyrings/githubcli-archive-keyring.gpg
+echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/githubcli-archive-keyring.gpg] https://cli.github.com/packages stable main" | sudo tee /etc/apt/sources.list.d/github-cli.list >/dev/null
+
+sudo apt install name-that-hash adb cargo gh routersploit python3-pip python3-virtualenv onesixtyone oscanner redis-tools smbclient smbmap snmp curl dnsrecon enum4linux nodejs gobuster nbtscan nikto nmap sslscan sipvicious tnscmd10g  wkhtmltopdf libimage-exiftool-perl code golang-go python3-ldap3 python3-yaml python3-impacket rainbowcrack ldnsutils ghidra strace dsniff yersinia dhcpstarv sslstrip zaproxy steghide bloodhound nuclei armitage beef-xss maltego protobuf-compiler httrack whatweb ruby osrframework sherlock sublist3r wifiphisher dnsmasq cmake terminator gcc feroxbuster seclists -y
 
 cargo install urlencode rustscan eza
 
@@ -29,8 +37,6 @@ python -m pip install pip==22.2.2 --upgrade --break-system-packages
 python3 -m pip install --user pipx
 python3 -m pipx ensurepath
 python3 -m pip install git+https://github.com/Tib3rius/AutoRecon.git
-
-python3 -m pip install --upgrade git+https://github.com/fportantier/habu.git
 
 cd $tools_path
 echo "Installing Kiterunner"
@@ -75,6 +81,10 @@ wget https://github.com/neovim/neovim/releases/download/v0.9.5/nvim.appimage
 sudo chmod +x nvim.appimage
 sudo ln -s $tools_path/nvim.appimage /usr/bin/nvim
 
+wget https://github.com/obsidianmd/obsidian-releases/releases/download/v1.5.3/Obsidian-1.5.3.AppImage
+sudo chmod +x Obsidian-1.5.3.AppImage
+sudo ln -s $tools_path/Obsidian-1.5.3.AppImage /usr/bin/obsidian
+
 git clone https://github.com/p4pentest/SuperEnum.git
 cd $tools_path/SuperEnum
 sudo chmod +x superenum
@@ -87,7 +97,7 @@ sudo ln -s $tools_path/linpeas.sh /usr/bin/linpeas
 
 cd $cwd
 sudo cp -r $cwd/fonts/'Fira Code' /usr/share/fonts/truetype
-sudo cp -r $cwd/fonts/'Noto Sans Mono' /usr/share/fonts/truetype
+sudo cp -r $cwd/fonts/Hack /usr/share/fonts/truetype
 
 mkdir ~/Labs
 FOLDERS=(
