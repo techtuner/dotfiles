@@ -19,6 +19,12 @@ font pango:JetBrainsMono Nerd Font 14
 # text rendering and scalability on retina/hidpi displays (thanks to pango).
 #font pango:Dank Mono 14
 
+
+# Remove the Windos tiotle bar
+default_border pixel 1
+default_floating_border pixel 1
+for_window [class="^.*"] border pixel 1
+
 # Start XDG autostart .desktop files using dex. See also
 # https://wiki.archlinux.org/index.php/XDG_Autostart
 exec --no-startup-id dex --autostart --environment i3
@@ -195,3 +201,4 @@ bindsym $mod+F9  exec ~/.config/i3/toggle_sink.sh
 exec_always feh --bg-center --no-xinerma ~/Pictures/wallpapers/pxfuel.jpg
 # exec_always picom
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
+ exec --no-startup-id /usr/lib/gsd-xsettings
