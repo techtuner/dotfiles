@@ -38,11 +38,17 @@ return {
                 disable_background = true,
             })
 
-            vim.cmd("colorscheme rose-pine")
+--             vim.cmd("colorscheme rose-pine")
 
             ColorMyPencils()
         end
     },
-
+  {
+    "techtuner/nord.nvim",
+    config = function()
+      vim.g.nord_disable_background = true
+      require('nord').set()
+    end
+  }
 
 }
