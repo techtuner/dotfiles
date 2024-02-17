@@ -120,5 +120,6 @@ fi
 export GOBIN="$HOME/.local/bin"
 export GOPATH="$HOME/go/"
 
+neofetch --ascii ~/.config/neofetch/banner | lolcat
 export PATH=~/.local/bin:/snap/bin:/usr/sandbox/:/usr/local/bin:/usr/bin:/bin:/usr/local/games:/usr/games:/usr/share/games:/usr/local/sbin:/usr/sbin:/sbin:~/.cargo/bin:/usr/local/go/bin:$PATH
 source ~/aliases.sh

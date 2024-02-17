@@ -35,7 +35,7 @@ for app in ${APPS[@]}; do
 	sudo snap install $app --classic
 done
 
-sudo apt-get install golang-go cargo gh wallch dconf-editor dconf-cli net-tools software-properties-common build-essential gdb gcc cmake pkg-config libfreetype6-dev libfontconfig1-dev libxcb-xfixes0-dev libxkbcommon-dev python3 nodejs python3-pip python3-venv zathura tmux terminator ripgrep fd-find xclip wl-clipboard -y
+sudo apt-get install golang-go cargo gh wallch dconf-editor dconf-cli net-tools software-properties-common build-essential gdb gcc cmake pkg-config libfreetype6-dev libfontconfig1-dev libxcb-xfixes0-dev libxkbcommon-dev python3 nodejs python3-pip python3-venv zathura tmux terminator ripgrep fd-find xclip wl-clipboard lolcat neofetch -y
   
 sudo apt remove apport apport-gtk -y && sudo apt purge apport apport-gtk -y
 
@@ -75,13 +75,14 @@ FOLDERS=(
   "Notes"
 )
 for folder in ${FOLDERS[@]}; do
-  mkdir -p ~/workspace/$folder
+  mkdir -p ~/workspace/Personal/$folder
 done
 cp -r ./nvim/ ~/.config/
 cp ./code/settings.json ~/.config/Code/User/
 cp ./code/keybindings.json ~/.config/Code/User/
 cp -r ./wallpapers/ ~/Pictures/
 cp -r ./terminator/ ~/.config/
+cp -r ./neofetch/ ~/.config/
 cp ./aliases.sh ~
 cp ./.bashrc ~
 source ~/.bashrc

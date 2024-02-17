@@ -13,7 +13,7 @@ alias vim="nvim"
 alias gs="git status"
 alias src="source ~/.bashrc"
 alias e="exit"
-
+alias tmux="tmux -u"
 # Function to clone github repo via github cli
 function ghclone() {
     if [[ $# -ne 2 ]]; then
