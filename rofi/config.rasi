@@ -1,6 +1,6 @@
 configuration {
 modi: "window,run,ssh";
-font: "FiraCode Nerd Font 16";
+font: "JetBrainsMono Nerd Font 16";
 /*	location: 0;*/
 /*	yoffset: 0;*/
 /*	xoffset: 0;*/
@@ -146,4 +146,4 @@ scroll-method: 0;
   }
 }
 
-@theme "GruvboxDark"
+@theme "Nord"
