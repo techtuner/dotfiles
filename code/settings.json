@@ -1,6 +1,6 @@
 {
   // Workbench and Editor Settings
-  "workbench.colorTheme": "Gruvbox Dark Hard",
+  "workbench.colorTheme": "Nord Deep",
   "workbench.productIconTheme": "fluent-icons",
   "workbench.iconTheme": "catppuccin-mocha",
   "workbench.startupEditor": "none",
@@ -38,15 +38,16 @@
   "files.trimFinalNewlines": true,
   "files.trimTrailingWhitespace": true,
   // Typography
-  "editor.fontFamily": "Noto Sans Mono",
+  "editor.fontFamily": "JetBrainsMono Nerd Font",
   "editor.fontWeight": "bold",
-  "editor.fontSize": 16,
+  "editor.fontSize": 14,
+  "window.zoomLevel": 1,
   "editor.lineHeight": 2,
   "editor.fontLigatures": true,
-  "terminal.integrated.fontFamily": "Noto Sans Mono",
+  "terminal.integrated.fontFamily": "JetBrainsMono Nerd Font",
   "terminal.integrated.fontSize": 14,
   "terminal.integrated.lineHeight": 1.5,
-  "errorLens.fontFamily": "Noto Sans Mono",
+  "errorLens.fontFamily": "JetBrainsMono Nerd Font",
   "errorLens.fontSize": "16",
   "errorLens.fontStyleItalic": true,
   "better-comments.tags": [
