@@ -26,5 +26,10 @@ keymap("n", "<C-S>", ":update<CR>", opts)
 keymap("v", "<C-S>", "<C-C>:update<CR>", opts)
 keymap("i", "<C-S>", "<C-O>:update<CR>", opts)
 
+-- Move the content selected
 keymap("v", "J", ":m '>+1<CR>gv=gv")
 keymap("v", "K", ":m '<-2<CR>gv=gv")
+
+
+-- Terminal
+keymap("n","<leader>t", ":vsplit | :terminal<cr>", opts)
