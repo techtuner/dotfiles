@@ -59,6 +59,8 @@ Unblock-File -Path C:\Users\$user\Documents\Powershell\Microsoft.PowerShell_prof
 
 code_extensions
 
+cargo install eza
+
 Install-Module -Name posh-git -Scope CurrentUser -Force
 Install-Module -Name PSFzf -Scope CurrentUser -Force
 Install-Module -Name Terminal-Icons -Scope CurrentUser -Force
