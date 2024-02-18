@@ -12,25 +12,35 @@
 	<a href="#"><img alt="GitHub last commit (branch)" src="https://img.shields.io/github/last-commit/techtuner/dotfiles/main?style=for-the-badge&logo=GitHub"></a>
 </p>
 
-## ⚙️ Installation
-- Windows
-	```powershell
-	Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass
-	./install.ps1
-	```
+## Prerequisite
+- **Git**
+  - Windows, download through the website https://git-scm.com/downloads
+  - Linux, you can install using the package manager `sudo apt install git -y`
 
-- Kali
+## ⚙️ Installation (Linux)
+- Clone the repository by running the command **`git clone https://www.github.com/techtuner/dotfiles && cd dotfiles`**
+- **Kali**
+
 	```shell
-	python kali.py
+	sudo chmod +x kali.sh
+   ./kali.sh
 	```
- - Ubuntu
+- **Ubuntu**
+
 	```shell
-	sudo apt-get install git curl wget -y
-	git clone https://www.github.com/techtuner/dotfiles.git
-	cd dotfiles
+	sudo apt-get install curl wget -y
 	sudo chmod +x ubuntu.sh
 	./ubuntu.sh
 	```
+## ⚙️ Installation (Windows)
+- Download the dotfiles as a zip and unzip the folder
+- Run Powershell as an Administrator and change into the extracted folder
+
+	```powershell
+    Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass
+    ./install.ps1
+	```
+
 ## Tools I Use
 - Neovim
 - Terminator
