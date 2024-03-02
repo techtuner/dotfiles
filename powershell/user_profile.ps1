@@ -21,12 +21,12 @@ function which ($command) {
 
 function touch { Set-Content -Path ($args[0]) -Value ($null) }
 
-function gcd ($username, $repo) {
+function ghclone ($username, $repo) {
     if (Test-Path -Path $repo) {
         cd $repo
     }
     else {
-        git clone https://www.github.com/$username/$repo && cd $repo
+        gh repo clone $username/$repo && cd $repo
     }
 }
 

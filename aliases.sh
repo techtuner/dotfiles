@@ -1,19 +1,20 @@
 #!/bin/ash
 
-
-# Aliasses for Personal Folder
-alias personal="cd ~/workspace/Personal"
-alias projects="cd ~/workspace/Personal/Projects"
-alias dots="cd ~/workspace/Personal/Projects/dotfiles"  
+# Aliasses for workspaces Folder
+alias projects="cd ~/workspace/Projects"
+alias notes="cd ~/workspace/Notes"
+alias dots="cd ~/workspace/Projects/dotfiles"
 
 # Aliases for general stuff
 alias python="python3"
 alias ls="eza"
 alias vim="nvim"
 alias gs="git status"
+alias gp="git pull"
 alias src="source ~/.bashrc"
 alias e="exit"
 alias tmux="tmux -u"
+
 # Function to clone github repo via github cli
 function ghclone() {
     if [[ $# -ne 2 ]]; then
