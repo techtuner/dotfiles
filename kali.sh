@@ -111,11 +111,9 @@ sudo chmod +x linpeas.sh
 sudo ln -s $tools_path/linpeas.sh /usr/bin/linpeas
 
 cd $cwd
-sudo cp -r $cwd/fonts/'Fira Code' /usr/share/fonts/truetype
-sudo cp -r $cwd/fonts/Hack /usr/share/fonts/truetype
+
 sudo cp -r $cwd/fonts/JetBrainsMono /usr/share/fonts/truetype
 
-mkdir ~/Labs
 FOLDERS=(
 "THM"
 "HTB"
@@ -130,7 +128,6 @@ done
 # Zsh configuration
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended
 git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
-git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
 
 cp -r $cwd/code/* ~/.config/Code/User/
 cp -r $cwd/wallpapers ~/Pictures/
@@ -157,6 +154,7 @@ EXTENSIONS=(
   "miguelsolorio.fluent-icons"
   "marlosirapuan.nord-deep"
   "yzhang.markdown-all-in-one"
+  "jdinhlife.gruvbox"
 )
 
 for extension in ${EXTENSIONS[@]}; do

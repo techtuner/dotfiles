@@ -29,18 +29,22 @@ APPS=(
 	"code"
 	"nvim"
   "obsidian"
+  "spotify"
+  "alacritty"
 )
 
 for app in ${APPS[@]}; do
 	sudo snap install $app --classic
 done
 
-sudo apt-get install golang-go cargo gh wallch dconf-editor dconf-cli net-tools software-properties-common build-essential gdb gcc cmake pkg-config libfreetype6-dev libfontconfig1-dev libxcb-xfixes0-dev libxkbcommon-dev python3 nodejs python3-pip python3-venv zathura tmux terminator ripgrep fd-find xclip wl-clipboard lolcat neofetch -y
-  
+sudo apt-get install golang-go cargo gh dconf-editor dconf-cli net-tools software-properties-common build-essential gdb gcc cmake pkg-config libfreetype6-dev libfontconfig1-dev libxcb-xfixes0-dev libxkbcommon-dev python3 nodejs python3-pip python3-venv zathura tmux ripgrep fd-find xclip wl-clipboard -y
+
 sudo apt remove apport apport-gtk -y && sudo apt purge apport apport-gtk -y
 
-sudo cp -r ./fonts/Hack /usr/share/fonts/truetype/
 sudo cp -r ./fonts/JetBrainsMono /usr/share/fonts/truetype/
+
+code&
+cargo install eza
 
 EXTENSIONS=(
     "rust-lang.rust-analyzer"
@@ -62,6 +66,7 @@ EXTENSIONS=(
     "vadimcn.vscode-lldb"
     "catppuccin.catppuccin-vsc-icons"
     "marlosirapuan.nord-deep"
+    "jdinhlife.gruvbox"
     "aaron-bond.better-comments"
 )
 
@@ -75,8 +80,9 @@ FOLDERS=(
   "Notes"
 )
 for folder in ${FOLDERS[@]}; do
-  mkdir -p ~/workspace/Personal/$folder
+  mkdir -p ~/workspace/$folder
 done
+
 cp -r ./nvim/ ~/.config/
 cp ./code/settings.json ~/.config/Code/User/
 cp ./code/keybindings.json ~/.config/Code/User/
@@ -85,7 +91,10 @@ cp -r ./terminator/ ~/.config/
 cp -r ./neofetch/ ~/.config/
 cp ./aliases.sh ~
 cp ./.bashrc ~
+cp ./.zshrc ~
+cp -r ./zsh ~
 source ~/.bashrc
+source ~/.zshrc
 
 read -p "Do you want to setup i3? (y/N): " choice
 if [ $choice == "y" ]

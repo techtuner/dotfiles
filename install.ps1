@@ -34,7 +34,8 @@ function code_extensions() {
     "naumovs.color-highlight",
     "vadimcn.vscode-lldb",
     "catppuccin.catppuccin-vsc-icons",
-    "aaron-bond.better-comments"
+    "aaron-bond.better-comments",
+    "jdinhlife.gruvbox"
 
 
     foreach ($extension in $extension_list) {
@@ -63,4 +64,3 @@ cargo install eza
 
 Install-Module -Name posh-git -Scope CurrentUser -Force
 Install-Module -Name PSFzf -Scope CurrentUser -Force
-Install-Module -Name Terminal-Icons -Scope CurrentUser -Force
