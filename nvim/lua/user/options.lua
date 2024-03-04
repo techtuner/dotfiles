@@ -42,3 +42,5 @@ set.laststatus = 0
 
 set.iskeyword:append("-")
 set.isfname:append("@-@")
+
+set.conceallevel = 2
