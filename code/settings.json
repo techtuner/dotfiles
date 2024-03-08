@@ -38,16 +38,16 @@
   "files.trimFinalNewlines": true,
   "files.trimTrailingWhitespace": true,
   // Typography
-  "editor.fontFamily": "JetBrainsMono Nerd Font",
+  "editor.fontFamily": "BerkeleyMono Nerd Font Mono",
   "editor.fontWeight": "bold",
   "editor.fontSize": 14,
   "window.zoomLevel": 1,
   "editor.lineHeight": 2,
   "editor.fontLigatures": true,
-  "terminal.integrated.fontFamily": "JetBrainsMono Nerd Font",
+  "terminal.integrated.fontFamily": "BerkeleyMono Nerd Font Mono",
   "terminal.integrated.fontSize": 14,
   "terminal.integrated.lineHeight": 1.5,
-  "errorLens.fontFamily": "JetBrainsMono Nerd Font",
+  "errorLens.fontFamily": "BerkeleyMono Nerd Font Mono",
   "errorLens.fontSize": "16",
   "errorLens.fontStyleItalic": true,
   "better-comments.tags": [
@@ -146,5 +146,6 @@
   "color-highlight.markerType": "background",
   "color-highlight.languages": ["*"],
   "gutterpreview.showImagePreviewOnGutter": true,
-  "workbench.activityBar.location": "hidden"
+  "workbench.activityBar.location": "hidden",
+  "security.workspace.trust.banner": "always"
 }
