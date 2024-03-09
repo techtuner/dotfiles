@@ -49,7 +49,7 @@ done
 
 sudo snap install rainbowcrack --beta
 
-sudo apt-get install golang-go cargo gh dconf-editor dconf-cli net-tools gdb gcc cmake pkg-config libfreetype6-dev libfontconfig1-dev libxcb-xfixes0-dev libxkbcommon-dev python3 nodejs python3-pip python3-venv zathura tmux ripgrep kitty fd-find xclip wl-clipboard fzf zsh autoconf make libpam0g-dev libcairo2-dev  libxcb-composite0-dev libev-dev libx11-xcb-dev libxcb-xkb-dev libxcb-xinerama0-dev libxcb-randr0-dev libxcb-image0-dev libxcb-util0-dev libxcb-xrm-dev libglib2.0-dev libxkbcommon-x11-dev libjpeg-dev libtool xutils-dev playerctl adb python3-pip python3-virtualenv onesixtyone redis-tools smbclient smbmap snmp dnsrecon gobuster nbtscan nikto nmap sslscan sipvicious wkhtmltopdf libimage-exiftool-perl python3-full python3-ldap3 python3-yaml python3-impacket  ldnsutils strace dsniff yersinia dhcpstarv steghide protobuf-compiler httrack whatweb ruby sublist3r dnsmasq libnl-3-dev libnl-genl-3-dev libssl-dev apt-transport-https libgmp-dev libgmpxx4ldbl ruby-dev ruby3.1-dev ruby3.1-doc bison icu-devtools libcurl4-openssl-dev libicu-dev libncurses-dev libreadline-dev libsqlite3-dev libxml2-dev libxslt1-dev libyaml-dev sqlite3 docker.io docker-compose -y
+sudo apt-get install golang-go cargo gh dconf-editor dconf-cli net-tools gdb gcc cmake pkg-config libfreetype6-dev libfontconfig1-dev libxcb-xfixes0-dev libxkbcommon-dev python3 nodejs python3-pip python3-venv zathura tmux ripgrep kitty fd-find xclip wl-clipboard fzf zsh autoconf make libpam0g-dev libcairo2-dev  libxcb-composite0-dev libev-dev libx11-xcb-dev libxcb-xkb-dev libxcb-xinerama0-dev libxcb-randr0-dev libxcb-image0-dev libxcb-util0-dev libxcb-xrm-dev libglib2.0-dev libxkbcommon-x11-dev libjpeg-dev libtool xutils-dev playerctl adb python3-pip python3-virtualenv onesixtyone redis-tools smbclient smbmap snmp dnsrecon gobuster nbtscan nikto nmap sslscan sipvicious wkhtmltopdf libimage-exiftool-perl python3-full python3-ldap3 python3-yaml python3-impacket  ldnsutils strace dsniff yersinia dhcpstarv steghide protobuf-compiler httrack whatweb ruby sublist3r dnsmasq libnl-3-dev libnl-genl-3-dev libssl-dev apt-transport-https libgmp-dev libgmpxx4ldbl ruby-dev ruby3.1-dev ruby3.1-doc bison icu-devtools libcurl4-openssl-dev libicu-dev libncurses-dev libreadline-dev libsqlite3-dev libxml2-dev libxslt1-dev libyaml-dev sqlite3 docker.io docker-compose i3 i3-wm dmenu rofi polybar picom -y
 
 cargo install urlencode rustscan eza
 
@@ -177,17 +177,21 @@ done
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended
 git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
 
+wget https://raw.githubusercontent.com/Daivasmara/daivasmara.zsh-theme/master/daivasmara.zsh-theme -P ~/.oh-my-zsh/custom/themes/
+
 cp -r $cwd/code/* ~/.config/Code/User/
 cp -r $cwd/wallpapers ~/Pictures/
 cp -r $cwd/nvim ~/.config/
 cp -r $cwd/zsh ~
+cp -r $cwd/i3/ ~/.config
+cp -r $cwd/polybar/ ~/.config
+cp -r $cwd/rofi/ ~/.config
 cp $cwd/.zshrc ~
 cp ~/tmux/.tmux.conf ~
 sudo cp -r $cwd/dnsmasq/techtuner.conf /etc/dnsmasq.d/
 
-
 EXTENSIONS=(
- "golang.go"
+  "golang.go"
   "christian-kohler.path-intellisense"
   "ms-python.python"
   "ms-python.black-formatter"
@@ -208,4 +212,8 @@ for extension in ${EXTENSIONS[@]}; do
 	code --install-extension $extension
 done
 
+source ~/.zshrc
 echo "DO REMEMBER TO CHANGE THE nameserver to 127.0.0.1 in /etc/resolv.conf"
+
+sleep 3
+reboot
