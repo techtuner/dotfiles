@@ -1,0 +1,6 @@
+-- Degreen the folder background in Linux: Runt the command in the terminal
+chmod -R a-x,o-w,+X thatGreenFolderWithSubfolders/
+
+
+-- Degreen the folder background in Windows: Add it to user_profile inside of powershell
+$PSStyle.FileInfo.Directory = "`e[38;2;255;255;255m"
