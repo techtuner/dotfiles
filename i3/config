@@ -51,7 +51,7 @@ bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOU
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec kitty
+bindsym $mod+Return exec alacritty
 
 # kill focused window
 bindsym $mod+q kill
@@ -128,6 +128,7 @@ set $ws9 "9"
 set $ws10 "10"
 
 # Allocate Applications to the desired workspace
+for_window [class="alacritty"] move to workspace $ws1
 for_window [class="firefox"] move to workspace $ws2
 for_window [class="Spotify"] move to workspace $ws3
 for_window [class="Code"] move to workspace $ws4

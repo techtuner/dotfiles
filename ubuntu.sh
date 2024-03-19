@@ -30,13 +30,14 @@ APPS=(
 	"nvim"
   "obsidian"
   "spotify"
+  "alacritty"
 )
 
 for app in ${APPS[@]}; do
 	sudo snap install $app --classic
 done
 
-sudo apt-get install golang-go cargo gh dconf-editor dconf-cli net-tools software-properties-common build-essential gdb gcc cmake pkg-config libfreetype6-dev libfontconfig1-dev libxcb-xfixes0-dev libxkbcommon-dev python3 nodejs python3-pip python3-venv zathura tmux ripgrep kitty i3 i3-wm rofi polybar fd-find xclip wl-clipboard dmenu fzf feh zsh picom autoconf make  libpam0g-dev libcairo2-dev  libxcb-composite0-dev libev-dev libx11-xcb-dev libxcb-xkb-dev libxcb-xinerama0-dev libxcb-randr0-dev libxcb-image0-dev libxcb-util0-dev libxcb-xrm-dev  libxkbcommon-x11-dev libjpeg-dev libtool xutils-dev playerctl -y
+sudo apt-get install golang-go cargo gh dconf-editor dconf-cli net-tools software-properties-common build-essential gdb gcc cmake pkg-config libfreetype6-dev libfontconfig1-dev libxcb-xfixes0-dev libxkbcommon-dev python3 nodejs python3-pip python3-venv zathura tmux ripgrep i3 i3-wm rofi polybar fd-find xclip wl-clipboard dmenu fzf feh fish picom autoconf make  libpam0g-dev libcairo2-dev  libxcb-composite0-dev libev-dev libx11-xcb-dev libxcb-xkb-dev libxcb-xinerama0-dev libxcb-randr0-dev libxcb-image0-dev libxcb-util0-dev libxcb-xrm-dev  libxkbcommon-x11-dev libjpeg-dev libtool xutils-dev playerctl -y
 
 sudo apt remove apport apport-gtk -y && sudo apt purge apport apport-gtk -y
 
@@ -44,6 +45,7 @@ cd ~/.config
 git clone https://github.com/Raymo111/i3lock-color.git
 cd i3lock-color
 ./install-i3lock-color.sh
+
 cd $cwd
 
 sudo cp -r ./fonts/JetBrainsMono /usr/share/fonts/truetype/
@@ -90,11 +92,6 @@ for folder in ${FOLDERS[@]}; do
 done
 
 git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended
-
-git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
-
-wget https://raw.githubusercontent.com/Daivasmara/daivasmara.zsh-theme/master/daivasmara.zsh-theme -P ~/.oh-my-zsh/custom/themes/
 
 cd /tmp
 git clone https://github.com/noctuid/zscroll && cd zscroll && sudo python3 setup.py install
@@ -111,15 +108,13 @@ cp -r ./polybar/ ~/.config/
 cp -r ./rofi/ ~/.config/
 cp -r ./picom/ ~/.config/
 cp ./tmux/.tmux.conf ~
-cp ./.zshrc ~
-cp -r ./zsh ~
+cp -r ./fish/ ~/.config/
 
 sudo chmod +x ~/.config/i3/*.sh
 sudo chmod +x ~/.config/polybar/scripts/*.sh
 sudo chmod +x ~/.config/polybar/launch.sh
-echo "exec zsh" >> ~/.bashrc
+echo "exec fish" >> ~/.bashrc
 source ~/.bashrc
-source ~/.zshrc
 
 sleep 3
 reboot

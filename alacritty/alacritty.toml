@@ -54,7 +54,7 @@ foreground = "0xebdbb2"
 size = 14.0
 
 [font.normal]
-family = "JetBrainsMono Nerd Font"
+family = "BerkeleyMono Nerd Font Mono"
 
 [[keyboard.bindings]]
 action = "Paste"
@@ -71,3 +71,4 @@ history = 0
 
 [window]
 decorations = "none"
+opacity = 0.95
