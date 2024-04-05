@@ -8,7 +8,5 @@ function ghclone
   set username $argv[1]
   set repository $argv[2]
 
-gh repo clone $username/$repository
+gh repo clone $username/$repository && cd $repository
 end
-
-

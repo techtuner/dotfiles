@@ -11,6 +11,7 @@ abbr -a notes "cd ~/workspace/Notes/ && ls"
 abbr -a config "cd ~/.config/ && ls"
 abbr -a wall "cd ~/Pictures/wallpapers && gio open ."
 abbr -a src "source ~/.config/fish/config.fish"
+abbr -a virtualenv "source ~/env/bin/activate.fish"
 
 if status is-interactive
     # Commands to run in interactive sessions can go here
