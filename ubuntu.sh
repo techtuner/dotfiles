@@ -30,26 +30,17 @@ APPS=(
 	"nvim"
   "obsidian"
   "spotify"
-  "alacritty"
 )
 
 for app in ${APPS[@]}; do
 	sudo snap install $app --classic
 done
 
-sudo apt-get install golang-go cargo gh dconf-editor dconf-cli net-tools software-properties-common build-essential gdb gcc cmake pkg-config libfreetype6-dev libfontconfig1-dev libxcb-xfixes0-dev libxkbcommon-dev python3 nodejs python3-pip python3-venv zathura tmux ripgrep i3 i3-wm rofi polybar fd-find xclip wl-clipboard dmenu fzf feh fish picom autoconf make  libpam0g-dev libcairo2-dev  libxcb-composite0-dev libev-dev libx11-xcb-dev libxcb-xkb-dev libxcb-xinerama0-dev libxcb-randr0-dev libxcb-image0-dev libxcb-util0-dev libxcb-xrm-dev  libxkbcommon-x11-dev libjpeg-dev libtool xutils-dev playerctl -y
+sudo apt-get install golang-go cargo gh dconf-editor dconf-cli net-tools software-properties-common build-essential gdb gcc cmake python3 nodejs python3-pip python3-venv zathura tmux ripgrep fd-find fzf fish make docker.io docker-compose -y
 
 sudo apt remove apport apport-gtk -y && sudo apt purge apport apport-gtk -y
 
-cd ~/.config
-git clone https://github.com/Raymo111/i3lock-color.git
-cd i3lock-color
-./install-i3lock-color.sh
-
-cd $cwd
-
 sudo cp -r ./fonts/JetBrainsMono /usr/share/fonts/truetype/
-sudo cp -r ./fonts/BerkNerdFont /usr/share/fonts/truetype/
 
 code&
 cargo install eza
@@ -73,7 +64,6 @@ EXTENSIONS=(
     "naumovs.color-highlight"
     "vadimcn.vscode-lldb"
     "catppuccin.catppuccin-vsc-icons"
-    "marlosirapuan.nord-deep"
     "jdinhlife.gruvbox"
     "aaron-bond.better-comments"
 )
@@ -93,26 +83,18 @@ done
 
 git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 
-cd /tmp
-git clone https://github.com/noctuid/zscroll && cd zscroll && sudo python3 setup.py install
-
-cd $cwd
-
 cp -r ./nvim/ ~/.config/
 cp ./code/settings.json ~/.config/Code/User/
 cp ./code/keybindings.json ~/.config/Code/User/
 cp -r ./wallpapers/ ~/Pictures/
-cp -r ./kitty/ ~/.config/
-cp -r ./i3/ ~/.config/
-cp -r ./polybar/ ~/.config/
-cp -r ./rofi/ ~/.config/
-cp -r ./picom/ ~/.config/
 cp ./tmux/.tmux.conf ~
 cp -r ./fish/ ~/.config/
 
-sudo chmod +x ~/.config/i3/*.sh
-sudo chmod +x ~/.config/polybar/scripts/*.sh
-sudo chmod +x ~/.config/polybar/launch.sh
+# Installing Fisher fish plugin
+curl -sL https://raw.githubusercontent.com/jorgebucaran/fisher/main/functions/fisher.fish | source && fisher install jorgebucaran/fisher
+fisher install PatrickF1/fzf.fish
+
+
 echo "exec fish" >> ~/.bashrc
 source ~/.bashrc
 
