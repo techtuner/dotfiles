@@ -56,16 +56,16 @@ EXTENSIONS=(
     "sumneko.lua"
     "kisstkondoros.vscode-gutter-preview"
     "golang.go"
-    "miguelsolorio.fluent-icons"
     "tamasfe.even-better-toml"
     "usernamehw.errorlens"
     "ms-azuretools.vscode-docker"
     "serayuzgur.crates"
     "naumovs.color-highlight"
     "vadimcn.vscode-lldb"
-    "catppuccin.catppuccin-vsc-icons"
-    "jdinhlife.gruvbox"
     "aaron-bond.better-comments"
+    "antfu.icons-carbon"
+    "jaakko.black"
+    "pkief.material-icon-theme"
 )
 
 for extension in ${EXTENSIONS[@]}

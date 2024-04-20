@@ -14,28 +14,26 @@ Invoke-Expression "& {$(Invoke-RestMethod get.scoop.sh)} -RunAsAdmin"
 scoop_packages
 
 function code_extensions() {
-    $extension_list = "rust-lang.rust-analyzer",
+    $extension_list =     "rust-lang.rust-analyzer",
     "artdiniz.quitcontrol-vscode",
     "ms-python.python",
     "ms-python.vscode-pylance",
     "esbenp.prettier-vscode",
-    "ms-vscode.powershell",
     "christian-kohler.path-intellisense",
     "yzhang.markdown-all-in-one",
     "sumneko.lua",
     "kisstkondoros.vscode-gutter-preview",
     "golang.go",
-    "marlosirapuan.nord-deep",
-    "miguelsolorio.fluent-icons",
     "tamasfe.even-better-toml",
     "usernamehw.errorlens",
     "ms-azuretools.vscode-docker",
     "serayuzgur.crates",
     "naumovs.color-highlight",
     "vadimcn.vscode-lldb",
-    "catppuccin.catppuccin-vsc-icons",
     "aaron-bond.better-comments",
-    "jdinhlife.gruvbox"
+    "antfu.icons-carbon",
+    "jaakko.black",
+    "pkief.material-icon-theme"
 
 
     foreach ($extension in $extension_list) {
