@@ -137,24 +137,28 @@ cp $cwd/.zshrc ~
 cp ~/tmux/.tmux.conf ~
 sudo cp -r $cwd/dnsmasq/techtuner.conf /etc/dnsmasq.d/
 
+
 EXTENSIONS=(
- "golang.go"
-  "christian-kohler.path-intellisense"
-  "ms-python.python"
-  "ms-python.black-formatter"
-  "rust-lang.rust-analyzer"
-  "ms-python.vscode-pylance"
-  "vadimcn.vscode-lldb"
-  "serayuzgur.crates"
-  "tamasfe.even-better-toml"
-  "ms-azuretools.vscode-docker"
-  "catppuccin.catppuccin-vsc-icons"
-  "rangav.vscode-thunder-client"
-  "naumovs.color-highlight"
-  "miguelsolorio.fluent-icons"
-  "marlosirapuan.nord-deep"
-  "yzhang.markdown-all-in-one"
-  "jdinhlife.gruvbox"
+    "rust-lang.rust-analyzer"
+    "artdiniz.quitcontrol-vscode"
+    "ms-python.python"
+    "ms-python.vscode-pylance"
+    "esbenp.prettier-vscode"
+    "christian-kohler.path-intellisense"
+    "yzhang.markdown-all-in-one"
+    "sumneko.lua"
+    "kisstkondoros.vscode-gutter-preview"
+    "golang.go"
+    "tamasfe.even-better-toml"
+    "usernamehw.errorlens"
+    "ms-azuretools.vscode-docker"
+    "serayuzgur.crates"
+    "naumovs.color-highlight"
+    "vadimcn.vscode-lldb"
+    "aaron-bond.better-comments"
+    "antfu.icons-carbon"
+    "jaakko.black"
+    "pkief.material-icon-theme"
 )
 
 for extension in ${EXTENSIONS[@]}; do
