@@ -3,7 +3,7 @@ Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass
 $user = $env:USERNAME
 
 function scoop_packages() {
-    $scoop_apps = "sudo", "nvm", "gcc", "wget", "curl", "jq", "neovim", "gh", "oh-my-posh", "fzf"
+    $scoop_apps = "sudo", "nvm", "gcc", "wget", "curl", "jq", "neovim", "gh", "oh-my-posh", "fzf", "cmake", "make"
     foreach ($app in $scoop_apps) {
         scoop install main/$app
     }
@@ -14,11 +14,9 @@ Invoke-Expression "& {$(Invoke-RestMethod get.scoop.sh)} -RunAsAdmin"
 scoop_packages
 
 function code_extensions() {
-    $extension_list =     "rust-lang.rust-analyzer",
-    "artdiniz.quitcontrol-vscode",
+    $extension_list = "artdiniz.quitcontrol-vscode",
     "ms-python.python",
     "ms-python.vscode-pylance",
-    "esbenp.prettier-vscode",
     "christian-kohler.path-intellisense",
     "yzhang.markdown-all-in-one",
     "sumneko.lua",
@@ -58,7 +56,10 @@ Unblock-File -Path C:\Users\$user\Documents\Powershell\Microsoft.PowerShell_prof
 
 code_extensions
 
-cargo install eza
-
 Install-Module -Name posh-git -Scope CurrentUser -Force
 Install-Module -Name PSFzf -Scope CurrentUser -Force
+
+nvm install 20.12.2
+nvm use 20.12.2
+
+Restart-Computer
