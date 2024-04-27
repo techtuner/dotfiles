@@ -25,7 +25,7 @@ function ghclone() {
     local username=$1
     local repository=$2
 
-    gh repo clone "https://github.com/$username/$repository.git"
+    gh repo clone "https://github.com/$username/$repository.git && cd $repository"
     set -e "Run gh auth login to configure Github CLI"
 }
 
