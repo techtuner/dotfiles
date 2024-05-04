@@ -22,17 +22,13 @@ echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/githu
 
 update_system
 
-sudo apt install adb cargo gh routersploit python3-pip python3-virtualenv onesixtyone oscanner redis-tools smbclient smbmap snmp curl dnsrecon enum4linux nodejs gobuster nbtscan nikto nmap sslscan sipvicious tnscmd10g  wkhtmltopdf libimage-exiftool-perl python3-full code golang-go python3-ldap3 python3-yaml python3-impacket rainbowcrack ldnsutils ghidra strace dsniff yersinia dhcpstarv sslstrip zaproxy steghide bloodhound nuclei armitage beef-xss maltego protobuf-compiler httrack whatweb ruby osrframework sherlock sublist3r wifiphisher dnsmasq cmake terminator gcc feroxbuster seclists -y
+sudo apt install adb cargo gh routersploit python3-pip python3-virtualenv onesixtyone oscanner redis-tools smbclient smbmap snmp curl dnsrecon enum4linux nodejs gobuster nbtscan nikto nmap sslscan sipvicious tnscmd10g  wkhtmltopdf libimage-exiftool-perl python3-full golang-go python3-ldap3 python3-yaml python3-impacket rainbowcrack ldnsutils ghidra strace dsniff yersinia dhcpstarv sslstrip zaproxy steghide bloodhound nuclei armitage beef-xss maltego protobuf-compiler httrack whatweb ruby osrframework sherlock sublist3r wifiphisher dnsmasq cmake terminator gcc feroxbuster seclists gedit fzf -y
 
 cargo install urlencode rustscan eza
 
-code&
-
 mkdir -p $tools_path
 
-python3 -m pip install --user pipx
-python3 -m pipx ensurepath
-python3 -m pip install git+https://github.com/Tib3rius/AutoRecon.git
+pip install autorecon
 
 cd $tools_path
 echo "Installing Kiterunner"
@@ -120,39 +116,13 @@ done
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended
 git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
 
-cp -r $cwd/code/* ~/.config/Code/User/
 cp -r $cwd/wallpapers ~/Pictures/
 cp -r $cwd/nvim ~/.config/
 cp -r $cwd/zsh ~
 cp $cwd/.zshrc ~
-cp ~/tmux/.tmux.conf ~
+cp $cwd/tmux/.tmux.conf ~
 sudo cp -r $cwd/dnsmasq/techtuner.conf /etc/dnsmasq.d/
 
-EXTENSIONS=(
-    "rust-lang.rust-analyzer"
-    "artdiniz.quitcontrol-vscode"
-    "ms-python.python"
-    "ms-python.vscode-pylance"
-    "esbenp.prettier-vscode"
-    "christian-kohler.path-intellisense"
-    "yzhang.markdown-all-in-one"
-    "sumneko.lua"
-    "kisstkondoros.vscode-gutter-preview"
-    "golang.go"
-    "tamasfe.even-better-toml"
-    "usernamehw.errorlens"
-    "ms-azuretools.vscode-docker"
-    "serayuzgur.crates"
-    "naumovs.color-highlight"
-    "vadimcn.vscode-lldb"
-    "aaron-bond.better-comments"
-    "antfu.icons-carbon"
-    "jaakko.black"
-    "pkief.material-icon-theme"
-)
-
-for extension in ${EXTENSIONS[@]}; do
-	code --install-extension $extension
-done
+curl https://raw.githubusercontent.com/Daivasmara/daivasmara.zsh-theme/master/daivasmara.zsh-theme -o ~/.oh-my-zsh/custom/themes/daivasmara.zsh-theme
 
 echo "DO REMEMBER TO CHANGE THE nameserver to 127.0.0.1 in /etc/resolv.conf"
