@@ -1,13 +1,17 @@
 [global_config]
   window_state = maximise
+  always_on_top = True
 [keybindings]
 [profiles]
   [[default]]
-    font = JetBrainsMono Nerd Font Medium 16
+    background_darkness = 0.95
+    font = JetBrainsMonoNL Nerd Font Semi-Bold 16
     foreground_color = "#00ff00"
     scrollbar_position = hidden
-    palette = "#282828:#cc241d:#98971a:#d79921:#458588:#b16286:#689d6a:#a89984:#928374:#fb4934:#b8bb26:#fabd2f:#83a598:#d3869b:#8ec07c:#ebdbb2"
+    scroll_on_output = True
+    palette = "#1f2229:#d41919:#5ebdab:#fea44c:#367bf0:#9755b3:#49aee6:#e6e6e6:#198388:#ec0101:#47d4b9:#ff8a18:#277fff:#962ac3:#05a1f7:#ffffff"
     use_system_font = False
+    bold_is_bright = True
 [layouts]
   [[default]]
     [[[window0]]]
