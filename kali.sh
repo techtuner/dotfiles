@@ -80,7 +80,7 @@ sudo ln -s $tools_path/Postman/Postman /usr/bin/postman
 rm -rf postman-linux-x64.tar.gz
 cd $tools_path
 
-echo "Downloading Obsidian and Neovim"
+echo "Downloading Neovim"
 wget https://github.com/neovim/neovim/releases/download/v0.9.5/nvim.appimage
 sudo chmod +x nvim.appimage
 sudo ln -s $tools_path/nvim.appimage /usr/bin/nvim
@@ -100,6 +100,7 @@ sudo ln -s $tools_path/linpeas.sh /usr/bin/linpeas
 cd $cwd
 
 sudo cp -r $cwd/fonts/JetBrainsMono /usr/share/fonts/truetype
+sudo cp -r $cwd/fonts/'Fira Code' /usr/share/fonts/truetype
 
 FOLDERS=(
 "THM"
