@@ -1,6 +1,6 @@
 {
-  // Workbench and Editor Settings
-  "workbench.colorTheme": "Black Italic",
+  // Workbench settings
+  "workbench.colorTheme": "Tokyo Night",
   "workbench.productIconTheme": "icons-carbon",
   "workbench.iconTheme": "material-icon-theme",
   "workbench.startupEditor": "none",
@@ -12,6 +12,7 @@
   "window.menuBarVisibility": "hidden",
   "workbench.layoutControl.enabled": false,
   "window.commandCenter": false,
+  //Editor settings
   "editor.minimap.enabled": false,
   "editor.cursorBlinking": "smooth",
   "editor.formatOnPaste": true,
@@ -25,7 +26,6 @@
     "source.organizeImports": "explicit",
     "source.fixAll": "explicit"
   },
-  "editor.wordWrap": "on",
   "explorer.sortOrder": "type",
   "editor.tabSize": 2,
   "terminal.integrated.profiles.windows": {
@@ -37,17 +37,17 @@
   "files.autoSave": "afterDelay",
   "files.trimFinalNewlines": true,
   "files.trimTrailingWhitespace": true,
-  // Typography
-  "editor.fontFamily": "JetBrainsMono Nerd Font",
-  "editor.fontWeight": "bold",
+  // Fonts
+  "editor.fontFamily": "PlemolJP Console NF",
+  "editor.wordWrap": "on",
   "editor.fontSize": 14,
   "window.zoomLevel": 1,
   "editor.lineHeight": 2,
   "editor.fontLigatures": true,
-  "terminal.integrated.fontFamily": "JetBrainsMono Nerd Font",
+  "terminal.integrated.fontFamily": "PlemolJP Console NF",
   "terminal.integrated.fontSize": 14,
   "terminal.integrated.lineHeight": 1.5,
-  "errorLens.fontFamily": "JetBrainsMono Nerd Font",
+  "errorLens.fontFamily": "PlemolJP Console NF",
   "errorLens.fontSize": "16",
   "errorLens.fontStyleItalic": true,
   "better-comments.tags": [
@@ -98,11 +98,6 @@
     }
   ],
   // Programming Languages
-  // Javascript
-  "[javascript]": {
-    "editor.maxTokenizationLineLength": 2500,
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
   // Markdown
   "[markdown]": {
     "editor.unicodeHighlight.ambiguousCharacters": false,
@@ -117,7 +112,9 @@
     }
   },
   // Rust
-  "[rust]": { "editor.defaultFormatter": "rust-lang.rust-analyzer" },
+  "[rust]": {
+    "editor.defaultFormatter": "rust-lang.rust-analyzer"
+  },
   // Go
   "[go]": {
     "editor.insertSpaces": false,
@@ -127,15 +124,6 @@
     "editor.suggest.snippetsPreventQuickSuggestions": false,
     "editor.defaultFormatter": "golang.go"
   },
-  "[lua]": {
-    "editor.quickSuggestions": {
-      "comments": "inline",
-      "other": "on",
-      "strings": "on"
-    },
-    "editor.semanticHighlighting.enabled": true,
-    "editor.defaultFormatter": "sumneko.lua"
-  },
   "[python]": {
     "editor.defaultFormatter": "ms-python.vscode-pylance",
     "editor.formatOnSave": true,
@@ -144,7 +132,9 @@
   // Color Highlight
   "color-highlight.enable": true,
   "color-highlight.markerType": "background",
-  "color-highlight.languages": ["*"],
+  "color-highlight.languages": [
+    "*"
+  ],
   "gutterpreview.showImagePreviewOnGutter": true,
   "workbench.activityBar.location": "hidden",
   "security.workspace.trust.banner": "always"

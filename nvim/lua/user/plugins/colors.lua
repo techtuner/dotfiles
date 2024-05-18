@@ -1,5 +1,5 @@
 function Colors(color)
-  color = color or "solarized-osaka"
+  color = color or "tokyonight"
 
   vim.cmd.colorscheme(color)
   vim.api.nvim_set_hl(0, "Normal", { bg = "none" })
@@ -24,6 +24,21 @@ return {
       Colors()
     end
   },
+  {
+  "folke/tokyonight.nvim",
+  lazy = false,
+  priority = 1000,
+  config = function(){
+    require('tokyonight').setup({
+      style = 'night',
+      transparent = true,
+      terminal_colors = true,
+
+    })
+    Colors()
+  end
+  }
+},
   {
     "rose-pine/neovim",
     name = "rose-pine",

@@ -1,35 +1,49 @@
+# TokyoNight Alacritty Colors
 # Default colors
 [colors.primary]
-background = '#00141a' #color.base04
-foreground = '#839495' #color.fg
+background = '#1a1b26'
+foreground = '#c0caf5'
+
+[colors.cursor]
+cursor = '#c0caf5'
+text = '#1a1b26'
 
 # Normal colors
 [colors.normal]
-black = '#00141a'   #color.base04
-red = '#dc312e'     #color.red
-green = '#859900'   #color.green
-yellow = '#b38600'  #color.yellow
-blue = '#278bd3'    #color.blue
-magenta = '#d33682' #color.magenta
-cyan = '#2aa298'    #color.cyan
-white = '#ede7d4'   #color.base2
+black = '#15161e'
+red = '#f7768e'
+green = '#9ece6a'
+yellow = '#e0af68'
+blue = '#7aa2f7'
+magenta = '#bb9af7'
+cyan = '#7dcfff'
+white = '#a9b1d6'
 
 # Bright colors
 [colors.bright]
-black = '#002d38'   #color.base03
-red = '#f65351'     #color.red300
-green = '#b7fa00'   #color.green300
-yellow = '#ffbf00'  #color.yellow300
-blue = '#47adf5'    #color.blue300
-magenta = '#f254a1' #color.magenta300
-cyan = '#2beede'    #color.cyan300
-white = '#fdf6e2'   #color.base3
+black = '#414868'
+red = '#f7768e'
+green = '#9ece6a'
+yellow = '#e0af68'
+blue = '#7aa2f7'
+magenta = '#bb9af7'
+cyan = '#7dcfff'
+white = '#c0caf5'
+
+# Indexed Colors
+[[colors.indexed_colors]]
+index = 16
+color = '#ff9e64'
+
+[[colors.indexed_colors]]
+index = 17
+color = '#db4b4b'
 
 [font]
-size = 14.0
+size = 16.0
 
 [font.normal]
-family = "DankMono Nerd Font Mono"
+family = "PlemolJP Console NF"
 
 [[keyboard.bindings]]
 action = "Paste"
@@ -47,3 +61,4 @@ history = 0
 [window]
 decorations = "none"
 opacity = 0.95
+startup_mode = "Maximized"

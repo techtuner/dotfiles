@@ -124,6 +124,5 @@ cp $cwd/.zshrc ~
 cp $cwd/tmux/.tmux.conf ~
 sudo cp -r $cwd/dnsmasq/techtuner.conf /etc/dnsmasq.d/
 
-curl https://raw.githubusercontent.com/Daivasmara/daivasmara.zsh-theme/master/daivasmara.zsh-theme -o ~/.oh-my-zsh/custom/themes/daivasmara.zsh-theme
 
 echo "DO REMEMBER TO CHANGE THE nameserver to 127.0.0.1 in /etc/resolv.conf"

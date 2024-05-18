@@ -3,46 +3,47 @@ Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass
 $user = $env:USERNAME
 
 function scoop_packages() {
-    $scoop_apps = "sudo", "nvm", "gcc", "wget", "curl", "jq", "neovim", "gh", "oh-my-posh", "fzf", "cmake", "make"
-    foreach ($app in $scoop_apps) {
-        scoop install main/$app
-    }
+  $scoop_apps = "sudo", "nvm", "gcc", "wget", "curl", "jq", "neovim", "gh", "oh-my-posh", "fzf", "cmake", "make", "docker"
+
+  foreach ($spp in $scoop_apps) {
+    scoop install $app
+  }
 }
 
+function code_extensions() {
+  $extension_list = "ms-python.python",
+  "naumovs.color-highlight",
+  "ms-azuretools.vscode-docker",
+  "golang.go",
+  "christian-kohler.path-intellisense",
+  "enkia.tokyo-night",
+  "redhat.vscode-yaml",
+  "aaron-bond.better-comments",
+  "twxs.cmake",
+  "vadimcn.vscode-lldb",
+  "editorconfig.editorconfig",
+  "usernamehw.errorlens",
+  "kisstkondoros.vscode-gutter-preview",
+  "yzhang.markdown-all-in-one",
+  "rust-lang.rust-analyzer",
+  "pkief.material-icon-theme",
+  "antfu.icons-carbon",
+  "ms-vscode.powershell"
+
+  foreach ($extension in $extension_list) {
+    code --install-extension $extension
+  }
+  Copy-Item .\code\settings.json C:\Users\$user\AppData\Roaming\Code\User\ -Recurse
+  Copy-Item .\code\keybindings.json C:\Users\$user\AppData\Roaming\Code\User\ -Recurse
+}
+
+# Installing Scoop Pacakage Manager
 Invoke-Expression "& {$(Invoke-RestMethod get.scoop.sh)} -RunAsAdmin"
 
 scoop_packages
 
-function code_extensions() {
-    $extension_list = "artdiniz.quitcontrol-vscode",
-    "ms-python.python",
-    "ms-python.vscode-pylance",
-    "christian-kohler.path-intellisense",
-    "yzhang.markdown-all-in-one",
-    "sumneko.lua",
-    "kisstkondoros.vscode-gutter-preview",
-    "golang.go",
-    "tamasfe.even-better-toml",
-    "usernamehw.errorlens",
-    "ms-azuretools.vscode-docker",
-    "serayuzgur.crates",
-    "naumovs.color-highlight",
-    "vadimcn.vscode-lldb",
-    "aaron-bond.better-comments",
-    "antfu.icons-carbon",
-    "jaakko.black",
-    "pkief.material-icon-theme"
-
-
-    foreach ($extension in $extension_list) {
-        code --install-extension $extension
-    }
-
-    Copy-Item .\code\settings.json C:\Users\$user\AppData\Roaming\Code\User\ -Recurse
-    Copy-Item .\code\keybindings.json C:\Users\$user\AppData\Roaming\Code\User\ -Recurse
-}
-
 # Create Directories
+mkdir D:\Projects
 mkdir ~\Documents\Powershell
 mkdir ~\.config\powershell
 
@@ -56,10 +57,5 @@ Unblock-File -Path C:\Users\$user\Documents\Powershell\Microsoft.PowerShell_prof
 
 code_extensions
 
-Install-Module -Name posh-git -Scope CurrentUser -Force
-Install-Module -Name PSFzf -Scope CurrentUser -Force
-
-nvm install 20.12.2
-nvm use 20.12.2
-
-Restart-Computer
+nvm install lts
+nvm use lts
