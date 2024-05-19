@@ -10,45 +10,47 @@ update_system() {
 
 update_system
 
-sudo apt-get install ca-certificates curl gnupg -y
-sudo mkdir -p /usr/share/keyrings
-curl -fsSL https://deb.nodesource.com/gpgkey/nodesource-repo.gpg.key | sudo gpg --dearmor -o /usr/share/keyrings/nodesource.gpg
-NODE_MAJOR=20
-echo "deb [signed-by=/usr/share/keyrings/nodesource.gpg] https://deb.nodesource.com/node_$NODE_MAJOR.x nodistro main" | sudo tee /etc/apt/sources.list.d/nodesource.list
+sudo apt-get install dconf-editor dconf-cli net-tools software-properties-common build-essential procps curl wget file git zathura i3 i3-wm dmenu polybar pulseaudio pipewire picom ca-certificates curl gnupg python3-venv -y
 
-# Github CLI
-curl -fsSL https://cli.github.com/packages/githubcli-archive-keyring.gpg | sudo dd of=/usr/share/keyrings/githubcli-archive-keyring.gpg
-sudo chmod go+r /usr/share/keyrings/githubcli-archive-keyring.gpg
-echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/githubcli-archive-keyring.gpg] https://cli.github.com/packages stable main" | sudo tee /etc/apt/sources.list.d/github-cli.list >/dev/null
+sudo apt remove apport apport-gtk -y && sudo apt purge apport apport-gtk -y
+sudo apt-get install  -y
+NONINTERACTIVE=1 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+
+test -d ~/.linuxbrew && eval "$(~/.linuxbrew/bin/brew shellenv)"
+test -d /home/linuxbrew/.linuxbrew && eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+echo "eval \"\$($(brew --prefix)/bin/brew shellenv)\"" >> ~/.bashrc
+
+source ~/.bashrc
+
+APPS=("gh" "neovim" "rust" "nvm" "python" "tmux" "gcc" "cmake" "make" "fzf" "zsh" "ripgrep" "go" "docker" "bash" "fd" "bat" "eza" "zoxide" "zsh-syntax-highlighting" "zsh-autosuggestions" "feh" "powerlevel10k" "autopep8" "gdb")
+for app in ${APPS[@]}; do
+  brew install $app
+done
 
 update_system
 
-APPS=(
+SNAPS=(
 	"code"
-	"nvim"
-  "spotify"
+  "alacritty"
 )
 
-for app in ${APPS[@]}; do
-	sudo snap install $app --classic
+for snapapp in ${SNAPS[@]}; do
+	sudo snap install $snapapp --classic
 done
-
-sudo apt-get install golang-go cargo gh dconf-editor dconf-cli net-tools software-properties-common build-essential gdb gcc cmake python3 nodejs python3-pip python3-venv zathura tmux ripgrep fd-find fzf zsh make docker.io docker-compose i3 i3-wm dmenu polybar feh pulseaudio pipewire -y
-
-sudo apt remove apport apport-gtk -y && sudo apt purge apport apport-gtk -y
 
 cd ~/Desktop
 wget -O playerctl-2.4.1_amd64.deb https://github.com/altdesktop/playerctl/releases/download/v2.4.1/playerctl-2.4.1_amd64.deb
 sudo dpkg -i playerctl-2.4.1_amd64.deb
 git clone https://github.com/noctuid/zscroll
 cd zscroll
+python3 -m venv ~/env
+source ~/env/bin/activate .
 sudo python3 setup.py install
 
 cd $cwd
-sudo cp -r ./fonts/PlemolJP /usr/share/fonts/truetype/
+sudo cp -r ./fonts/'Fira Code' /usr/share/fonts/truetype/
 
 code&
-cargo install eza
 
 EXTENSIONS=(
    "ms-python.python"
@@ -76,10 +78,9 @@ do
 done
 
 mkdir -p ~/workspace/Projects
+mkdir ~/.nvm
 
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended
 git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
-git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
 
 cp -r ./nvim/ ~/.config/
 cp -r ./i3/ ~/.config/
@@ -91,7 +92,6 @@ sudo chmod +x ~/.config/polybar/launch.sh
 cp ./code/settings.json ~/.config/Code/User/
 cp ./code/keybindings.json ~/.config/Code/User/
 cp -r ./alacritty ~/.config/
-cp -r ./kitty ~/.config/
 cp -r ./wallpapers/ ~/Pictures/
 cp ./tmux/.tmux.conf ~
 cp -r ./zsh/ ~
@@ -100,5 +100,5 @@ cp -r .zshrc ~
 echo "exec zsh" >> ~/.bashrc
 source ~/.bashrc
 
-sleep 3
+sleep 5
 reboot

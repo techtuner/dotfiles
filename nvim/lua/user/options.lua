@@ -37,7 +37,7 @@ set.splitbelow = true
 set.splitright = true
 
 set.pumheight = 10
-
+set.laststatus = 0
 
 set.iskeyword:append("-")
 set.isfname:append("@-@")
