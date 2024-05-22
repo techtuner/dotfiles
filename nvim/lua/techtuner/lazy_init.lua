@@ -9,9 +9,12 @@ if not vim.loop.fs_stat(lazypath) then
     lazypath,
   })
 end
+
 vim.opt.rtp:prepend(lazypath)
 
+
 require("lazy").setup({
-  spec = "user.plugins",
-  change_detection = { notify = true }
+  spec="techtuner.plugins",
+  change_detection = {notify = false }
 })
+
