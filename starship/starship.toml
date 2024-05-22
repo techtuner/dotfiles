@@ -58,11 +58,11 @@ format = '[$localipv4](bold green) '
 disabled = false
 
 
-#[custom.docker]
-#command = "echo '  '"
-#files = ["Dockerfile", 'docker-compose.yml', "docker-compose.yaml"]
-#when = """ comand -v docker &> /dev/null; exit (echo $?); """
-#format = " [$output](color7)"
+# [custom.docker]
+# command = "echo '  '"
+# files = ["Dockerfile", 'docker-compose.yml', "docker-compose.yaml"]
+# when = """ comand -v docker &> /dev/null; exit (echo $?); """
+# format = " [$output](color7)"
 
 [character]
 success_symbol = " [$shell\\$](color7)"

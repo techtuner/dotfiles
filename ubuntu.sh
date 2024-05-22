@@ -22,7 +22,7 @@ echo "eval \"\$($(brew --prefix)/bin/brew shellenv)\"" >> ~/.bashrc
 
 source ~/.bashrc
 
-APPS=("gh" "neovim" "rust" "nvm" "python" "tmux" "gcc" "cmake" "make" "fzf" "zsh" "ripgrep" "go" "docker" "bash" "fd" "bat" "eza" "zoxide" "zsh-syntax-highlighting" "zsh-autosuggestions" "feh" "powerlevel10k" "autopep8" "gdb")
+APPS=("gh" "neovim" "rust" "nvm" "python" "tmux" "gcc" "cmake" "make" "fzf" "zsh" "ripgrep" "go" "docker" "bash" "fd" "bat" "eza" "zoxide" "feh" "autopep8" "gdb")
 for app in ${APPS[@]}; do
   brew install $app
 done
@@ -38,6 +38,8 @@ for snapapp in ${SNAPS[@]}; do
 	sudo snap install $snapapp --classic
 done
 
+curl -sS https://starship.rs/install.sh | sh
+
 cd ~/Desktop
 wget -O playerctl-2.4.1_amd64.deb https://github.com/altdesktop/playerctl/releases/download/v2.4.1/playerctl-2.4.1_amd64.deb
 sudo dpkg -i playerctl-2.4.1_amd64.deb
@@ -49,6 +51,7 @@ sudo python3 setup.py install
 
 cd $cwd
 sudo cp -r ./fonts/'Fira Code' /usr/share/fonts/truetype/
+sudo cp -r ./fonts/JetBrainsMono /usr/share/fonts/truetype/
 
 code&
 
@@ -82,6 +85,7 @@ mkdir ~/.nvm
 
 git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 
+cp -r ./starship/starship.toml ~/.config/
 cp -r ./nvim/ ~/.config/
 cp -r ./i3/ ~/.config/
 cp ./.i3status.conf ~
