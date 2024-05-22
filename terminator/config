@@ -5,7 +5,7 @@
 [profiles]
   [[default]]
     background_darkness = 0.95
-    font = PlemolJP Console NF 16
+    font = JetBrainsMono Nerd Font Mono 16
     foreground_color = "#00ff00"
     scrollbar_position = hidden
     scroll_on_output = True
