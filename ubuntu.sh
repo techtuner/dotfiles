@@ -38,15 +38,11 @@ for snapapp in ${SNAPS[@]}; do
 	sudo snap install $snapapp --classic
 done
 
-curl -sS https://starship.rs/install.sh | sh
-
 cd ~/Desktop
 wget -O playerctl-2.4.1_amd64.deb https://github.com/altdesktop/playerctl/releases/download/v2.4.1/playerctl-2.4.1_amd64.deb
 sudo dpkg -i playerctl-2.4.1_amd64.deb
 git clone https://github.com/noctuid/zscroll
 cd zscroll
-python3 -m venv ~/env
-source ~/env/bin/activate .
 sudo python3 setup.py install
 
 cd $cwd
@@ -84,8 +80,9 @@ mkdir -p ~/workspace/Projects
 mkdir ~/.nvm
 
 git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
+git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
 
-cp -r ./starship/starship.toml ~/.config/
 cp -r ./nvim/ ~/.config/
 cp -r ./i3/ ~/.config/
 cp ./.i3status.conf ~
