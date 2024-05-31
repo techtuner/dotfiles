@@ -81,4 +81,4 @@ export NVM_DIR="$HOME/.nvm"
 
 source ~/zsh/function.zsh
 source ~/zsh/aliases.zsh
-
+eval "$(starship init zsh)"

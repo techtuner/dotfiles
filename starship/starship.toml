@@ -1,148 +1,102 @@
+# ~/.config/starship.toml
+
+add_newline = false
 command_timeout = 1000
+# format = """$os$username$kubernetes$directory$git_branch$git_status"""
+format = """\
+[╭╴](238)$os\
+$all[╰─](238)$character"""
 
-add_newline = true
-
-format = """
-[╭─](color2)\
-    [【](color7)\
-      $username \
-      [@](color7) \
-       $localip\
-      $directory\      
-    [】](color7)
-[╰─](color2)\
-    $git_branch\
-    $git_status\
-    $package\
-    $python\
-    $nodejs\
-    $os\ 
-    $rust\ 
-    $golang\ 
-    $c\ 
-    $time\
-    $shell"""
-
-palette = "pywal"
-
-[palettes.pywal]
-color0 = "#191C22"
-color1 = "#81A1C1"
-color2 = "#8FBCBB"
-color3 = "#BF616A"
-color4 = "#B48EAD"
-color5 = "#A3BE8C"
-color6 = "#4C566A"
-color7 = "#ECEFF4"
-color8 = "#EBCB8B"
-
-[memory_usage]
-disabled = false
-symbol = " "
-threshold = -1
-format = " [$symbol$ram](color1)"
-
-
-[username]
-show_always = true
-format = "[$user](color1)"
-
-[hostname]
-ssh_only = false
-format = "[$hostname](color1)"
-disabled = false
-
-[localip]
-ssh_only = false
-format = '[$localipv4](bold green) '
-disabled = false
-
-
-# [custom.docker]
-# command = "echo '  '"
-# files = ["Dockerfile", 'docker-compose.yml', "docker-compose.yaml"]
-# when = """ comand -v docker &> /dev/null; exit (echo $?); """
-# format = " [$output](color7)"
-
-[character]
-success_symbol = " [$shell\\$](color7)"
-error_symbol = " [$shell✖](color7)"
-
-[shell]
-powershell_indicator = "_"
-bash_indicator = ""
-disabled = false
-
-
-[time]
-disabled = false
-time_format = "%T"
-format = "[ $time](color5)"
-use_12hr = true
-
-[directory]
-disabled = false
-read_only = " "
-truncation_length = 4
-truncate_to_repo = false
-format = "[$read_only](color4)[$path](color4) "
-home_symbol = ""
-
-[directory.substitutions]
-"~" = ""
-
-[cmd_duration]
-disabled = false
-min_time = 2000
-show_milliseconds = true
-show_notifications = false
-min_time_to_notify = 45_000
-format = "[ 祥$duration](color3) "
-
-[git_status]
-stashed = " \\(${count}\\) "
-ahead = "ﲗ ${count}"
-behind = "ﲔ ${count}"
-diverged = "李 ${ahead_count} ${behind_count}"
-conflicted = "${count}"
-deleted = " [${count}](color3)"
-renamed = "﫦${count}"
-modified = "[  \\(${count}\\) ](color3)"
-staged = " [ ${count}](color3)"
-untracked = "  \\(${count}\\)"
-format = "([$all_status$ahead_behind](color3)) "
-
-[git_branch]
-symbol = " "
-format = "[$symbol$branch](color7)"
-
-[package]
-symbol = " "
-display_private = true
-version_format = "v${raw}"
-format = "[$symbol$version](color4)"
-
-#=== languages ===
-
-[nodejs]
-symbol = "  "
-format = "[$symbol($version)](color7)"
-
-[python]
-symbol = "  "
-pyenv_prefix = 'pyenv '
-python_binary = "python"
-format = '[$symbol$pyenv_prefix$version(\($virtualenv\))](color7)'
-
-[c]
-format = '\[[$symbol($version(-$name))]($style)\]'
-
-[golang]
-format = '\[[$symbol($version)]($style)\]'
+# ---
 
 [os]
-format = '\[[$symbol]($style)\]'
+format = '[$symbol](bold white) '   
+disabled = false
 
-[rust]
-format = '\[[$symbol($version)]($style)\]'
-style = "bold green"
+[os.symbols]
+Windows = ''
+Arch = '󰣇'
+Ubuntu = ''
+Macos = '󰀵'
+
+# ---
+
+# Shows the username
+[username]
+style_user = 'white bold'
+style_root = 'black bold'
+format = '[$user]($style) '
+disabled = false
+show_always = true
+
+# Shows the hostname
+# [hostname]
+# ssh_only = false
+# format = 'on [$hostname](bold yellow) '
+# disabled = false
+
+# Shows current directory
+[directory]
+# truncation_length = 1
+# truncation_symbol = '…/'
+home_symbol = '󰋜 ~'
+read_only_style = '197'
+read_only = '  '
+format = 'at [$path]($style)[$read_only]($read_only_style) '
+
+# Shows current git branch
+[git_branch]
+symbol = ' '
+format = 'via [$symbol$branch]($style)'
+# truncation_length = 4
+truncation_symbol = '…/'
+style = 'bold green'
+
+# Shows current git status
+[git_status]
+format = '[$all_status$ahead_behind]($style) '
+style = 'bold green'
+conflicted = '🏳'
+up_to_date = ''
+untracked = ' '
+ahead = '⇡${count}'
+diverged = '⇕⇡${ahead_count}⇣${behind_count}'
+behind = '⇣${count}'
+stashed = ' '
+modified = ' '
+staged = '[++\($count\)](green)'
+renamed = '襁 '
+deleted = ' '
+
+# Shows kubernetes context and namespace
+[kubernetes]
+format = 'via [󱃾 $context\($namespace\)](bold purple) '
+disabled = false
+
+# ---
+
+[vagrant]
+disabled = true
+
+[docker_context]
+disabled = true
+
+[helm]
+disabled = true
+
+[python]
+disabled = true
+
+[nodejs]
+disabled = true
+
+[ruby]
+disabled = true
+
+[terraform]
+disabled = true
+
+# Change the default prompt characters
+[character]
+success_symbol = "[](238)"
+error_symbol = "[](238)"

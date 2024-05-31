@@ -13,6 +13,7 @@ Set-PSReadLineKeyHandler -Chord 'Ctrl+a' -Function BeginningOfLine
 #Aliases
 Set-Alias -Name vim -Value nvim
 Set-Alias grep findstr
+Set-Alias -Name cat -Value bat
 Set-Alias tig 'C:\Program Files\Git\usr\bin\tig.exe'
 Set-Alias less 'C:\Program Files\Git\usr\bin\less.exe'
 
@@ -32,4 +33,6 @@ function ghclone($username, $repo){
   }
 }
 
-oh-my-posh init pwsh --config "$env:POSH_THEMES_PATH\spaceship.omp.json" | Invoke-Expression
+#oh-my-posh init pwsh --config "$env:POSH_THEMES_PATH\spaceship.omp.json" | Invoke-Expression
+Invoke-Expression (&starship init powershell)
+# $PSStyle.FileInfo.Directory = "`e[38;2;255;255;255m"

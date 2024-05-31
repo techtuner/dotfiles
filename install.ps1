@@ -3,9 +3,9 @@ Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass
 $user = $env:USERNAME
 
 function scoop_packages() {
-  $scoop_apps = "sudo", "nvm", "gcc", "wget", "curl", "jq", "neovim", "gh", "oh-my-posh", "fzf", "cmake", "make", "docker"
+  $scoop_apps = "sudo", "nvm", "gcc", "wget", "curl", "jq", "neovim", "gh", "oh-my-posh", "fzf", "cmake", "make", "docker", "starship", "bat"
 
-  foreach ($spp in $scoop_apps) {
+  foreach ($app in $scoop_apps) {
     scoop install $app
   }
 }
