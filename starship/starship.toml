@@ -1,7 +1,7 @@
 # ~/.config/starship.toml
 
 add_newline = false
-command_timeout = 1000
+command_timeout = 5000
 # format = """$os$username$kubernetes$directory$git_branch$git_status"""
 format = """\
 [╭╴](238)$os\
@@ -98,5 +98,5 @@ disabled = true
 
 # Change the default prompt characters
 [character]
-success_symbol = "[](238)"
-error_symbol = "[](238)"
+success_symbol = "[](green)"
+error_symbol = "[](red)"
