@@ -38,6 +38,8 @@ for snapapp in ${SNAPS[@]}; do
 	sudo snap install $snapapp --classic
 done
 
+cargo install starship
+
 cd ~/Desktop
 wget -O playerctl-2.4.1_amd64.deb https://github.com/altdesktop/playerctl/releases/download/v2.4.1/playerctl-2.4.1_amd64.deb
 sudo dpkg -i playerctl-2.4.1_amd64.deb
@@ -80,7 +82,7 @@ mkdir -p ~/workspace/Projects
 mkdir ~/.nvm
 
 git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended
+# sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended
 git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
 git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
 
@@ -95,6 +97,7 @@ cp ./code/settings.json ~/.config/Code/User/
 cp ./code/keybindings.json ~/.config/Code/User/
 cp -r ./alacritty ~/.config/
 cp -r ./wallpapers/ ~/Pictures/
+cp ./starship/starship.toml ~/.config/
 cp ./tmux/.tmux.conf ~
 cp -r ./zsh/ ~
 cp -r .zshrc ~

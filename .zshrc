@@ -1,6 +1,6 @@
 export ZSH="$HOME/.oh-my-zsh"
 
-ZSH_THEME="robbyrussell"
+# ZSH_THEME="robbyrussell"
 
 # history setup
 HISTFILE=$HOME/.zhistory
@@ -82,3 +82,5 @@ export NVM_DIR="$HOME/.nvm"
 source ~/zsh/function.zsh
 source ~/zsh/aliases.zsh
 eval "$(starship init zsh)"
+
+export PATH=/home/techtuner/.nvm/versions/node/v20.13.1/bin:/home/linuxbrew/.linuxbrew/bin:/home/linuxbrew/.linuxbrew/sbin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/snap/bin:/home/techtuner/.cargo/bin
