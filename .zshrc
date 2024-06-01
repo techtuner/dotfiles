@@ -71,7 +71,11 @@ _fzf_comprun() {
 # ---- Zoxide (better cd) ----
 eval "$(zoxide init zsh)"
 
-plugins=(git zsh-autosuggestions zsh-syntax-highlighting)
+plugins=(git tmux zsh-autosuggestions zsh-syntax-highlighting)
+ZSH_TMUX_AUTOSTART=true
+
+
+
 source $ZSH/oh-my-zsh.sh
 
 
@@ -82,5 +86,3 @@ export NVM_DIR="$HOME/.nvm"
 source ~/zsh/function.zsh
 source ~/zsh/aliases.zsh
 eval "$(starship init zsh)"
-
-export PATH=/home/techtuner/.nvm/versions/node/v20.13.1/bin:/home/linuxbrew/.linuxbrew/bin:/home/linuxbrew/.linuxbrew/sbin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/snap/bin:/home/techtuner/.cargo/bin
