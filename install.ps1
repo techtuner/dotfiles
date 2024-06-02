@@ -16,7 +16,7 @@ function code_extensions() {
   "ms-azuretools.vscode-docker",
   "golang.go",
   "christian-kohler.path-intellisense",
-  "enkia.tokyo-night",
+  "adorabilis.nord-midnight",
   "redhat.vscode-yaml",
   "aaron-bond.better-comments",
   "twxs.cmake",
