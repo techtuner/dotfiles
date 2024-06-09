@@ -22,13 +22,11 @@ echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/githu
 
 update_system
 
-sudo apt install adb cargo gh routersploit python3-pip python3-virtualenv onesixtyone oscanner redis-tools smbclient smbmap snmp curl dnsrecon enum4linux nodejs gobuster nbtscan nikto nmap sslscan sipvicious tnscmd10g  wkhtmltopdf libimage-exiftool-perl python3-full golang-go python3-ldap3 python3-yaml python3-impacket rainbowcrack ldnsutils ghidra strace dsniff yersinia dhcpstarv sslstrip zaproxy steghide bloodhound nuclei armitage beef-xss maltego protobuf-compiler httrack whatweb ruby osrframework sherlock sublist3r wifiphisher dnsmasq cmake terminator gcc feroxbuster seclists gedit fzf -y
+sudo apt install adb cargo gh routersploit python3-pip python3-virtualenv onesixtyone oscanner redis-tools smbclient smbmap snmp curl dnsrecon enum4linux nodejs gobuster nbtscan nikto nmap sslscan sipvicious tnscmd10g  wkhtmltopdf libimage-exiftool-perl python3-full golang-go python3-ldap3 python3-yaml python3-impacket rainbowcrack ldnsutils ghidra strace dsniff yersinia dhcpstarv sslstrip zaproxy steghide bloodhound nuclei armitage beef-xss maltego protobuf-compiler httrack whatweb ruby osrframework sherlock sublist3r wifiphisher dnsmasq cmake kitty gcc feroxbuster seclists gedit fzf zoxide autorecon netexec -y
 
 cargo install urlencode rustscan eza
 
 mkdir -p $tools_path
-
-pip install autorecon
 
 cd $tools_path
 echo "Installing Kiterunner"
@@ -57,12 +55,6 @@ wget https://github.com/DominicBreuker/pspy/releases/download/v1.2.1/pspy64
 sudo chmod +x ./pspy64
 sudo ln -s $tools_path/pspy64 /usr/bin/pspy
 
-echo "Installing NetExec"
-git clone https://github.com/Pennyw0rth/NetExec
-cd NetExec
-pip install .
-cd $tools_path
-
 echo "Installing Go tools"
 go install github.com/fullstorydev/grpcurl/cmd/grpcurl@latest
 go install github.com/fullstorydev/grpcui/cmd/grpcui@latest
@@ -72,13 +64,6 @@ sudo ln -s ~/go/bin/kerbrute /usr/bin/kerbrute
 sudo ln -s ~/go/bin/grpcui /usr/bin/grpcui
 sudo ln -s ~/go/bin/grpcurl /usr/bin/grpcurl
 sudo ln -s ~/go/bin/assetfinder /usr/bin/assetfinder
-
-echo "Installing Postman"
-sudo wget https://dl.pstmn.io/download/latest/linux_64 -O postman-linux-x64.tar.gz
-sudo tar -xvzf postman-linux-x64.tar.gz
-sudo ln -s $tools_path/Postman/Postman /usr/bin/postman
-rm -rf postman-linux-x64.tar.gz
-cd $tools_path
 
 echo "Downloading Neovim"
 wget https://github.com/neovim/neovim/releases/download/v0.9.5/nvim.appimage
@@ -119,10 +104,10 @@ git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:
 
 cp -r $cwd/wallpapers ~/Pictures/
 cp -r $cwd/nvim ~/.config/
+cp -r $cwd/kitty ~/.config/
 cp -r $cwd/zsh ~
 cp $cwd/.zshrc ~
 cp $cwd/tmux/.tmux.conf ~
 sudo cp -r $cwd/dnsmasq/techtuner.conf /etc/dnsmasq.d/
-
 
 echo "DO REMEMBER TO CHANGE THE nameserver to 127.0.0.1 in /etc/resolv.conf"
