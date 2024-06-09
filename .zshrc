@@ -1,6 +1,6 @@
 export ZSH="$HOME/.oh-my-zsh"
 
-# ZSH_THEME="robbyrussell"
+ZSH_THEME="robbyrussell"
 
 # history setup
 HISTFILE=$HOME/.zhistory
@@ -71,7 +71,7 @@ _fzf_comprun() {
 # ---- Zoxide (better cd) ----
 eval "$(zoxide init zsh)"
 
-plugins=(git tmux zsh-autosuggestions zsh-syntax-highlighting)
+plugins=(git tmux zsh-syntax-highlighting)
 ZSH_TMUX_AUTOSTART=true
 
 
@@ -85,4 +85,6 @@ export NVM_DIR="$HOME/.nvm"
 
 source ~/zsh/function.zsh
 source ~/zsh/aliases.zsh
-eval "$(starship init zsh)"
+
+export PATH=$PATH:~/.cargo/bin:/~/.local/bin
+
