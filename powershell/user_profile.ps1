@@ -33,6 +33,6 @@ function ghclone($username, $repo){
   }
 }
 
-#oh-my-posh init pwsh --config "$env:POSH_THEMES_PATH\spaceship.omp.json" | Invoke-Expression
-Invoke-Expression (&starship init powershell)
-# $PSStyle.FileInfo.Directory = "`e[38;2;255;255;255m"
+oh-my-posh init pwsh --config "$env:POSH_THEMES_PATH\robbyrussell.omp.json" | Invoke-Expression
+# Invoke-Expression (&starship init powershell)
+$PSStyle.FileInfo.Directory = "`e[38;2;255;255;255m"
