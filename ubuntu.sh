@@ -1,46 +1,35 @@
 #!/bin/bash
+
 cwd=$PWD
-update_system() {
-	sudo apt --fix-broken install -y
-	sudo apt update -y
-	sudo apt full-upgrade -y
+update_system(){
+  sudo apt --fix-broken install -y
+  sudo apt update -y
+  sudo apt full-upgrade -y
   sudo apt dist-upgrade -y
-	sudo apt autoremove -y
+  sudo apt autoremove -y
 }
 
 update_system
 
-sudo apt-get install dconf-editor dconf-cli net-tools software-properties-common build-essential procps curl wget file git zathura i3 i3-wm dmenu polybar pulseaudio pipewire picom ca-certificates curl gnupg python3-venv -y
+wget -qO- https://cli.github.com/packages/githubcli-archive-keyring.gpg | sudo tee /etc/apt/keyrings/githubcli-archive-keyring.gpg > /dev/null \
+&& sudo chmod go+r /etc/apt/keyrings/githubcli-archive-keyring.gpg \
+&& echo "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/githubcli-archive-keyring.gpg] https://cli.github.com/packages stable main" | sudo tee /etc/apt/sources.list.d/github-cli.list > /dev/null 
 
-sudo apt remove apport apport-gtk -y && sudo apt purge apport apport-gtk -y
-sudo apt-get install  -y
-NONINTERACTIVE=1 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-
-test -d ~/.linuxbrew && eval "$(~/.linuxbrew/bin/brew shellenv)"
-test -d /home/linuxbrew/.linuxbrew && eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
-echo "eval \"\$($(brew --prefix)/bin/brew shellenv)\"" >> ~/.bashrc
-
-source ~/.bashrc
-
-APPS=("gh" "neovim" "rust" "nvm" "python" "tmux" "gcc" "cmake" "make" "fzf" "zsh" "ripgrep" "go" "docker" "bash" "fd" "bat" "eza" "zoxide" "feh" "autopep8" "gdb")
-for app in ${APPS[@]}; do
-  brew install $app
-done
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.7/install.sh | bash
 
 update_system
 
-SNAPS=(
-	"code"
-  "alacritty"
-)
+sudo apt install git curl wget lightdm net-tools dconf-editor dconf-cli software-properties-common build-essentials procps file zathura i3 i3-wm dmenu polybar pulseaudio pipewire picom ca-certificates gnupg python3 python3-pip python3-venv tmux make cmake fzf zsh ripgrep fd-find zoxide bat feh gcc gdb gcc kitty docker.io docker-compose cargo eza adb go -y
 
-for snapapp in ${SNAPS[@]}; do
-	sudo snap install $snapapp --classic
+sudo apt remove apport apport-gtk -y && sudo apt purge apport apport-gtk -y
+
+SNAPS=("code" "neovim" "spotify")
+for apps in ${SNAPS[@]}; do
+  sudo snap install $apps --classic
 done
 
-cargo install starship
+cd ~/Desktop/
 
-cd ~/Desktop
 wget -O playerctl-2.4.1_amd64.deb https://github.com/altdesktop/playerctl/releases/download/v2.4.1/playerctl-2.4.1_amd64.deb
 sudo dpkg -i playerctl-2.4.1_amd64.deb
 git clone https://github.com/noctuid/zscroll
@@ -54,7 +43,7 @@ sudo cp -r ./fonts/JetBrainsMono /usr/share/fonts/truetype/
 code&
 
 EXTENSIONS=(
-   "ms-python.python"
+  "ms-python.python"
   "naumovs.color-highlight"
   "ms-azuretools.vscode-docker"
   "golang.go"
@@ -71,11 +60,10 @@ EXTENSIONS=(
   "rust-lang.rust-analyzer"
   "pkief.material-icon-theme"
   "antfu.icons-carbon"
-)
+  )
 
-for extension in ${EXTENSIONS[@]}
-do
-    code --install-extension $extension
+for extension in ${EXTENSIONS[@]}; do
+   code --install-extension $extension
 done
 
 mkdir -p ~/workspace/Projects
@@ -88,16 +76,14 @@ git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:
 
 cp -r ./nvim/ ~/.config/
 cp -r ./i3/ ~/.config/
-cp ./.i3status.conf ~
 cp -r ./polybar/ ~/.config/
 sudo chmod +x ~/.config/i3/*.sh
 sudo chmod +x ~/.config/polybar/scripts/*.sh
 sudo chmod +x ~/.config/polybar/launch.sh
 cp ./code/settings.json ~/.config/Code/User/
 cp ./code/keybindings.json ~/.config/Code/User/
-cp -r ./alacritty ~/.config/
+cp -r ./kitty/ ~/.config/
 cp -r ./wallpapers/ ~/Pictures/
-cp ./starship/starship.toml ~/.config/
 cp ./tmux/.tmux.conf ~
 cp -r ./zsh/ ~
 cp -r .zshrc ~
