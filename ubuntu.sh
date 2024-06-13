@@ -19,11 +19,13 @@ curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.7/install.sh | bash
 
 update_system
 
-sudo apt install git curl wget lightdm net-tools dconf-editor dconf-cli software-properties-common build-essentials procps file zathura i3 i3-wm dmenu polybar pulseaudio pipewire picom ca-certificates gnupg python3 python3-pip python3-venv tmux make cmake fzf zsh ripgrep fd-find zoxide bat feh gcc gdb gcc kitty docker.io docker-compose cargo eza adb go -y
+sudo apt install git curl wget lightdm net-tools dconf-editor dconf-cli software-properties-common build-essential procps file zathura i3 i3-wm dmenu polybar pulseaudio pipewire picom ca-certificates gnupg python3 python3-pip python3-venv tmux make cmake fzf zsh ripgrep fd-find zoxide bat feh gcc gdb gcc kitty docker.io docker-compose cargo adb golang -y
 
 sudo apt remove apport apport-gtk -y && sudo apt purge apport apport-gtk -y
 
-SNAPS=("code" "neovim" "spotify")
+cargo install eza
+
+SNAPS=("code" "nvim" "spotify")
 for apps in ${SNAPS[@]}; do
   sudo snap install $apps --classic
 done
@@ -90,6 +92,9 @@ cp -r .zshrc ~
 
 echo "exec zsh" >> ~/.bashrc
 source ~/.bashrc
+
+nvm install --lts
+nvm use --lts
 
 sleep 5
 reboot
