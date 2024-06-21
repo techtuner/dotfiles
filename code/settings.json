@@ -1,57 +1,68 @@
 {
-  // Workbench settings
-  "workbench.colorTheme": "Nord Midnight",
-  "workbench.productIconTheme": "icons-carbon",
-  "workbench.iconTheme": "material-icon-theme",
-  "workbench.startupEditor": "none",
-  "workbench.sideBar.location": "right",
-  "workbench.editor.showTabs": "single",
-  "workbench.editor.enablePreview": false,
-  "breadcrumbs.filePath": "last",
-  "workbench.list.smoothScrolling": true,
-  "window.menuBarVisibility": "hidden",
-  "workbench.layoutControl.enabled": false,
-  "window.commandCenter": false,
-  //Editor settings
-  "editor.minimap.enabled": false,
-  "editor.cursorBlinking": "smooth",
-  "editor.formatOnPaste": true,
-  "editor.formatOnSave": true,
-  "editor.lineNumbers": "off",
-  "editor.cursorSmoothCaretAnimation": "on",
-  "editor.overviewRulerBorder": false,
-  "editor.linkedEditing": true,
-  "editor.lightbulb.enabled": "off",
-  "editor.codeActionsOnSave": {
-    "source.organizeImports": "explicit",
-    "source.fixAll": "explicit"
-  },
-  "explorer.sortOrder": "type",
-  "editor.tabSize": 2,
-  "terminal.integrated.profiles.windows": {
-    "PowerShell": {
-      "source": "PowerShell",
-      "icon": "terminal-powershell"
-    }
-  },
-  "files.autoSave": "afterDelay",
-  "files.trimFinalNewlines": true,
-  "files.trimTrailingWhitespace": true,
-  // Fonts
-  "editor.fontFamily": "Bai Jamjuree",
-  "editor.fontWeight": "bold",
-  "editor.wordWrap": "on",
-  "editor.fontSize": 14,
-  "window.zoomLevel": 1,
-  "editor.lineHeight": 2,
-  "editor.fontLigatures": true,
-  "terminal.integrated.fontFamily": "FiraCode Nerd Font Mono",
-  "terminal.integrated.fontSize": 14,
-  "terminal.integrated.lineHeight": 1.5,
-  "errorLens.fontFamily": "Bai Jamjuree",
-  "errorLens.fontSize": "16",
-  "errorLens.fontStyleItalic": true,
-  "better-comments.tags": [
+    // Workbench Settings
+    "workbench.iconTheme": "material-icon-theme",
+    "workbench.productIconTheme": "icons-carbon",
+    "workbench.colorTheme": "Material Theme Darker High Contrast",
+    "workbench.sideBar.location": "right",
+    "workbench.statusBar.visible": false,
+    "workbench.startupEditor": "none",
+    "workbench.editor.enablePreview": false,
+    "workbench.editor.showTabs": "single",
+    "breadcrumbs.filePath": "last",
+    "workbench.list.smoothScrolling": true,
+    "window.menuBarVisibility": "hidden",
+    "workbench.layoutControl.enabled": false,
+    "window.commandCenter": false,
+    "window.zoomLevel": -0.5,
+
+    //Editor Settings
+    "editor.minimap.enabled": false,
+    "editor.cursorBlinking": "smooth",
+    "editor.formatOnPaste": true,
+    "editor.formatOnSave": true,
+    "editor.lineNumbers": "off",
+    "editor.cursorSmoothCaretAnimation": "on",
+    "editor.overviewRulerBorder": false,
+    "editor.linkedEditing": true,
+    "editor.lightbulb.enabled": "off",
+    "editor.codeActionsOnSave": {
+        "source.organizeImports": "always",
+        "source.fixAll": "explicit"
+    },
+    "explorer.sortOrder": "type",
+    "files.autoSave": "afterDelay",
+    "files.trimFinalNewlines": true,
+    "files.trimTrailingWhitespace": true,
+    "files.exclude": {
+        "**/.git": true,
+        "**/.svn": true,
+        "**/.hg": true,
+        "**/CVS": true,
+        "**/.DS_Store": true,
+        "**/Thumbs.db": true
+    },
+    "search.exclude": {
+        "**/node_modules": true,
+        "**/bower_components": true,
+        "**/*.code-search": true
+    },
+
+    // Typography
+    "editor.fontFamily": "Dank Mono",
+    "editor.fontWeight": "bold",
+    "editor.wordWrap": "on",
+    "editor.fontLigatures": true,
+    "editor.lineHeight": 2.5,
+    "editor.fontSize": 16,
+    "terminal.integrated.fontFamily": "FiraCode Nerd Font Mono",
+    "terminal.integrated.lineHeight": 1.5,
+    "terminal.integrated.fontSize": 14,
+    "errorLens.fontFamily": "Dank Mono",
+    "errorLens.fontStyleItalic": true,
+    "errorLens.fontSize": "14",
+
+    // Better Comments
+    "better-comments.tags": [
     {
       "tag": "!",
       "color": "#FF2D00",
@@ -98,45 +109,58 @@
       "italic": false
     }
   ],
-  // Programming Languages
-  // Markdown
-  "[markdown]": {
-    "editor.unicodeHighlight.ambiguousCharacters": false,
-    "editor.unicodeHighlight.invisibleCharacters": false,
-    "editor.wordWrap": "on",
-    "editor.formatOnSave": true,
-    "editor.defaultFormatter": "yzhang.markdown-all-in-one",
-    "editor.quickSuggestions": {
-      "comments": "off",
-      "strings": "off",
-      "other": "off"
-    }
-  },
-  // Rust
-  "[rust]": {
-    "editor.defaultFormatter": "rust-lang.rust-analyzer"
-  },
-  // Go
-  "[go]": {
-    "editor.insertSpaces": false,
-    "editor.codeActionsOnSave": {
-      "source.organizeImports": "explicit"
+
+    // Programming Language
+    // Markdown
+    "[markdown]": {
+        "editor.unicodeHighlight.ambiguousCharacters": false,
+        "editor.unicodeHighlight.invisibleCharacters": false,
+        "diffEditor.ignoreTrimWhitespace": false,
+        "editor.wordWrap": "on",
+        "editor.quickSuggestions": {
+            "comments": "off",
+            "strings": "off",
+            "other": "off"
+        },
+        "editor.defaultFormatter": "yzhang.markdown-all-in-one"
     },
-    "editor.suggest.snippetsPreventQuickSuggestions": false,
-    "editor.defaultFormatter": "golang.go"
-  },
-  "[python]": {
-    "editor.defaultFormatter": "ms-python.vscode-pylance",
-    "editor.formatOnSave": true,
-    "editor.formatOnType": true
-  },
-  // Color Highlight
-  "color-highlight.enable": true,
-  "color-highlight.markerType": "background",
-  "color-highlight.languages": [
-    "*"
-  ],
-  "gutterpreview.showImagePreviewOnGutter": true,
-  "security.workspace.trust.banner": "always",
-  "workbench.activityBar.location": "hidden"
+    // Rust
+    "[rust]": {
+        "editor.defaultFormatter": "rust-lang.rust-analyzer"
+    },
+    // Go
+    "[go]": {
+        "editor.insertSpaces": false,
+        "editor.formatOnSave": true,
+        "editor.codeActionsOnSave": {
+            "source.organizeImports": "always"
+        },
+        "editor.defaultFormatter": "golang.go"
+    },
+    // Python
+    "[python]": {
+        "diffEditor.ignoreTrimWhitespace": false,
+        "editor.formatOnType": true,
+        "editor.wordBasedSuggestions": "off",
+        "editor.defaultFormatter": "ms-python.vscode-pylance"
+    },
+    "[javascript]": {
+        "editor.maxTokenizationLineLength": 2500,
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+
+    // Color Highlight
+    "color-highlight.enable": true,
+    "color-highlight.markerType": "background",
+    "color-highlight.languages": [
+        "*"
+    ],
+
+    //Gutter Preview
+    "gutterpreview.showImagePreviewOnGutter": true,
+    "security.workspace.trust.enabled": true,
+    "security.workspace.trust.banner": "always",
+
+    // Dynamic
+    "workbench.activityBar.location": "hidden"
 }
