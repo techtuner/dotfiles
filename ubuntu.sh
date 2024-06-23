@@ -11,15 +11,20 @@ update_system(){
 
 update_system
 
+sudo mkdir -p /etc/apt/keyrings
+
 wget -qO- https://cli.github.com/packages/githubcli-archive-keyring.gpg | sudo tee /etc/apt/keyrings/githubcli-archive-keyring.gpg > /dev/null \
 && sudo chmod go+r /etc/apt/keyrings/githubcli-archive-keyring.gpg \
-&& echo "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/githubcli-archive-keyring.gpg] https://cli.github.com/packages stable main" | sudo tee /etc/apt/sources.list.d/github-cli.list > /dev/null 
+&& echo "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/githubcli-archive-keyring.gpg] https://cli.github.com/packages stable main" | sudo tee /etc/apt/sources.list.d/github-cli.list > /dev/null
+
+curl -fsSL https://repo.charm.sh/apt/gpg.key | sudo gpg --dearmor -o /etc/apt/keyrings/charm.gpg
+echo "deb [signed-by=/etc/apt/keyrings/charm.gpg] https://repo.charm.sh/apt/ * *" | sudo tee /etc/apt/sources.list.d/charm.list
 
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.7/install.sh | bash
 
 update_system
 
-sudo apt install git curl wget lightdm net-tools dconf-editor dconf-cli software-properties-common build-essential procps file zathura i3 i3-wm dmenu polybar pulseaudio pipewire picom ca-certificates gnupg python3 python3-pip python3-venv tmux make cmake fzf zsh ripgrep fd-find zoxide bat feh gcc gdb gcc kitty docker.io docker-compose cargo adb golang -y
+sudo apt install git curl wget lightdm net-tools dconf-editor dconf-cli software-properties-common build-essential procps file zathura i3 i3-wm dmenu polybar pulseaudio pipewire picom ca-certificates gnupg python3 python3-pip python3-venv tmux make cmake fzf zsh ripgrep fd-find zoxide bat feh gcc gdb gcc kitty docker.io docker-compose cargo adb golang gh glow -y
 
 sudo apt remove apport apport-gtk -y && sudo apt purge apport apport-gtk -y
 
@@ -40,28 +45,38 @@ sudo python3 setup.py install
 
 cd $cwd
 sudo cp -r ./fonts/'Fira Code' /usr/share/fonts/truetype/
-sudo cp -r ./fonts/JetBrainsMono /usr/share/fonts/truetype/
+sudo cp -r ./fonts/Bai_Jamjuree /usr/share/fonts/truetype/
 
 code&
 
 EXTENSIONS=(
-  "ms-python.python"
+  "formulahendry.auto-close-tag"
+  "formulahendry.auto-rename-tag"
+  "formulahendry.auto-complete-tag"
+  "aaron-bond.better-comments"
+  "antfu.icons-carbon"
+  "formulahendry.code-runner"
+  "vadimcn.vscode-lldb"
   "naumovs.color-highlight"
   "ms-azuretools.vscode-docker"
-  "golang.go"
-  "christian-kohler.path-intellisense"
-  "adorabilis.nord-midnight"
-  "redhat.vscode-yaml"
-  "aaron-bond.better-comments"
-  "twxs.cmake"
-  "vadimcn.vscode-lldb"
   "editorconfig.editorconfig"
   "usernamehw.errorlens"
+  "dsznajder.es7-react-js-snippets"
+  "dbaeumer.vscode-eslint"
+  "golang.go"
   "kisstkondoros.vscode-gutter-preview"
   "yzhang.markdown-all-in-one"
-  "rust-lang.rust-analyzer"
   "pkief.material-icon-theme"
-  "antfu.icons-carbon"
+  "equinusocio.vsc-material-theme"
+  "equinusocio.vsc-material-theme-icons"
+  "christian-kohler.npm-intellisense"
+  "christian-kohler.path-intellisense"
+  "ms-vscode.powershell"
+  "esbenp.prettier-vscode"
+  "ms-python.python"
+  "rust-lang.rust-analyzer"
+  "redhat.vscode-yaml"
+  "twxs.cmake"
   )
 
 for extension in ${EXTENSIONS[@]}; do
