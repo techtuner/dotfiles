@@ -11,24 +11,33 @@ function scoop_packages() {
 }
 
 function code_extensions() {
-  $extension_list = "ms-python.python",
+  $extension_list = "formulahendry.auto-close-tag",
+  "formulahendry.auto-rename-tag",
+  "formulahendry.auto-complete-tag",
+  "aaron-bond.better-comments",
+  "antfu.icons-carbon",
+  "formulahendry.code-runner",
+  "vadimcn.vscode-lldb",
   "naumovs.color-highlight",
   "ms-azuretools.vscode-docker",
-  "golang.go",
-  "christian-kohler.path-intellisense",
-  "adorabilis.nord-midnight",
-  "redhat.vscode-yaml",
-  "aaron-bond.better-comments",
-  "twxs.cmake",
-  "vadimcn.vscode-lldb",
   "editorconfig.editorconfig",
   "usernamehw.errorlens",
+  "dsznajder.es7-react-js-snippets",
+  "dbaeumer.vscode-eslint",
+  "golang.go",
   "kisstkondoros.vscode-gutter-preview",
   "yzhang.markdown-all-in-one",
-  "rust-lang.rust-analyzer",
   "pkief.material-icon-theme",
-  "antfu.icons-carbon",
-  "ms-vscode.powershell"
+  "equinusocio.vsc-material-theme",
+  "equinusocio.vsc-material-theme-icons",
+  "christian-kohler.npm-intellisense",
+  "christian-kohler.path-intellisense",
+  "ms-vscode.powershell",
+  "esbenp.prettier-vscode",
+  "ms-python.python",
+  "rust-lang.rust-analyzer",
+  "redhat.vscode-yaml",
+  "twxs.cmake"
 
   foreach ($extension in $extension_list) {
     code --install-extension $extension
