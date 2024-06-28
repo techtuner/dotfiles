@@ -48,16 +48,16 @@
     },
 
     // Typography
-    "editor.fontFamily": "Dank Mono",
-    "editor.fontWeight": "bold",
+    "editor.fontFamily": "Hack Nerd Font",
+    // "editor.fontWeight": "bold",
     "editor.wordWrap": "on",
     "editor.fontLigatures": true,
     "editor.lineHeight": 2.5,
     "editor.fontSize": 16,
-    "terminal.integrated.fontFamily": "FiraCode Nerd Font Mono",
+    "terminal.integrated.fontFamily": "Hack Nerd Font Mono",
     "terminal.integrated.lineHeight": 1.5,
     "terminal.integrated.fontSize": 14,
-    "errorLens.fontFamily": "Dank Mono",
+    "errorLens.fontFamily": "Hack Nerd Font",
     "errorLens.fontStyleItalic": true,
     "errorLens.fontSize": "14",
 
