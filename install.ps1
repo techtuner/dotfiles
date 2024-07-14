@@ -3,7 +3,7 @@ Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass
 $user = $env:USERNAME
 
 function scoop_packages() {
-  $scoop_apps = "sudo", "nvm", "gcc", "wget", "curl", "jq", "neovim", "gh", "oh-my-posh", "fzf", "cmake", "make", "docker", "starship", "bat"
+  $scoop_apps = "sudo", "nodejs", "gcc", "wget", "curl", "jq", "neovim", "gh", "oh-my-posh", "fzf", "cmake", "make", "docker", "starship", "bat"
 
   foreach ($app in $scoop_apps) {
     scoop install $app
@@ -37,7 +37,8 @@ function code_extensions() {
   "ms-python.python",
   "rust-lang.rust-analyzer",
   "redhat.vscode-yaml",
-  "twxs.cmake"
+  "twxs.cmake",
+  "jdinhlife.gruvbox"
 
   foreach ($extension in $extension_list) {
     code --install-extension $extension
@@ -58,7 +59,6 @@ mkdir ~\.config\powershell
 
 Copy-Item .\powershell\user_profile.ps1 C:\Users\$user\.config\powershell\
 Copy-Item .\powershell\Microsoft.PowerShell_profile.ps1 C:\Users\$user\Documents\Powershell\
-Copy-Item .\starship\starship.toml ~\.config\
 Copy-Item .\wallpapers\ C:\Users\$user\Pictures\ -Recurse
 Copy-Item .\nvim\ $env:LOCALAPPDATA -Recurse
 
@@ -66,6 +66,3 @@ Unblock-File -Path C:\Users\$user\.config\powershell\user_profile.ps1
 Unblock-File -Path C:\Users\$user\Documents\Powershell\Microsoft.PowerShell_profile.ps1
 
 code_extensions
-
-nvm install lts
-nvm use lts
