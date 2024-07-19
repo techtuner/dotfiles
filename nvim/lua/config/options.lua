@@ -42,7 +42,7 @@ set.undofile = true
 -- UI settings
 set.cmdheight = 1
 set.pumheight = 10
-set.conceallevel = 0
+set.conceallevel = 1
 set.showmode = false
 set.showtabline = 0
 set.termguicolors = true

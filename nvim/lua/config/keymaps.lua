@@ -37,3 +37,8 @@ keymap("n", "<leader>w", ":wq<cr>", opts)
 keymap("n", "<C-S>", ":update<CR>", opts)
 keymap("v", "<C-S>", "<C-C>:update<CR>", opts)
 keymap("i", "<C-S>", "<C-O>:update<CR>", opts)
+
+-- Telescope Plugin
+keymap("n", "<leader>ff", ":Telescope find_files<cr>", opts)
+keymap("n", "<leader>fg", ":Telescope live_grep<cr>", opts)
+keymap("n", "<leader>fb", ":Telescope grep_string<cr>", opts)

@@ -20,11 +20,11 @@ install = {
 },
 checker = {
 enabled = true,
-notify = false,
+notify = true,
 },
 change_detection = {
 enabled = true,
-notify = false,
+notify = true,
 },
 ui = {
 border = "rounded"
