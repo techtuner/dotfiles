@@ -17,9 +17,9 @@ api.nvim_command("autocmd VimResized * wincmd=")
 
 -- Close some of the filetypes using <q>
 api.nvim_create_autocmd("FileType", {
-group = vim.api.nvim_create_augroup("close_with_q", { clear = true }),
-pattern = {
-   "PlenaryTestPopup",
+  group = vim.api.nvim_create_augroup("close_with_q", { clear = true }),
+  pattern = {
+    "PlenaryTestPopup",
     "help",
     "lspinfo",
     "man",
@@ -32,9 +32,16 @@ pattern = {
     "checkhealth",
     "neotest-summary",
     "neotest-output-panel",
-},
-callback = function()
-vim.bo[event.buf].buflisted = false
-vim.keymap.set("n", "q", "<cmd>close<cr>", { buffer = event.buf, silent = true })
-end
+  },
+  callback = function()
+    vim.bo[event.buf].buflisted = false
+    vim.keymap.set("n", "q", "<cmd>close<cr>", { buffer = event.buf, silent = true })
+  end
+})
+
+api.nvim_create_autocmd("BufWritePre", {
+  pattern = "*",
+  callback = function(args)
+    require("conform").format({ bufnr = args.buf })
+  end,
 })
