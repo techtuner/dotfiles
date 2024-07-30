@@ -1,3 +1,6 @@
+---@diagnostic disable: missing-fields
+---@diagnostic disable: spell-check
+
 return {
   "hrsh7th/nvim-cmp",
   event = "InsertEnter",
@@ -18,9 +21,9 @@ return {
   config = function()
     local cmp = require("cmp")
     local luasnip = require("luasnip")
-    
+
     local kind_icons = {
-       Text = "",
+      Text = "",
       Method = "󰆧",
       Function = "󰊕",
       Constructor = "",
@@ -48,17 +51,17 @@ return {
     }
     require("luasnip.loaders.from_vscode").lazy_load()
     luasnip.config.setup({})
-  cmp.setup({
-  snippet = {
-    expand = function(args)
-      luasnip.lsp_expand(args.body)
-    end
-  },
-  completion = {
-    completeopt = "menu,menuone,noselect",
-  },
-  mapping = cmp.mapping.preset.insert({
-          ["<C-n>"] = cmp.mapping.select_next_item(),
+    cmp.setup({
+      snippet = {
+        expand = function(args)
+          luasnip.lsp_expand(args.body)
+        end
+      },
+      completion = {
+        completeopt = "menu,menuone,noselect",
+      },
+      mapping = cmp.mapping.preset.insert({
+        ["<C-n>"] = cmp.mapping.select_next_item(),
         ["<C-p>"] = cmp.mapping.select_prev_item(),
         ["<C-b>"] = cmp.mapping.scroll_docs(-4),
         ["<C-f>"] = cmp.mapping.scroll_docs(4),
@@ -67,8 +70,8 @@ return {
         ["<CR>"] = cmp.mapping.confirm({
           behavior = cmp.ConfirmBehavior.Replace,
           select = true,
-  }),
-  ["<Tab>"] = cmp.mapping(function(fallback)
+        }),
+        ["<Tab>"] = cmp.mapping(function(fallback)
           if cmp.visible() then
             cmp.select_next_item()
           elseif luasnip.expand_or_locally_jumpable() then
@@ -86,40 +89,40 @@ return {
             fallback()
           end
         end, { "i", "s" }),
-  }),
-  window = {
-    completion = cmp.config.window.bordered(),
-    documentation = cmp.config.window.bordered(),
-  },
-  sources = {
-    {name = "nvim_lsp"},
-    {name = "nvim_lua"},
-    {name = "luasnip"},
-    {name = "buffer"},
-    {name = "path"},
-    {name = "treesitter"},
-    {name = "tmux"},
-  },
-  formatting = {
-    format = function(entry, vim_item)
-      local lspkind_ok, lspkind = pcall(require, "lspkind")
-      if not lspkind_ok then
-        vim.item.kind = string.format("%s %s", kind_icons[vim_item.kind], vim_item.kind)
-        vim_item.menu = ({
-          nvim_lsp = "[LSP]",
-          nvim_lua = "[LUA]",
-          luasnip = "[Luasnip]",
-          buffer = "[Buffer]",
-          latex_symols = "[Latex]",
-        })[entry.source.menu]
-        return vim_item
-      else
-        return lspkind.cmp_format()(entry, vim_item)
-      end
-    end
-  }
+      }),
+      window = {
+        completion = cmp.config.window.bordered(),
+        documentation = cmp.config.window.bordered(),
+      },
+      sources = {
+        { name = "nvim_lsp" },
+        { name = "nvim_lua" },
+        { name = "luasnip",   max_item_count = 5 },
+        { name = "buffer" },
+        { name = "path",      max_item_count = 5 },
+        { name = "treesitter" },
+        { name = "tmux" },
+      },
+      formatting = {
+        format = function(entry, vim_item)
+          local lspkind_ok, lspkind = pcall(require, "lspkind")
+          if not lspkind_ok then
+            vim.item.kind = string.format("%s %s", kind_icons[vim_item.kind], vim_item.kind)
+            vim_item.menu = ({
+              nvim_lsp = "[LSP]",
+              nvim_lua = "[LUA]",
+              luasnip = "[Luasnip]",
+              buffer = "[Buffer]",
+              latex_symols = "[Latex]",
+            })[entry.source.menu]
+            return vim_item
+          else
+            return lspkind.cmp_format()(entry, vim_item)
+          end
+        end
+      }
 
-})
+    })
   end
 
 }

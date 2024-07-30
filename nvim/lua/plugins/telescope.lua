@@ -9,11 +9,11 @@ return {
       "nvim-tree/nvim-web-devicons",
       { "nvim-telescope/telescope-fzf-native.nvim", build = "make" },
       "nvim-telescope/telescope-ui-select.nvim",
-      "telescope-dap.nvim",
+      "jonarrien/telescope-cmdline.nvim",
+      "nvim-telescope/telescope-dap.nvim",
       "kkharji/sqlite.lua",
       "nvim-telescope/telescope-dap.nvim",
       "mfussenegger/nvim-dap",
-      "rcarriga/nvim-notify",
       "vuki656/package-info.nvim"
       -- "nvim-telescope/telescope-frecency.nvim",
     },
@@ -150,10 +150,18 @@ return {
         },
         extensions = {
           fzf = {
-            fuzzy = true, -- false will only do exact matching
+            fuzzy = true,                   -- false will only do exact matching
             override_generic_sorter = true, -- override the generic sorter
-            override_file_sorter = true, -- override the file sorter
-            case_mode = "smart_case", -- or "ignore_case" or "respect_case"
+            override_file_sorter = true,    -- override the file sorter
+            case_mode = "smart_case",       -- or "ignore_case" or "respect_case"
+          },
+          cmdline = {
+            picker = {
+              layout_config = {
+                width  = 120,
+                height = 25,
+              }
+            }
           },
           ["ui-select"] = {
             require("telescope.themes").get_dropdown({
@@ -189,6 +197,7 @@ return {
       })
       telescope.load_extension("fzf")
       telescope.load_extension("ui-select")
+      telescope.load_extension("cmdline")
       -- telescope.load_extension("refactoring")
       telescope.load_extension("dap")
       -- telescope.load_extension("frecency")
