@@ -1,51 +1,66 @@
 # Need to run this as an administrator
 if (-not ([Security.Principal.WindowsPrincipal] [Security.Principal.WindowsIdentity]::GetCurrent()).IsInRole([Security.Principal.WindowsBuiltInRole] "Administrator")) {
-    Write-Warning "You do not have Administrator rights. Run this script as Administrator."
-    Exit
+  Write-Warning "You do not have Administrator rights. Run this script as Administrator."
+  Exit
 }
 
 $user = $env:USERNAME
 
 Write-Host "Configuring Windows....."
 $wingetDeps = @(
-"chocolatey.chocolatey"
-"eza-community.eza"
-"git.git"
-"github.cli"
-"ezwinports.make"
-"kitware.cmake"
-"microsoft.powershell"
-"neovim.neovim"
-"openjs.nodejs"
-"starship.starship"
-"Microsoft.VisualStudioCode"
+  "chocolatey.chocolatey"
+  "eza-community.eza"
+  "git.git"
+  "github.cli"
+  "ezwinports.make"
+  "kitware.cmake"
+  "microsoft.powershell"
+  "neovim.neovim"
+  "openjs.nodejs"
+  "Microsoft.VisualStudioCode"
+  # "starship.starship"
+  "Obsidian.Obsidian"
+  "Brave.Brave"
+  "VideoLAN.VLC"
+  "Microsoft.PowerToys"
+  "Microsoft.Sysinternals.ProcessExplorer"
+  "Microsoft.Sysinternals.ProcessMonitor"
+  "Adobe.Acrobat.Reader.64-bit"
+  "Google.Drive"
+  "Skillbrains.Lightshot"
+  "Spicetify.Spicetify"
+  "Docker.DockerDesktop"
+  "Readdle.Spark"
+  "Rustlang.Rustup"
+  "Appest.TickTick"
+  "Microsoft.VisualStudio.2022.Community"
 )
 
-$chocoDeps= @(
-"bat"
-"fd"
-"ripgrep"
-"lazygit"
-"fzf"
-"zoxide"
-"python"
-"go"
-"oh-my-posh"
-"sudo"
-"mingw"
-"jq"
+$chocoDeps = @(
+  "bat"
+  "fd"
+  "ripgrep"
+  "lazygit"
+  "fzf"
+  "zoxide"
+  "python"
+  "go"
+  "oh-my-posh"
+  "sudo"
+  "mingw"
+  "jq"
 )
 
 $psModules = @(
-"CompletionPredictor"
-"PSScriptAnalyzer"
-"PSFzf"
-"posh-git"
-"Terminal-Icons"
+  "CompletionPredictor"
+  "PSScriptAnalyzer"
+  "PSFzf"
+  "posh-git"
+  "Terminal-Icons"
 )
 
 $code_extensions = @(
-"formulahendry.auto-close-tag"
+  "formulahendry.auto-close-tag"
   "formulahendry.auto-rename-tag"
   "formulahendry.auto-complete-tag"
   "aaron-bond.better-comments"
@@ -62,7 +77,6 @@ $code_extensions = @(
   "kisstkondoros.vscode-gutter-preview"
   "yzhang.markdown-all-in-one"
   "pkief.material-icon-theme"
-  "equinusocio.vsc-material-theme"
   "equinusocio.vsc-material-theme-icons"
   "christian-kohler.npm-intellisense"
   "christian-kohler.path-intellisense"
@@ -72,7 +86,7 @@ $code_extensions = @(
   "rust-lang.rust-analyzer"
   "redhat.vscode-yaml"
   "twxs.cmake"
-  "jdinhlife.gruvbox"
+  "BeardedBear.beardedtheme"
 )
 
 Set-Location $PSScriptRoot
@@ -96,7 +110,7 @@ foreach ($chocoDep in $chocoDeps) {
 
 # code&
 Write-Host "Installing Visual Studio Code extensions"
-foreach ($code_extension in $code_extensions){
+foreach ($code_extension in $code_extensions) {
   code --install-extension $code_extension
 }
 
@@ -124,7 +138,7 @@ pwsh"&"
 
 Write-Host -ForegroundColor Yellow "Installing PS Modules"
 foreach ($psModule in $psModules) {
-  if(!(Get-Module -ListAvailable -Name $psModule)){
+  if (!(Get-Module -ListAvailable -Name $psModule)) {
     Install-Module -Name $psModule -Force -AcceptLicense -Scope CurrentUser
   }
 }
