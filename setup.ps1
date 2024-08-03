@@ -18,7 +18,7 @@ $wingetDeps = @(
   "neovim.neovim"
   "openjs.nodejs"
   "Microsoft.VisualStudioCode"
-  # "starship.starship"
+  "starship.starship"
   "Obsidian.Obsidian"
   "Brave.Brave"
   "VideoLAN.VLC"
@@ -34,6 +34,7 @@ $wingetDeps = @(
   "Rustlang.Rustup"
   "Appest.TickTick"
   "Microsoft.VisualStudio.2022.Community"
+  "wez.wezterm"
 )
 
 $chocoDeps = @(
@@ -45,7 +46,6 @@ $chocoDeps = @(
   "zoxide"
   "python"
   "go"
-  "oh-my-posh"
   "sudo"
   "mingw"
   "jq"
@@ -121,20 +121,16 @@ mkdir ~\.config\powershell
 Write-Host "Copying Files to the respective Directories"
 Copy-Item $PSScriptRoot\powershell\user_profile.ps1 C:\Users\$user\.config\powershell\
 Copy-Item $PSScriptRoot\powershell\Microsoft.PowerShell_profile.ps1 C:\Users\$user\Documents\Powershell\
+Copy-Item $PSScriptRoot\starship\starship.toml C:\Users\$user\.config\
 Copy-Item $PSScriptRoot\wallpapers\ C:\Users\$user\Pictures\ -Recurse
-Copy-Item $PSSCriptRoot\nvim\ $env:LOCALAPPDATA -Recurse
+Copy-Item $PSScriptRoot\wezterm C:\Users\$user\.config -Recurse
+Copy-Item $PSScriptRoot\nvim\ $env:LOCALAPPDATA -Recurse
 Copy-Item $PSScriptRoot\code\settings.json C:\Users\$user\AppData\Roaming\Code\User\ -Recurse
 Copy-Item $PSScriptRoot\code\keybindings.json C:\Users\$user\AppData\Roaming\Code\User\ -Recurse
 
 
 Unblock-File -Path C:\Users\$user\.config\powershell\user_profile.ps1
 Unblock-File -Path C:\Users\$user\Documents\Powershell\Microsoft.PowerShell_profile.ps1
-
-
-bat cache --clear
-bat cache --build
-
-pwsh"&"
 
 Write-Host -ForegroundColor Yellow "Installing PS Modules"
 foreach ($psModule in $psModules) {
