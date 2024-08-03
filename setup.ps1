@@ -34,6 +34,7 @@ $wingetDeps = @(
   "Rustlang.Rustup"
   "Appest.TickTick"
   "Microsoft.VisualStudio.2022.Community"
+  "VMware.WorkstationPro"
   "wez.wezterm"
 )
 
