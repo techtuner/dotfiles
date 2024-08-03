@@ -1,102 +1,142 @@
-# ~/.config/starship.toml
+format = """
+$directory\
+$git_branch\
+$git_status\
+$fill\
+$lua\
+$python\
+$nodejs\
+$aws\
+$docker_context\
+$jobs\
+$cmd_duration\
+$line_break\
+$character"""
 
-add_newline = false
-command_timeout = 5000
-# format = """$os$username$kubernetes$directory$git_branch$git_status"""
-format = """\
-[╭╴](238)$os\
-$all[╰─](238)$character"""
+add_newline = true
+palette = "cyberdream"
 
-# ---
+[fill]
+symbol = ' '
 
-[os]
-format = '[$symbol](bold white) '   
-disabled = false
-
-[os.symbols]
-Windows = ''
-Arch = '󰣇'
-Ubuntu = ''
-Macos = '󰀵'
-
-# ---
-
-# Shows the username
-[username]
-style_user = 'white bold'
-style_root = 'black bold'
-format = '[$user]($style) '
-disabled = false
-show_always = true
-
-# Shows the hostname
-# [hostname]
-# ssh_only = false
-# format = 'on [$hostname](bold yellow) '
-# disabled = false
-
-# Shows current directory
 [directory]
-# truncation_length = 1
-# truncation_symbol = '…/'
-home_symbol = '󰋜 ~'
-read_only_style = '197'
-read_only = '  '
-format = 'at [$path]($style)[$read_only]($read_only_style) '
-
-# Shows current git branch
-[git_branch]
-symbol = ' '
-format = 'via [$symbol$branch]($style)'
-# truncation_length = 4
+style = 'bold fg:dark_blue'
+format = '[$path ]($style)'
+truncation_length = 3
 truncation_symbol = '…/'
-style = 'bold green'
+truncate_to_repo = false
 
-# Shows current git status
+[directory.substitutions]
+'Documents' = '󰈙'
+'Downloads' = ' '
+'Music' = ' '
+'Pictures' = ' '
+
+[git_branch]
+style = 'fg:green'
+symbol = ' '
+format = '[on](white) [$symbol$branch ]($style)'
+
 [git_status]
-format = '[$all_status$ahead_behind]($style) '
-style = 'bold green'
-conflicted = '🏳'
-up_to_date = ''
-untracked = ' '
-ahead = '⇡${count}'
-diverged = '⇕⇡${ahead_count}⇣${behind_count}'
-behind = '⇣${count}'
-stashed = ' '
-modified = ' '
-staged = '[++\($count\)](green)'
-renamed = '襁 '
-deleted = ' '
+style = 'fg:green'
+format = '([$all_status$ahead_behind]($style) )'
 
-# Shows kubernetes context and namespace
-[kubernetes]
-format = 'via [󱃾 $context\($namespace\)](bold purple) '
-disabled = false
+[cmd_duration]
+min_time = 500
+style = 'fg:gray'
+format = '[$duration]($style)'
 
-# ---
+[jobs]
+symbol = ' '
+style = 'red'
+number_threshold = 1
+format = '[$symbol]($style)'
 
-[vagrant]
-disabled = true
+[aws]
+symbol = ' '
+style = 'yellow'
+format = '[$symbol($profile )(\[$duration\] )]($style)'
 
 [docker_context]
-disabled = true
-
-[helm]
-disabled = true
+symbol = ' '
+style = 'fg:#06969A'
+format = '[$symbol]($style) $path'
+detect_files = ['docker-compose.yml', 'docker-compose.yaml', 'Dockerfile']
+detect_extensions = ['Dockerfile']
 
 [python]
-disabled = true
+style = 'teal'
+symbol = ' '
+format = '[${symbol}${pyenv_prefix}(${version} )(\($virtualenv\) )]($style)'
+pyenv_version_name = true
+pyenv_prefix = ""
+
+[golang]
+style = 'blue'
+symbol = ' '
+
+[haskell]
+style = 'blue'
+symbol = ' '
 
 [nodejs]
-disabled = true
+style = 'blue'
+symbol = ' '
+
+[rust]
+style = 'orange'
+symbol = ' '
 
 [ruby]
-disabled = true
+style = 'blue'
+symbol = ' '
 
-[terraform]
-disabled = true
+[lua]
+symbol = ' '
 
-# Change the default prompt characters
+[package]
+symbol = '󰏗 '
+
+[palettes.nord]
+dark_blue = '#5E81AC'
+blue = '#81A1C1'
+teal = '#88C0D0'
+red = '#BF616A'
+orange = '#D08770'
+green = '#A3BE8C'
+yellow = '#EBCB8B'
+purple = '#B48EAD'
+gray = '#434C5E'
+black = '#2E3440'
+white='#D8DEE9'
+
+[palettes.cyberdream]
+dark_blue = '#5e81ac'
+blue = '#5ea1ff'
+teal = '#5ef1ff'
+red = '#ff6e5e'
+orange = '#ffbd5e'
+green = '#5eff6c'
+yellow = '#f1ff5e'
+purple = '#bd5eff'
+gray = '#7b8496'
+black = '#16181a'
+white='#ffffff'
+
+[palettes.onedark]
+dark_blue='#61afef'
+blue='#56b6c2'
+red='#e06c75'
+green='#98c379'
+purple='#c678dd'
+cyan='#56b6c2'
+orange='#be5046'
+yellow='#e5c07b'
+gray='#828997'
+white ='#abb2bf'
+black='#2c323c'
+
+
 [character]
-success_symbol = "[](green)"
-error_symbol = "[](red)"
+success_symbol = "[➥](green)"
+error_symbol = "[➥](red)"
