@@ -1,26 +1,25 @@
 {
-  // Workbench Settings
-  "workbench.iconTheme": "eq-material-theme-icons-light",
+  // Appearance
+  "workbench.colorTheme": "ppy-like",
   "workbench.productIconTheme": "icons-carbon",
+  "workbench.iconTheme": "eq-material-theme-icons-light",
   "material-icon-theme.files.color": "#42a5f5",
-  "workbench.colorTheme": "Bearded Theme Monokai Black",
   "workbench.sideBar.location": "right",
   "workbench.statusBar.visible": false,
   "workbench.startupEditor": "none",
   "workbench.editor.enablePreview": false,
-  "workbench.editor.showTabs": "single",
+  "workbench.editor.showTabs": "multiple",
   "breadcrumbs.filePath": "last",
-  "workbench.list.smoothScrolling": true,
   "window.menuBarVisibility": "hidden",
   "workbench.layoutControl.enabled": false,
   "window.commandCenter": false,
-  "window.zoomLevel": -0.5,
-  //Editor Settings
+  "window.zoomLevel": -1,
+  // Editor Font
   "editor.minimap.enabled": false,
   "editor.cursorBlinking": "smooth",
   "editor.formatOnPaste": true,
   "editor.formatOnSave": true,
-  "editor.lineNumbers": "off",
+  "editor.lineNumbers": "on",
   "editor.cursorSmoothCaretAnimation": "on",
   "editor.overviewRulerBorder": false,
   "editor.linkedEditing": true,
@@ -29,10 +28,25 @@
     "source.organizeImports": "always",
     "source.fixAll": "explicit"
   },
-  "explorer.sortOrder": "type",
-  "files.autoSave": "afterDelay",
-  "files.trimFinalNewlines": true,
-  "files.trimTrailingWhitespace": true,
+  // Typography
+  "editor.fontFamily": "JetBrainsMono Nerd Font",
+  "editor.fontSize": 16,
+  "editor.wordWrap": "on",
+  "editor.fontWeight": "bold",
+  "editor.lineHeight": 2,
+  "editor.fontLigatures": true,
+  "terminal.integrated.fontFamily": "JetBrainsMono Nerd Font",
+  "terminal.integrated.fontSize": 14,
+  "terminal.integrated.lineHeight": 1.5,
+  "errorLens.fontFamily": "JetBrainsMono Nerd Font",
+  "errorLens.fontSize": "14",
+  "errorLens.fontStyleItalic": true,
+  // Files
+  "search.exclude": {
+    "**/node_modules": true,
+    "**/bower_components": true,
+    "**/*.code-search": true
+  },
   "files.exclude": {
     "**/.git": true,
     "**/.svn": true,
@@ -41,24 +55,10 @@
     "**/.DS_Store": true,
     "**/Thumbs.db": true
   },
-  "search.exclude": {
-    "**/node_modules": true,
-    "**/bower_components": true,
-    "**/*.code-search": true
-  },
-  // Typography
-  "editor.fontFamily": "Geist Mono,Hack Nerd Font",
-  // "editor.fontWeight": "bold",
-  "editor.wordWrap": "on",
-  "editor.fontLigatures": true,
-  "editor.lineHeight": 2.5,
-  "editor.fontSize": 16,
-  "terminal.integrated.fontFamily": "DankMono Nerd Font Mono, Hack Nerd Font Mono",
-  "terminal.integrated.lineHeight": 1.5,
-  "terminal.integrated.fontSize": 14,
-  "errorLens.fontFamily": "Geist Mono,Hack Nerd Font",
-  "errorLens.fontStyleItalic": true,
-  "errorLens.fontSize": "14",
+  "files.autoSave": "afterDelay",
+  "files.trimFinalNewlines": true,
+  "files.trimTrailingWhitespace": true,
+  "explorer.sortOrder": "type",
   // Better Comments
   "better-comments.tags": [
     {
@@ -156,5 +156,64 @@
   "security.workspace.trust.enabled": true,
   "security.workspace.trust.banner": "always",
   // Dynamic
-  "workbench.activityBar.location": "hidden"
+  "workbench.activityBar.location": "hidden",
+  // VScode Neovim
+  "vim.leader": "<space>",
+  "vim.hlsearch": true,
+  "vim.handleKeys": {
+    "<C-n>": false,
+  },
+  "vim.useSystemClipboard": true,
+  "vim.normalModeKeyBindings": [
+    {
+      "before": [
+        "<C-s>"
+      ],
+      "commands": "workbench.actions.files.save"
+    },
+    {
+      "before": [
+        "leader",
+        "q"
+      ],
+      "commands": [
+        ":q!"
+      ]
+    }
+  ],
+  "vim.insertModeKeyBindings": [
+    {
+      "before": [
+        "<C-s>"
+      ],
+      "commands": "workbench.actions.files.save"
+    }
+  ],
+  "vim.visualModeKeyBindings": [
+    {
+      "before": [
+        "<C-s>"
+      ],
+      "commands": "workbench.actions.files.save"
+    },
+    {
+      "before": [
+        ">"
+      ],
+      "commands": [
+        "editor.action.indentLines"
+      ]
+    },
+    {
+      "before": [
+        "<"
+      ],
+      "commands": [
+        "editor.action.outdentLines"
+      ]
+    }
+  ],
+  "extensions.experimental.affinity": {
+    "vscodevim.vim": 1
+  }
 }
