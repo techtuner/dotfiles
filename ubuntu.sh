@@ -44,7 +44,6 @@ code_setup(){
   "kisstkondoros.vscode-gutter-preview"
   "yzhang.markdown-all-in-one"
   "pkief.material-icon-theme"
-  "equinusocio.vsc-material-theme"
   "equinusocio.vsc-material-theme-icons"
   "christian-kohler.npm-intellisense"
   "christian-kohler.path-intellisense"
@@ -54,7 +53,10 @@ code_setup(){
   "rust-lang.rust-analyzer"
   "redhat.vscode-yaml"
   "twxs.cmake"
-  )
+  "BeardedBear.beardedtheme"
+  "reiisen.hi"
+  "vscodevim.vim"
+)
     for extension in ${EXTENSIONS[@]}; do
     code --install-extension $extension
     done

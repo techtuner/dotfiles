@@ -29,7 +29,6 @@ $wingetDeps = @(
   "Google.Drive"
   "Skillbrains.Lightshot"
   "Spicetify.Spicetify"
-  "Docker.DockerDesktop"
   "Readdle.Spark"
   "Rustlang.Rustup"
   "Appest.TickTick"
@@ -88,6 +87,9 @@ $code_extensions = @(
   "redhat.vscode-yaml"
   "twxs.cmake"
   "BeardedBear.beardedtheme"
+  "reiisen.hi"
+  "vscodevim.vim"
+
 )
 
 Set-Location $PSScriptRoot
