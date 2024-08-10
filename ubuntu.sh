@@ -55,7 +55,6 @@ code_setup(){
   "twxs.cmake"
   "BeardedBear.beardedtheme"
   "reiisen.hi"
-  "vscodevim.vim"
 )
     for extension in ${EXTENSIONS[@]}; do
     code --install-extension $extension
@@ -109,12 +108,12 @@ curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.7/install.sh | bash
 
 update_system
 
-sudo apt install git curl wezterm wget lightdm net-tools dconf-editor dconf-cli software-properties-common build-essential procps file zathura ca-certificates gnupg python3 python3-pip python3-venv tmux make cmake fzf zsh ripgrep fd-find zoxide bat gcc gdb gcc kitty docker.io docker-compose cargo adb golang gh -y
+sudo apt install git curl wezterm wget lightdm net-tools dconf-editor dconf-cli software-properties-common build-essential procps file zathura ca-certificates gnupg python3 python3-pip python3-venv tmux make cmake fzf zsh ripgrep fd-find zoxide bat gcc gdb gcc kitty docker.io docker-compose cargo adb golang gh powershell -y
 sudo apt remove apport apport-gtk -y && sudo apt purge apport apport-gtk -y
 
 cargo install eza urlencode
 
-SNAPS=("code" "nvim" "spotify")
+SNAPS=("code" "nvim" "spotify" "powershell")
 for apps in ${SNAPS[@]}; do
   sudo snap install $apps --classic
 done
@@ -122,6 +121,7 @@ done
 cd $cwd
 sudo cp -r ./fonts/'Fira Code' /usr/share/fonts/truetype/
 sudo cp -r ./fonts/Hack /usr/share/fonts/truetype/
+sudo cp -r ./fonts/JetBrainsMono/ /usr/share/fonts/truetype/
 
 code&
 
