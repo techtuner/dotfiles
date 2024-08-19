@@ -40,8 +40,16 @@
     Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass
     ./install.ps1
 	```
+ - For detailed script using Winget to install some of the application
+
+	```powershell
+    Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass
+    ./setup.ps1
+	```
 
 ## Tools I Use
 - Neovim
 - Terminator
 - Visual Studio Code
+- Wezterm
+- Obsidian
