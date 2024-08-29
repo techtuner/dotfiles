@@ -1,20 +1,19 @@
 {
   // Appearance
-  "workbench.colorTheme": "ppy-like",
+  "workbench.colorTheme": "Bearded Theme Monokai Black",
   "workbench.productIconTheme": "icons-carbon",
-  "workbench.iconTheme": "eq-material-theme-icons-light",
-  "material-icon-theme.files.color": "#42a5f5",
+  "workbench.iconTheme": "eq-material-theme-icons-deepforest",
+  "material-icon-theme.folders.color": "#42a5f5",
   "workbench.sideBar.location": "right",
   "workbench.statusBar.visible": false,
   "workbench.startupEditor": "none",
   "workbench.editor.enablePreview": false,
-  "workbench.editor.showTabs": "multiple",
+  "workbench.editor.showTabs": "single",
   "breadcrumbs.filePath": "last",
   "window.menuBarVisibility": "hidden",
   "workbench.layoutControl.enabled": false,
   "window.commandCenter": false,
   "window.zoomLevel": -1,
-  // Editor Font
   "editor.minimap.enabled": false,
   "editor.cursorBlinking": "smooth",
   "editor.formatOnPaste": true,
@@ -28,17 +27,19 @@
     "source.organizeImports": "always",
     "source.fixAll": "explicit"
   },
+
   // Typography
-  "editor.fontFamily": "JetBrainsMono Nerd Font",
-  "editor.fontSize": 16,
+  // "editor.fontFamily": "Consolas, 'Courier New', monospace",
+  "editor.fontFamily": "BerkeleyMono Nerd Font Mono",
+  "editor.fontSize": 18,
   "editor.wordWrap": "on",
-  "editor.fontWeight": "bold",
-  "editor.lineHeight": 2,
+  "editor.fontWeight": "100",
+  "editor.lineHeight": 1.75,
   "editor.fontLigatures": true,
-  "terminal.integrated.fontFamily": "JetBrainsMono Nerd Font",
+  "terminal.integrated.fontFamily": "BerkeleyMono Nerd Font Mono",
   "terminal.integrated.fontSize": 14,
   "terminal.integrated.lineHeight": 1.5,
-  "errorLens.fontFamily": "JetBrainsMono Nerd Font",
+  "errorLens.fontFamily": "BerkeleyMono Nerd Font Mono",
   "errorLens.fontSize": "14",
   "errorLens.fontStyleItalic": true,
   // Files
@@ -59,6 +60,7 @@
   "files.trimFinalNewlines": true,
   "files.trimTrailingWhitespace": true,
   "explorer.sortOrder": "type",
+
   // Better Comments
   "better-comments.tags": [
     {
@@ -107,8 +109,15 @@
       "italic": false
     }
   ],
-  // Programming Language
-  // Markdown
+
+  // Language Settings
+
+  // JSON
+  "[jsonc]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+
+  //   Markdown
   "[markdown]": {
     "editor.unicodeHighlight.ambiguousCharacters": false,
     "editor.unicodeHighlight.invisibleCharacters": false,
@@ -121,11 +130,13 @@
     },
     "editor.defaultFormatter": "yzhang.markdown-all-in-one"
   },
+
   // Rust
   "[rust]": {
     "editor.defaultFormatter": "rust-lang.rust-analyzer"
   },
-  // Go
+
+  // Golang
   "[go]": {
     "editor.insertSpaces": false,
     "editor.formatOnSave": true,
@@ -134,6 +145,7 @@
     },
     "editor.defaultFormatter": "golang.go"
   },
+
   // Python
   "[python]": {
     "diffEditor.ignoreTrimWhitespace": false,
@@ -141,79 +153,34 @@
     "editor.wordBasedSuggestions": "off",
     "editor.defaultFormatter": "ms-python.vscode-pylance"
   },
+
+  // Javascript
   "[javascript]": {
     "editor.maxTokenizationLineLength": 2500,
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
+
+  // Javascript React
+  "[javascriptreact]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+
+  // Typescript
+  "[typescript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+
   // Color Highlight
   "color-highlight.enable": true,
   "color-highlight.markerType": "background",
-  "color-highlight.languages": [
-    "*"
-  ],
-  //Gutter Preview
+  "color-highlight.languages": ["*"],
+
+  // Gutter Preview
   "gutterpreview.showImagePreviewOnGutter": true,
+
   "security.workspace.trust.enabled": true,
   "security.workspace.trust.banner": "always",
-  // Dynamic
-  "workbench.activityBar.location": "hidden",
-  // VScode Neovim
-  "vim.leader": "<space>",
-  "vim.hlsearch": true,
-  "vim.handleKeys": {
-    "<C-n>": false,
-  },
-  "vim.useSystemClipboard": true,
-  "vim.normalModeKeyBindings": [
-    {
-      "before": [
-        "<C-s>"
-      ],
-      "commands": "workbench.actions.files.save"
-    },
-    {
-      "before": [
-        "leader",
-        "q"
-      ],
-      "commands": [
-        ":q!"
-      ]
-    }
-  ],
-  "vim.insertModeKeyBindings": [
-    {
-      "before": [
-        "<C-s>"
-      ],
-      "commands": "workbench.actions.files.save"
-    }
-  ],
-  "vim.visualModeKeyBindings": [
-    {
-      "before": [
-        "<C-s>"
-      ],
-      "commands": "workbench.actions.files.save"
-    },
-    {
-      "before": [
-        ">"
-      ],
-      "commands": [
-        "editor.action.indentLines"
-      ]
-    },
-    {
-      "before": [
-        "<"
-      ],
-      "commands": [
-        "editor.action.outdentLines"
-      ]
-    }
-  ],
-  "extensions.experimental.affinity": {
-    "vscodevim.vim": 1
-  }
+
+  // Dynamic Changing
+  "workbench.activityBar.location": "hidden"
 }
