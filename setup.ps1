@@ -10,31 +10,19 @@ Write-Host "Configuring Windows....."
 $wingetDeps = @(
   "chocolatey.chocolatey"
   "eza-community.eza"
-  "git.git"
   "github.cli"
   "ezwinports.make"
   "kitware.cmake"
-  "microsoft.powershell"
   "neovim.neovim"
   "openjs.nodejs"
-  "Microsoft.VisualStudioCode"
   "starship.starship"
-  "Obsidian.Obsidian"
-  "Brave.Brave"
-  "VideoLAN.VLC"
   "Microsoft.PowerToys"
   "Microsoft.Sysinternals.ProcessExplorer"
   "Microsoft.Sysinternals.ProcessMonitor"
-  "Adobe.Acrobat.Reader.64-bit"
-  "Google.Drive"
-  "Skillbrains.Lightshot"
-  "Spicetify.Spicetify"
-  "Readdle.Spark"
+  "Microsoft.Sysinternals.TCPView"
+  "Mozilla.Firefox.DeveloperEdition"
   "Rustlang.Rustup"
-  "Appest.TickTick"
   "Microsoft.VisualStudio.2022.Community"
-  "VMware.WorkstationPro"
-  "wez.wezterm"
 )
 
 $chocoDeps = @(
@@ -44,20 +32,18 @@ $chocoDeps = @(
   "lazygit"
   "fzf"
   "zoxide"
-  "python"
-  "go"
   "sudo"
   "mingw"
   "jq"
 )
 
-$psModules = @(
-  "CompletionPredictor"
-  "PSScriptAnalyzer"
-  "PSFzf"
-  "posh-git"
-  "Terminal-Icons"
-)
+# $psModules = @(
+#   "CompletionPredictor"
+#   "PSScriptAnalyzer"
+#   "PSFzf"
+#   "posh-git"
+#   "Terminal-Icons"
+# )
 
 $code_extensions = @(
   "formulahendry.auto-close-tag"
@@ -77,7 +63,6 @@ $code_extensions = @(
   "kisstkondoros.vscode-gutter-preview"
   "yzhang.markdown-all-in-one"
   "pkief.material-icon-theme"
-  "equinusocio.vsc-material-theme-icons"
   "christian-kohler.npm-intellisense"
   "christian-kohler.path-intellisense"
   "ms-vscode.powershell"
@@ -88,7 +73,8 @@ $code_extensions = @(
   "twxs.cmake"
   "BeardedBear.beardedtheme"
   "reiisen.hi"
-  "vscodevim.vim"
+  "josemurilloc.aura-spirit-dracula"
+  "sumneko.lua"
 
 )
 
@@ -110,7 +96,6 @@ foreach ($chocoDep in $chocoDeps) {
   choco install $chocoDep -y
 }
 
-
 # code&
 Write-Host "Installing Visual Studio Code extensions"
 foreach ($code_extension in $code_extensions) {
@@ -126,7 +111,6 @@ Copy-Item $PSScriptRoot\powershell\user_profile.ps1 C:\Users\$user\.config\power
 Copy-Item $PSScriptRoot\powershell\Microsoft.PowerShell_profile.ps1 C:\Users\$user\Documents\Powershell\
 Copy-Item $PSScriptRoot\starship\starship.toml C:\Users\$user\.config\
 Copy-Item $PSScriptRoot\wallpapers\ C:\Users\$user\Pictures\ -Recurse
-Copy-Item $PSScriptRoot\wezterm C:\Users\$user\.config -Recurse
 Copy-Item $PSScriptRoot\nvim\ $env:LOCALAPPDATA -Recurse
 Copy-Item $PSScriptRoot\code\settings.json C:\Users\$user\AppData\Roaming\Code\User\ -Recurse
 Copy-Item $PSScriptRoot\code\keybindings.json C:\Users\$user\AppData\Roaming\Code\User\ -Recurse
@@ -135,11 +119,11 @@ Copy-Item $PSScriptRoot\code\keybindings.json C:\Users\$user\AppData\Roaming\Cod
 Unblock-File -Path C:\Users\$user\.config\powershell\user_profile.ps1
 Unblock-File -Path C:\Users\$user\Documents\Powershell\Microsoft.PowerShell_profile.ps1
 
-Write-Host -ForegroundColor Yellow "Installing PS Modules"
-foreach ($psModule in $psModules) {
-  if (!(Get-Module -ListAvailable -Name $psModule)) {
-    Install-Module -Name $psModule -Force -AcceptLicense -Scope CurrentUser
-  }
-}
+# Write-Host -ForegroundColor Yellow "Installing PS Modules"
+# foreach ($psModule in $psModules) {
+#   if (!(Get-Module -ListAvailable -Name $psModule)) {
+#     Install-Module -Name $psModule -Force -AcceptLicense -Scope CurrentUser
+#   }
+# }
 
 Restart-Computer
