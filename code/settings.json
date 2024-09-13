@@ -1,47 +1,58 @@
 {
-  // Appearance
-  "workbench.colorTheme": "Bearded Theme Monokai Black",
-  "workbench.productIconTheme": "icons-carbon",
-  "workbench.iconTheme": "eq-material-theme-icons-deepforest",
-  "material-icon-theme.folders.color": "#42a5f5",
+  //Appearance
+  "window.zoomLevel": -0.5,
+  "workbench.colorTheme": "Aura Dracula Spirit",
+  "workbench.iconTheme": "material-icon-theme",
+  "material-icon-theme.hidesExplorerArrows": true,
+"material-icon-theme.folders.color": "#42a5f5",
+  "workbench.tree.renderIndentGuides": "none",
   "workbench.sideBar.location": "right",
+  "workbench.activityBar.visibile": false,
+  "workbench.activityBar.location": "hidden",
   "workbench.statusBar.visible": false,
-  "workbench.startupEditor": "none",
-  "workbench.editor.enablePreview": false,
   "workbench.editor.showTabs": "single",
-  "breadcrumbs.filePath": "last",
-  "window.menuBarVisibility": "hidden",
   "workbench.layoutControl.enabled": false,
-  "window.commandCenter": false,
-  "window.zoomLevel": -1,
+  "workbench.startupEditor": "none",
+  "editor.lineNumbers": "off",
+  "workbench.tips.enabled": false,
+  "editor.lightbulb.enabled": "onCode",
+  "workbench.colorCustomizations": {
+    "editorSuggestWidget.selectedBackground": "#231739",
+    "sideBar.background": "#191521",
+    "list.activeSelectionBackground": "#231739",
+    "list.inactiveSelectionBackground": "#231739",
+    "list.focusBackground": "#231739",
+    "list.hoverBackground": "#231739",
+    "terminalCursor.foreground": "#C45DFF"
+  },
   "editor.minimap.enabled": false,
-  "editor.cursorBlinking": "smooth",
-  "editor.formatOnPaste": true,
-  "editor.formatOnSave": true,
-  "editor.lineNumbers": "on",
+  "editor.guides.indentation": false,
+  "editor.renderWhitespace": "none",
+  "editor.renderLineHighlight": "none",
+  "editor.cursorBlinking": "solid",
+  "editor.cursorWidth": 3,
   "editor.cursorSmoothCaretAnimation": "on",
+  "editor.matchBrackets": "never",
+  "editor.hover.enabled": false,
+  "editor.showFoldingControls": "never",
+  "editor.scrollbar.horizontal": "hidden",
+  "editor.scrollbar.vertical": "hidden",
+  "editor.hideCursorInOverviewRuler": true,
   "editor.overviewRulerBorder": false,
-  "editor.linkedEditing": true,
-  "editor.lightbulb.enabled": "off",
+  "editor.tabSize": 2,
+  "editor.detectIndentation": false,
+  "breadcrumbs.enabled": false,
+  // General Setting
+  "explorer.confirmDragAndDrop": false,
+  "explorer.compactFolders": false,
+  "explorer.sortOrder": "type",
+  "extensions.ignoreRecommendations": true,
+  "editor.formatOnSave": true,
+  "window.menuBarVisibility": "hidden",
   "editor.codeActionsOnSave": {
     "source.organizeImports": "always",
     "source.fixAll": "explicit"
   },
-
-  // Typography
-  // "editor.fontFamily": "Consolas, 'Courier New', monospace",
-  "editor.fontFamily": "BerkeleyMono Nerd Font Mono",
-  "editor.fontSize": 18,
-  "editor.wordWrap": "on",
-  "editor.fontWeight": "100",
-  "editor.lineHeight": 1.75,
-  "editor.fontLigatures": true,
-  "terminal.integrated.fontFamily": "BerkeleyMono Nerd Font Mono",
-  "terminal.integrated.fontSize": 14,
-  "terminal.integrated.lineHeight": 1.5,
-  "errorLens.fontFamily": "BerkeleyMono Nerd Font Mono",
-  "errorLens.fontSize": "14",
-  "errorLens.fontStyleItalic": true,
   // Files
   "search.exclude": {
     "**/node_modules": true,
@@ -56,65 +67,37 @@
     "**/.DS_Store": true,
     "**/Thumbs.db": true
   },
-  "files.autoSave": "afterDelay",
   "files.trimFinalNewlines": true,
+  "files.autoSave": "afterDelay",
   "files.trimTrailingWhitespace": true,
-  "explorer.sortOrder": "type",
-
-  // Better Comments
-  "better-comments.tags": [
-    {
-      "tag": "!",
-      "color": "#FF2D00",
-      "strikethrough": false,
-      "underline": false,
-      "backgroundColor": "transparent",
-      "bold": false,
-      "italic": false
-    },
-    {
-      "tag": "?",
-      "color": "#3498DB",
-      "strikethrough": false,
-      "underline": false,
-      "backgroundColor": "transparent",
-      "bold": false,
-      "italic": false
-    },
-    {
-      "tag": "//",
-      "color": "#474747",
-      "strikethrough": true,
-      "underline": false,
-      "backgroundColor": "transparent",
-      "bold": false,
-      "italic": false
-    },
-    {
-      "tag": "todo",
-      "color": "#FF8C00",
-      "strikethrough": false,
-      "underline": false,
-      "backgroundColor": "transparent",
-      "bold": false,
-      "italic": false
-    },
-    {
-      "tag": "*",
-      "color": "#98C379",
-      "strikethrough": false,
-      "underline": false,
-      "backgroundColor": "transparent",
-      "bold": false,
-      "italic": false
-    }
+  // Typography
+  "editor.fontFamily": "BerkeleyMono Nerd Font Mono",
+  "editor.fontSize": 18,
+  "editor.fontLigatures": true,
+  "editor.lineHeight": 2.5,
+  "editor.wordWrap": "on",
+  "terminal.integrated.fontFamily": "BerkeleyMono Nerd Font Mono",
+  "terminal.integrated.fontSize": 16,
+  "terminal.integrated.lineHeight": 1.05,
+  "terminal.integrated.tabs.enabled": false,
+"errorLens.fontFamily": "DankMono, BerkeleyMono Nerd Font Mono",
+  // Color Highlight
+  "color-highlight.enable": true,
+  "color-highlight.markerType": "background",
+  "color-highlight.languages": [
+    "*"
   ],
+  // Gutter Preview
+  "gutterpreview.showImagePreviewOnGutter": true,
 
-  // Language Settings
+   // Language Settings
+  "[*]": {
+    "editor.formatOnSave": true
+  },
 
-  // JSON
+   // JSON
   "[jsonc]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
   },
 
   //   Markdown
@@ -169,18 +152,59 @@
   "[typescript]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
+// HTML
+"[html]": {
+  "editor.suggest.insertMode": "replace",
+  "editor.defaultFormatter": "esbenp.prettier-vscode"
+},
 
-  // Color Highlight
-  "color-highlight.enable": true,
-  "color-highlight.markerType": "background",
-  "color-highlight.languages": ["*"],
+  // Better Comments
+  "better-comments.tags": [
+    {
+      "tag": "!",
+      "color": "#FF2D00",
+      "strikethrough": false,
+      "underline": false,
+      "backgroundColor": "transparent",
+      "bold": false,
+      "italic": false
+    },
+    {
+      "tag": "?",
+      "color": "#3498DB",
+      "strikethrough": false,
+      "underline": false,
+      "backgroundColor": "transparent",
+      "bold": false,
+      "italic": false
+    },
+    {
+      "tag": "//",
+      "color": "#474747",
+      "strikethrough": true,
+      "underline": false,
+      "backgroundColor": "transparent",
+      "bold": false,
+      "italic": false
+    },
+    {
+      "tag": "todo",
+      "color": "#FF8C00",
+      "strikethrough": false,
+      "underline": false,
+      "backgroundColor": "transparent",
+      "bold": false,
+      "italic": false
+    },
+    {
+      "tag": "*",
+      "color": "#98C379",
+      "strikethrough": false,
+      "underline": false,
+      "backgroundColor": "transparent",
+      "bold": false,
+      "italic": false
+    }
+  ]
 
-  // Gutter Preview
-  "gutterpreview.showImagePreviewOnGutter": true,
-
-  "security.workspace.trust.enabled": true,
-  "security.workspace.trust.banner": "always",
-
-  // Dynamic Changing
-  "workbench.activityBar.location": "hidden"
 }
