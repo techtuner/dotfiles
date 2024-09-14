@@ -44,10 +44,8 @@ code_setup(){
   "kisstkondoros.vscode-gutter-preview"
   "yzhang.markdown-all-in-one"
   "pkief.material-icon-theme"
-  "equinusocio.vsc-material-theme-icons"
   "christian-kohler.npm-intellisense"
   "christian-kohler.path-intellisense"
-  "ms-vscode.powershell"
   "esbenp.prettier-vscode"
   "ms-python.python"
   "rust-lang.rust-analyzer"
@@ -55,6 +53,8 @@ code_setup(){
   "twxs.cmake"
   "BeardedBear.beardedtheme"
   "reiisen.hi"
+  "josemurilloc.aura-spirit-dracula"
+  "sumneko.lua"
 )
     for extension in ${EXTENSIONS[@]}; do
     code --install-extension $extension
@@ -97,23 +97,15 @@ sudo mkdir -p /etc/apt/keyrings
 wget -qO- https://cli.github.com/packages/githubcli-archive-keyring.gpg | sudo tee /etc/apt/keyrings/githubcli-archive-keyring.gpg > /dev/null \
 && sudo chmod go+r /etc/apt/keyrings/githubcli-archive-keyring.gpg \
 && echo "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/githubcli-archive-keyring.gpg] https://cli.github.com/packages stable main" | sudo tee /etc/apt/sources.list.d/github-cli.list > /dev/null
-
-curl -fsSL https://apt.fury.io/wez/gpg.key | sudo gpg --yes --dearmor -o /usr/share/keyrings/wezterm-fury.gpg
-echo 'deb [signed-by=/usr/share/keyrings/wezterm-fury.gpg] https://apt.fury.io/wez/ * *' | sudo tee /etc/apt/sources.list.d/wezterm.list
-
-curl -fsSL https://repo.charm.sh/apt/gpg.key | sudo gpg --dearmor -o /etc/apt/keyrings/charm.gpg
-echo "deb [signed-by=/etc/apt/keyrings/charm.gpg] https://repo.charm.sh/apt/ * *" | sudo tee /etc/apt/sources.list.d/charm.list
-
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.7/install.sh | bash
 
 update_system
-
-sudo apt install git curl wezterm wget lightdm net-tools dconf-editor dconf-cli software-properties-common build-essential procps file zathura ca-certificates gnupg python3 python3-pip python3-venv tmux make cmake fzf zsh ripgrep fd-find zoxide bat gcc gdb gcc kitty docker.io docker-compose cargo adb golang gh powershell -y
+sudo apt install git curl wget lightdm net-tools dconf-editor dconf-cli software-properties-common build-essential procps file zathura ca-certificates gnupg python3 python3-pip python3-venv tmux make cmake fzf zsh ripgrep fd-find zoxide bat gcc gdb gcc kitty docker.io docker-compose cargo adb golang gh -y
 sudo apt remove apport apport-gtk -y && sudo apt purge apport apport-gtk -y
 
 cargo install eza urlencode
 
-SNAPS=("code" "nvim" "spotify" "powershell")
+SNAPS=("code" "nvim" "spotify")
 for apps in ${SNAPS[@]}; do
   sudo snap install $apps --classic
 done
@@ -121,7 +113,6 @@ done
 cd $cwd
 sudo cp -r ./fonts/'Fira Code' /usr/share/fonts/truetype/
 sudo cp -r ./fonts/Hack /usr/share/fonts/truetype/
-sudo cp -r ./fonts/JetBrainsMono/ /usr/share/fonts/truetype/
 
 code&
 
@@ -137,8 +128,6 @@ cp -r ./nvim/ ~/.config/
 cp ./code/settings.json ~/.config/Code/User/
 cp ./code/keybindings.json ~/.config/Code/User/
 cp -r ./kitty/ ~/.config/
-cp -r ./wezterm/ ~/.config/
-# cp -r ./Hyper/hyper.js ~/.hyper.js
 cp -r ./wallpapers/ ~/Pictures/
 cp ./tmux/.tmux.conf ~
 
