@@ -1,14 +1,12 @@
 {
   //Appearance
   "window.zoomLevel": -0.5,
-  "workbench.colorTheme": "Aura Dracula Spirit",
+  "workbench.colorTheme": "Nord Deep",
   "workbench.iconTheme": "material-icon-theme",
   "material-icon-theme.hidesExplorerArrows": true,
-"material-icon-theme.folders.color": "#42a5f5",
   "workbench.tree.renderIndentGuides": "none",
   "workbench.sideBar.location": "right",
   "workbench.activityBar.visibile": false,
-  "workbench.activityBar.location": "hidden",
   "workbench.statusBar.visible": false,
   "workbench.editor.showTabs": "single",
   "workbench.layoutControl.enabled": false,
@@ -16,27 +14,27 @@
   "editor.lineNumbers": "off",
   "workbench.tips.enabled": false,
   "editor.lightbulb.enabled": "onCode",
-  "workbench.colorCustomizations": {
-    "editorSuggestWidget.selectedBackground": "#231739",
-    "sideBar.background": "#191521",
-    "list.activeSelectionBackground": "#231739",
-    "list.inactiveSelectionBackground": "#231739",
-    "list.focusBackground": "#231739",
-    "list.hoverBackground": "#231739",
-    "terminalCursor.foreground": "#C45DFF"
-  },
+  // "workbench.colorCustomizations": {
+  //   "editorSuggestWidget.selectedBackground": "#1e2128",
+  //   "sideBar.background": "#191521",
+  //   "list.activeSelectionBackground": "#1e2128",
+  //   "list.inactiveSelectionBackground": "#1e2128",
+  //   "list.focusBackground": "#1e2128",
+  //   "list.hoverBackground": "#1e2128",
+  //   "terminalCursor.foreground": "#C45DFF",
+  // },
   "editor.minimap.enabled": false,
   "editor.guides.indentation": false,
   "editor.renderWhitespace": "none",
   "editor.renderLineHighlight": "none",
   "editor.cursorBlinking": "solid",
-  "editor.cursorWidth": 3,
+  // "editor.cursorWidth": 9,
   "editor.cursorSmoothCaretAnimation": "on",
   "editor.matchBrackets": "never",
   "editor.hover.enabled": false,
   "editor.showFoldingControls": "never",
-  "editor.scrollbar.horizontal": "hidden",
-  "editor.scrollbar.vertical": "hidden",
+  // "editor.scrollbar.horizontal": "hidden",
+  // "editor.scrollbar.vertical": "hidden",
   "editor.hideCursorInOverviewRuler": true,
   "editor.overviewRulerBorder": false,
   "editor.tabSize": 2,
@@ -80,7 +78,7 @@
   "terminal.integrated.fontSize": 16,
   "terminal.integrated.lineHeight": 1.05,
   "terminal.integrated.tabs.enabled": false,
-"errorLens.fontFamily": "DankMono, BerkeleyMono Nerd Font Mono",
+"errorLens.fontFamily": "BerkeleyMono Nerd Font Mono",
   // Color Highlight
   "color-highlight.enable": true,
   "color-highlight.markerType": "background",
@@ -205,6 +203,6 @@
       "bold": false,
       "italic": false
     }
-  ]
-
+  ],
+  "workbench.activityBar.location": "hidden"
 }
