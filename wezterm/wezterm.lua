@@ -9,7 +9,7 @@ config = {
 --  color_scheme = 'Nord (Gogh)',
   colors = require("cyberdream"),
   -- font = wezterm.font("DankMono Nerd Font Mono"),
-  font = wezterm.font("JetBrains Mono"),
+  font = wezterm.font("BerkeleyMono Nerd Font Mono"),
   font_size = 10,
   background = {
     {
