@@ -15,7 +15,6 @@ $wingetDeps = @(
   "kitware.cmake"
   "neovim.neovim"
   "openjs.nodejs"
-  "starship.starship"
   "Microsoft.PowerToys"
   "Microsoft.Sysinternals.ProcessExplorer"
   "Microsoft.Sysinternals.ProcessMonitor"
@@ -25,17 +24,75 @@ $wingetDeps = @(
   "Microsoft.VisualStudio.2022.Community"
 )
 
-$chocoDeps = @(
-  "bat"
-  "fd"
-  "ripgrep"
-  "lazygit"
-  "fzf"
-  "zoxide"
-  "sudo"
-  "mingw"
-  "jq"
-)
+# Function to install packages from either Chocolatey or Scoop
+# Installing Chocolatey
+function Install-Chocolatey {
+  if (-Not (Get-Command choco -ErrorAction SilentlyContinue)) {
+    Write-Host "Installing Chocolatey..."
+    Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.SecurityProtocolType]::Tls12; iex ((New-Object System.Net.WebClient).DownloadString('https://chocolatey.org/install.ps1'))
+  }
+  else {
+    Write-Host "Chocolatey is already installed."
+  }
+}
+
+# Installing Scoop
+function Install-Scoop {
+  if (-Not (Get-Command scoop -ErrorAction SilentlyContinue)) {
+    Write-Host "Installing Scoop..."
+    Set-ExecutionPolicy RemoteSigned -Scope CurrentUser; iex (new-object net.webclient).downloadstring('get.scoop.sh')
+  }
+  else {
+    Write-Host "Scoop is already installed."
+  }
+}
+
+$choice = Read-Host "Choose a package manager: (1) Chocolatey (2) Scoop"
+
+switch ($choice) {
+  '1' {
+    Install-Chocolatey
+    $chocoDeps = @(
+      "bat"
+      "fd"
+      "ripgrep"
+      "lazygit"
+      "fzf"
+      "zoxide"
+      "sudo"
+      "mingw"
+      "jq"
+    )
+    Write-Host -ForegroundColor Yellow "Installing the Choco Dependencies"
+    $ChocoAppsInstalled = (choco list --limit-output --id-only).Split("`n")
+    foreach ($chocoDep in $chocoDeps) {
+      choco install $chocoDep -y
+    }
+  }
+
+  '2' {
+    Install-Scoop
+    $scoopDeps = @(
+      "sudo"
+      "nodejs"
+      "gcc"
+      "curl"
+      "wget"
+      "jq"
+      "oh-my-posh"
+      "fzf"
+      "cmake"
+      "make"
+      "docker"
+      "bat"
+    )
+
+    Write-Host -ForegroundColor Yellow "Installing the Choco Dependencies"
+    foreach ($scoopDep in $scoopDeps) {
+      scoop install $scoopDep
+    }
+  }
+}
 
 # $psModules = @(
 #   "CompletionPredictor"
@@ -73,7 +130,7 @@ $code_extensions = @(
   "twxs.cmake"
   "BeardedBear.beardedtheme"
   "reiisen.hi"
-  "josemurilloc.aura-spirit-dracula"
+  "Nur.just-black"
   "sumneko.lua"
 
 )
@@ -90,13 +147,6 @@ foreach ($wingetDep in $wingetDeps) {
 # Path Refresh
 $env:Path = [System.Environment]::GetEnvironmentVariable("Path", "Machine") + ";" + [System.Environment]::GetEnvironmentVariable("Path", "User")
 
-Write-Host -ForegroundColor Yellow "Installing the Choco Dependencies"
-$ChocoAppsInstalled = (choco list --limit-output --id-only).Split("`n")
-foreach ($chocoDep in $chocoDeps) {
-  choco install $chocoDep -y
-}
-
-# code&
 Write-Host "Installing Visual Studio Code extensions"
 foreach ($code_extension in $code_extensions) {
   code --install-extension $code_extension
@@ -109,12 +159,11 @@ mkdir ~\.config\powershell
 Write-Host "Copying Files to the respective Directories"
 Copy-Item $PSScriptRoot\powershell\user_profile.ps1 C:\Users\$user\.config\powershell\
 Copy-Item $PSScriptRoot\powershell\Microsoft.PowerShell_profile.ps1 C:\Users\$user\Documents\Powershell\
-Copy-Item $PSScriptRoot\starship\starship.toml C:\Users\$user\.config\
+# Copy-Item $PSScriptRoot\starship\starship.toml C:\Users\$user\.config\
 Copy-Item $PSScriptRoot\wallpapers\ C:\Users\$user\Pictures\ -Recurse
 Copy-Item $PSScriptRoot\nvim\ $env:LOCALAPPDATA -Recurse
 Copy-Item $PSScriptRoot\code\settings.json C:\Users\$user\AppData\Roaming\Code\User\ -Recurse
 Copy-Item $PSScriptRoot\code\keybindings.json C:\Users\$user\AppData\Roaming\Code\User\ -Recurse
-
 
 Unblock-File -Path C:\Users\$user\.config\powershell\user_profile.ps1
 Unblock-File -Path C:\Users\$user\Documents\Powershell\Microsoft.PowerShell_profile.ps1
@@ -125,5 +174,3 @@ Unblock-File -Path C:\Users\$user\Documents\Powershell\Microsoft.PowerShell_prof
 #     Install-Module -Name $psModule -Force -AcceptLicense -Scope CurrentUser
 #   }
 # }
-
-Restart-Computer
