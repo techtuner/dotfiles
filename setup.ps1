@@ -40,7 +40,7 @@ function Install-Chocolatey {
 function Install-Scoop {
   if (-Not (Get-Command scoop -ErrorAction SilentlyContinue)) {
     Write-Host "Installing Scoop..."
-    Set-ExecutionPolicy RemoteSigned -Scope CurrentUser; iex (new-object net.webclient).downloadstring('get.scoop.sh')
+    Set-ExecutionPolicy RemoteSigned -Scope CurrentUser; Invoke-RestMethod -Uri https://get.scoop.sh | Invoke-Expression
   }
   else {
     Write-Host "Scoop is already installed."
@@ -87,7 +87,7 @@ switch ($choice) {
       "bat"
     )
 
-    Write-Host -ForegroundColor Yellow "Installing the Choco Dependencies"
+    Write-Host -ForegroundColor Yellow "Installing the Scoop Dependencies"
     foreach ($scoopDep in $scoopDeps) {
       scoop install $scoopDep
     }
