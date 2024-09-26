@@ -2,7 +2,6 @@
 
 Import-Module posh-git
 Import-Module PSFzf
-Import-Module Terminal-Icons
 Set-PsFzfOption -PSReadlineChordProvider 'Ctrl+f' -PSReadlineChordReverseHistory 'Ctrl+r'
 
 Set-PSReadLineOption -EditMode Vi
@@ -34,6 +33,6 @@ function ghclone($username, $repo){
   }
 }
 
-# oh-my-posh init pwsh --config "$env:POSH_THEMES_PATH\robbyrussell.omp.json" | Invoke-Expression
-Invoke-Expression (&starship init powershell)
+oh-my-posh init pwsh --config "$env:POSH_THEMES_PATH\robbyrussell.omp.json" | Invoke-Expression
+# Invoke-Expression (&starship init powershell)
 $PSStyle.FileInfo.Directory = "`e[38;2;255;255;255m"
