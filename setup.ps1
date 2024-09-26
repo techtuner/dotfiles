@@ -11,17 +11,22 @@ $wingetDeps = @(
   "chocolatey.chocolatey"
   "eza-community.eza"
   "github.cli"
+  "Git.Git"
   "ezwinports.make"
   "kitware.cmake"
   "neovim.neovim"
   "openjs.nodejs"
   "Microsoft.PowerToys"
+"Readdle.Spark"
   "Microsoft.Sysinternals.ProcessExplorer"
   "Microsoft.Sysinternals.ProcessMonitor"
   "Microsoft.Sysinternals.TCPView"
   "Mozilla.Firefox.DeveloperEdition"
+  "TorProject.TorBrowser"
   "Rustlang.Rustup"
   "Microsoft.VisualStudio.2022.Community"
+  "VideoLAN.VLC"
+  "Alacritty.Alacritty"
 )
 
 # Function to install packages from either Chocolatey or Scoop
@@ -48,51 +53,6 @@ function Install-Scoop {
 }
 
 $choice = Read-Host "Choose a package manager: (1) Chocolatey (2) Scoop"
-
-switch ($choice) {
-  '1' {
-    Install-Chocolatey
-    $chocoDeps = @(
-      "bat"
-      "fd"
-      "ripgrep"
-      "lazygit"
-      "fzf"
-      "zoxide"
-      "sudo"
-      "mingw"
-      "jq"
-    )
-    Write-Host -ForegroundColor Yellow "Installing the Choco Dependencies"
-    $ChocoAppsInstalled = (choco list --limit-output --id-only).Split("`n")
-    foreach ($chocoDep in $chocoDeps) {
-      choco install $chocoDep -y
-    }
-  }
-
-  '2' {
-    Install-Scoop
-    $scoopDeps = @(
-      "sudo"
-      "nodejs"
-      "gcc"
-      "curl"
-      "wget"
-      "jq"
-      "oh-my-posh"
-      "fzf"
-      "cmake"
-      "make"
-      "docker"
-      "bat"
-    )
-
-    Write-Host -ForegroundColor Yellow "Installing the Scoop Dependencies"
-    foreach ($scoopDep in $scoopDeps) {
-      scoop install $scoopDep
-    }
-  }
-}
 
 # $psModules = @(
 #   "CompletionPredictor"
@@ -146,6 +106,54 @@ foreach ($wingetDep in $wingetDeps) {
 
 # Path Refresh
 $env:Path = [System.Environment]::GetEnvironmentVariable("Path", "Machine") + ";" + [System.Environment]::GetEnvironmentVariable("Path", "User")
+
+
+switch ($choice) {
+  '1' {
+    Install-Chocolatey
+    $chocoDeps = @(
+      "bat"
+      "fd"
+      "ripgrep"
+      "lazygit"
+      "fzf"
+      "zoxide"
+      "sudo"
+      "mingw"
+      "jq"
+    )
+    Write-Host -ForegroundColor Yellow "Installing the Choco Dependencies"
+    $ChocoAppsInstalled = (choco list --limit-output --id-only).Split("`n")
+    foreach ($chocoDep in $chocoDeps) {
+      choco install $chocoDep -y
+    }
+  }
+
+  '2' {
+    Install-Scoop
+    $scoopDeps = @(
+      "sudo"
+      "nodejs"
+      "gcc"
+      "curl"
+      "wget"
+      "jq"
+      "oh-my-posh"
+      "fzf"
+      "cmake"
+      "make"
+     "python"
+     "go"
+      "docker"
+      "bat"
+    )
+
+    Write-Host -ForegroundColor Yellow "Installing the Scoop Dependencies"
+    foreach ($scoopDep in $scoopDeps) {
+      scoop install $scoopDep
+    }
+  }
+}
 
 Write-Host "Installing Visual Studio Code extensions"
 foreach ($code_extension in $code_extensions) {
