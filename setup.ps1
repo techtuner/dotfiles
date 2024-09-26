@@ -45,7 +45,7 @@ function Install-Chocolatey {
 function Install-Scoop {
   if (-Not (Get-Command scoop -ErrorAction SilentlyContinue)) {
     Write-Host "Installing Scoop..."
-    Set-ExecutionPolicy RemoteSigned -Scope CurrentUser; Invoke-RestMethod -Uri https://get.scoop.sh | Invoke-Expression
+    Set-ExecutionPolicy RemoteSigned -Scope CurrentUser; iex "& {$(irm get.scoop.sh)} -RunAsAdmin"
   }
   else {
     Write-Host "Scoop is already installed."
@@ -92,7 +92,6 @@ $code_extensions = @(
   "reiisen.hi"
   "Nur.just-black"
   "sumneko.lua"
-
 )
 
 Set-Location $PSScriptRoot
