@@ -7,4 +7,5 @@ require("php").setup{}
 vim.keymap.set("n","<leader>pa", function()
 R "php"
 require("php.artisan").telescope_select_artisan()
+end
 )
