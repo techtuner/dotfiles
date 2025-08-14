@@ -1,0 +1,177 @@
+command_timeout = 3600
+"$schema" = 'https://starship.rs/config-schema.json'
+
+add_newline = false
+
+format = """
+ ➜\
+$directory\
+${custom.giturl}\
+$git_branch\
+$git_state\
+$git_status\
+$line_break\
+$character
+"""
+
+right_format = """$all"""
+
+# ─────────────────────────
+# PALETTE: Gruvbox Material + Catppuccin Symbols
+# ─────────────────────────
+palette = "gruvbox_material_catppuccin"
+
+[palettes.gruvbox_material_catppuccin]
+# Gruvbox Material colors
+bg0 = "#1d2021"
+bg1 = "#282828"
+bg2 = "#32302f"
+bg3 = "#3c3836"
+bg4 = "#504945"
+fg0 = "#fbf1c7"
+fg1 = "#ebdbb2"
+fg2 = "#d5c4a1"
+fg3 = "#bdae93"
+fg4 = "#a89984"
+red = "#fb4934"
+green = "#b8bb26"
+yellow = "#fabd2f"
+blue = "#83a598"
+purple = "#d3869b"
+aqua = "#8ec07c"
+orange = "#fe8019"
+gray = "#928374"
+
+# Catppuccin Mocha accents for icons/symbols
+rosewater = "#f5e0dc"
+flamingo = "#f2cdcd"
+pink = "#f5c2e7"
+mauve = "#cba6f7"
+maroon = "#eba0ac"
+peach = "#fab387"
+teal = "#94e2d5"
+sky = "#89dceb"
+sapphire = "#74c7ec"
+lavender = "#b4befe"
+
+# ─────────────────────────
+# OS SYMBOLS
+# ─────────────────────────
+[os.symbols]
+Windows = "󰍲"
+Ubuntu = "󰕈"
+SUSE = ""
+Raspbian = "󰐿"
+Mint = "󰣭"
+Macos = " "
+Manjaro = ""
+Linux = "󰌽"
+Gentoo = "󰣨"
+Fedora = "󰣛"
+Alpine = ""
+Amazon = ""
+Android = ""
+Arch = "󰣇"
+Artix = "󰣇"
+CentOS = ""
+Debian = "󰣚"
+Redhat = "󱄛"
+RedHatEnterprise = "󱄛"
+
+# ─────────────────────────
+# DIRECTORY MODULE
+# ─────────────────────────
+[directory]
+style = "fg:blue"
+format = "[ $path ]($style)"
+[directory.substitutions]
+"Documents" = "󰈙 "
+"Downloads" = " "
+"Music" = "󰝚 "
+"Pictures" = " "
+"Developer" = "󰲋 "
+
+# ─────────────────────────
+# CUSTOM GIT URL
+# ─────────────────────────
+[custom.giturl]
+description = "Display symbol for remote Git server"
+command = """
+if git rev-parse --is-inside-work-tree &>/dev/null; then
+    GIT_REMOTE=$(git ls-remote --get-url 2>/dev/null)
+    case "$GIT_REMOTE" in
+        *github*)   echo " " ;;
+        *gitlab*)   echo " " ;;
+        *bitbucket*) echo " " ;;
+        *git*)      echo " " ;;
+        *)          echo " " ;;
+    esac
+fi
+"""
+when = 'git rev-parse --is-inside-work-tree 2> /dev/null'
+format = "at $output"
+
+# ─────────────────────────
+# GIT BRANCH & STATUS
+# ─────────────────────────
+[git_branch]
+symbol = ""
+style = "fg:lavender bg:bg3"
+format = ' on [$symbol $branch]($style) '
+
+[git_status]
+format = ' [($all_status$ahead_behind )]($style)'
+
+# ─────────────────────────
+# LANGUAGE MODULES
+# ─────────────────────────
+[nodejs]
+symbol = ""
+format = '[ $symbol( $version) ]($style)'
+
+[c]
+symbol = " "
+format = '[[ $symbol( $version) ]]($style)'
+
+[rust]
+symbol = ""
+format = '[[ $symbol( $version) ]]($style)'
+
+[golang]
+symbol = ""
+format = '[ $symbol( $version) ]($style)'
+
+[php]
+symbol = ""
+format = '[[ $symbol( $version) ]]($style)'
+
+[java]
+symbol = " "
+format = '[[ $symbol( $version) ]]($style)'
+
+[kotlin]
+symbol = ""
+format = '[[ $symbol( $version) ]]($style)'
+
+[haskell]
+symbol = ""
+format = '[[ $symbol( $version) ]]($style)'
+
+[python]
+symbol = ""
+format = '[[ $symbol( $version) ]]($style)'
+
+[docker_context]
+symbol = ""
+format = '[ $symbol( $context) ]($style)'
+
+# ─────────────────────────
+# PROMPT CHARACTER
+# ─────────────────────────
+[character]
+success_symbol = '[𝘹](bold fg:green)'
+error_symbol = '[𝘹](bold fg:red)'
+vimcmd_symbol = '[](bold fg:green)'
+vimcmd_replace_one_symbol = '[](bold fg:purple)'
+vimcmd_replace_symbol = '[](bold fg:purple)'
+vimcmd_visual_symbol = '[](bold fg:lavender)'
