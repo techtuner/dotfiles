@@ -2,10 +2,10 @@
 include themes/gruvbox-material.conf
 
 # Fonts
-font-family = Hack Nerd Font Propo
-bold-font = Hack Nerd Font Propo
-italic-font = Hack Nerd Font Propo
-bold-italic-font = Hack Nerd Font Propo
+font-family = SFMono Nerd Font
+bold-font = SFMono Nerd Font
+italic-font = SFMono Nerd Font
+bold-italic-font = SFMono Nerd Font
 font-size = 14.0
 
 # Spacing
