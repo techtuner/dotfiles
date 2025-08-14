@@ -1,0 +1,56 @@
+# Include the Gruvbox Material Hard Custom theme
+include themes/gruvbox-material.conf
+
+# Fonts
+font-family = Hack Nerd Font Propo
+bold-font = Hack Nerd Font Propo
+italic-font = Hack Nerd Font Propo
+bold-italic-font = Hack Nerd Font Propo
+font-size = 14.0
+
+# Spacing
+line-height = 1.25
+
+# Bell
+audio-bell = false
+
+# Ligatures
+disable-ligatures = never
+
+# Copy on select
+copy-on-select = true
+
+# Shell integration
+shell-integration = false
+
+# Cursor
+cursor-shape = block
+cursor-blink-interval = 0
+
+# Window
+remember-window-size = true
+window-decoration = titlebar-only
+background-opacity = 0.85
+background-blur-radius = 25
+
+# Whitespace trimming
+strip-trailing-spaces = smart
+
+# Tab bar & layout
+tab-bar-edge = bottom
+tab-bar-style = separator
+tab-separator = " | "
+tab-activity-symbol = ⚡
+tab-title-template = "{fmt.fg._f64832}{index}:{fmt.fg.tab}{title.split()[0]}"
+active-tab-title-template = "{fmt.fg._f64832}{index}:{fmt.fg.active_tab}{title.split()[0]}"
+
+# Layouts
+enabled-layouts = splits:split_axis=horizontal
+
+# Key mappings (Ghostty uses keybind blocks)
+[keybind]
+key = ctrl+f
+action = overlay
+command = /usr/bin/fzf --no-sort --no-mouse --exact -i
+stdin-source = @screen_scrollback
+
