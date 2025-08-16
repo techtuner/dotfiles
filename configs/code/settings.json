@@ -80,7 +80,7 @@
   "editor.fontFamily": "SFMono Nerd Font",
   "editor.lineHeight": 1.5,
   "editor.wordWrap": "on",
-  "terminal.integrated.fontFamily": "'SFMono Nerd Font",
+  "terminal.integrated.fontFamily": "SFMono Nerd Font",
   "terminal.integrated.lineHeight": 1.15,
   "terminal.integrated.fontSize": 16,
   "errorLens.fontFamily": "SFMono Nerd Font",
@@ -214,4 +214,3 @@
   "workbench.activityBar.location": "hidden",
   "workbench.secondarySideBar.defaultVisibility": "hidden"
 }
-
