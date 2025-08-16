@@ -46,7 +46,6 @@ function Install-Winget {
 
 function Install-WingetApps {
   $documentFolder = [Environment]::GetFolderPath("MyDocuments")
-  $downloadFolder = [Environment]::GetFolderPath("Downloads")
 
   $apps = @(
     @{Name = "Brave Browser"; Id = "Brave.Brave" },
@@ -84,7 +83,6 @@ function Install-WingetApps {
     }
   }
 
-  # Installing Spoify and Winlibs
   # Setting Mingw
 
   Invoke-WebRequest `
@@ -98,13 +96,4 @@ function Install-WingetApps {
   Remove-Item "$(Join-Path $documentFolder 'WinLibs.zip')"
   Remove-Item "$(Join-Path $documentFolder WinLibs)" -Recurse -Force
   Write-Host "WinLibs installed successfully"
-
-  # Downloading Spotify
-  Invoke-WebRequest https://download.scdn.co/SpotifySetup.exe -Outfile "$(Join-Path $downloadFolder 'SpotifySetup.exe')"
-
-  $spotifyProc = Start-Process -FilePath "$(Join-Path $downloadFolder "SpotifySetup.exe")" -ArgumentList "/S" -PassThru
-  $spotifyProc.WaitForExit()
-  Get-Process -Name "Spotify" -ErrorAction SilentlyContinue | Stop-Process -Force
-  Remove-Item "$(Join-Path $downloadFolder "SpotifySetup.exe")" -Force
-  Write-Host "Spotify installed successfully"
 }
